@@ -2,7 +2,7 @@ import React from "react";
 import { useFetch } from "../hooks/useFetch.js";
 
 //test api used for testing useFetch custom hook. Will be replaced with ingredients back end.
-const api = "https://uselessfacts.jsph.pl/random.json?language=en";
+const api = process.env.API_CALL;
 
 function Homepage() {
   const [data] = useFetch(api);
