@@ -5,6 +5,7 @@ import IngredientPage from "../IngredientPage/IngredientPage.js";
 import RecipePage from "../RecipePage/RecipePage.js";
 import SearchPage from "../SearchPage/SearchPage.js";
 import ShoppingList from "../ShoppingList/ShoppingList.js";
+import NavMenu from "../NavMenu/navmenu";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Link to="/search">Search</Link>
         <Link to="/shoppinglist">Shopping List</Link>
       </nav>
+      <NavMenu />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="ingredients" element={<IngredientPage />} />
