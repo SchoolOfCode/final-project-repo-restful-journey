@@ -9,7 +9,6 @@ import ShoppingList from "../ShoppingList/ShoppingList.js";
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
       <nav>
         <Link to="/ingredients">Ingredients Page</Link>
         <Link to="/recipes">Recipes</Link>
