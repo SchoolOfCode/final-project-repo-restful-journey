@@ -19,6 +19,7 @@ function App() {
         <Link to="/shoppinglist">Shopping List</Link>
         <Link to="/hamburger">hamburgermenu</Link>
       </nav>
+      <NavMenu />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="ingredients" element={<IngredientPage />} />
