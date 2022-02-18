@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <nav>
+        <Link to="/">Homepage</Link>
         <Link to="/ingredients">Ingredients Page</Link>
         <Link to="/recipes">Recipes</Link>
         <Link to="/search">Search</Link>
