@@ -5,14 +5,14 @@ import { useFetch } from "../hooks/useFetch.js";
 const api = process.env.REACT_APP_API_CALL;
 
 function Homepage() {
-  const [data] = useFetch(api);
-  console.log(data);
+  const [data] = useFetch(`${api}/ingredients`);
+  console.log(data.payload.name);
 
   if (data) {
     return (
       <>
         <h1>Hello again!</h1>
-        <h1>{data.text}</h1>
+        <h1>{data.payload.name}</h1>
       </>
     );
   } else {
