@@ -22,7 +22,6 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path="/" element={<Homepage className={css.homepage} />} />
-        <Route path="ingredients" element={<IngredientPage />} />
         <Route path="recipes" element={<RecipePage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="shoppinglist" element={<ShoppingList />} />
@@ -33,3 +32,5 @@ function App() {
 }
 
 export default App;
+
+// Make the ingredients event handlers (button)
