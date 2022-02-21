@@ -1,18 +1,19 @@
-import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
-import Homepage from "../Homepage/Homepage.js";
-import IngredientPage from "../IngredientPage/IngredientPage.js";
-import RecipePage from "../RecipePage/RecipePage.js";
-import SearchPage from "../SearchPage/SearchPage.js";
-import ShoppingList from "../ShoppingList/ShoppingList.js";
-import NavMenu from "../NavMenu/navmenu";
+import './App.css';
+import { Routes, Route, Link } from 'react-router-dom';
+import Homepage from '../Homepage/Homepage.js';
+import IngredientPage from '../IngredientPage/IngredientPage.js';
+import RecipePage from '../RecipePage/RecipePage.js';
+import SearchPage from '../SearchPage/SearchPage.js';
+import ShoppingList from '../ShoppingList/ShoppingList.js';
+import NavMenu from '../NavMenu/navmenu';
+import LoginButton from '../LoginButton/Login';
 
 function App() {
   return (
-
     <div className="App">
       <nav>
-        <Link to="/">Homepage</Link>
+        <Link to="/">Login</Link>
+        <Link to="/home">Homepage</Link>
         <Link to="/ingredients">Ingredients Page</Link>
         <Link to="/recipes">Recipes</Link>
         <Link to="/search">Search</Link>
@@ -21,7 +22,8 @@ function App() {
       </nav>
       <NavMenu />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<LoginButton />} />
+        <Route path="home" element={<Homepage />} />
         <Route path="ingredients" element={<IngredientPage />} />
         <Route path="recipes" element={<RecipePage />} />
         <Route path="search" element={<SearchPage />} />
