@@ -12,7 +12,7 @@ export const StyledMenu = styled.nav`
   top: 0;
   right: 0;
   transition: transform 0.3s ease-in-out;
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translatey(-100%)")};
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
