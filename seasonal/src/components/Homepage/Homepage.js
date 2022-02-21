@@ -7,8 +7,8 @@ const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length)
 console.log(randomNumber)
 
 //test api used for testing useFetch custom hook. Will be replaced with ingredients back end.
-// const api = process.env.REACT_APP_API_CALL;
-const api = "https://nourish-seasonal.herokuapp.com";
+const api = process.env.REACT_APP_API_CALL;
+// const api = "https://nourish-seasonal.herokuapp.com";
 
 function Homepage() {
   const [data] = useFetch(`${api}/ingredients`);
