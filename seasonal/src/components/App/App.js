@@ -14,7 +14,7 @@ function App() {
       <nav>
         <Link to="/">Login</Link>
         <Link to="/home">Homepage</Link>
-        <Link to="/ingredients">Ingredients Page</Link>
+        <Link to="/home/ingredients">Ingredients Page</Link>
         <Link to="/recipes">Recipes</Link>
         <Link to="/search">Search</Link>
         <Link to="/shoppinglist">Shopping List</Link>
@@ -23,9 +23,12 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path="/" element={<LoginButton />} />
-        <Route path="home" element={<Homepage />} />
+        <Route path="home/*" element={<Homepage />} />
         <Route path="/" element={<Homepage className={css.homepage} />} />
-        <Route path="ingredients" element={<IngredientPage />} />
+        {/* <Route
+          path="home/ingredients"
+          element={<IngredientPage/>}
+        /> */}
         <Route path="recipes" element={<RecipePage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="shoppinglist" element={<ShoppingList />} />

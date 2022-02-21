@@ -13,10 +13,10 @@ console.log(randomNumber);
 const api = process.env.REACT_APP_API_CALL;
 
 function Homepage() {
-  const [type, setType] = useState();
+  const [type, setType] = useState("test");
   let navigate = useNavigate();
   function routeChange() {
-    let path = "/ingredients";
+    let path = "ingredients";
     navigate(path);
   }
   const [data] = useFetch(`${api}/ingredients`);
@@ -26,7 +26,7 @@ function Homepage() {
   function handleClick(e) {
     setType(e.target.alt);
     console.log(type);
-    // routeChange();
+    routeChange();
   }
 
   if (data) {
@@ -35,7 +35,7 @@ function Homepage() {
         <h1>Hello again!</h1>
         <Routes>
           <Route
-            path="ingredients"
+            path="/ingredients"
             element={<IngredientPage ingredient={type} />}
           />
         </Routes>
