@@ -1,4 +1,4 @@
-import "./App.css";
+import css from "./App.module.css";
 import { Routes, Route, Link } from "react-router-dom";
 import Homepage from "../Homepage/Homepage.js";
 import IngredientPage from "../IngredientPage/IngredientPage.js";
@@ -10,7 +10,7 @@ import NavMenu from "../NavMenu/navmenu";
 function App() {
   return (
 
-    <div className="App">
+    <div className={css.App}>
       <nav>
         <Link to="/">Homepage</Link>
         <Link to="/ingredients">Ingredients Page</Link>
@@ -21,7 +21,7 @@ function App() {
       </nav>
       <NavMenu />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Homepage className={css.homepage} />} />
         <Route path="ingredients" element={<IngredientPage />} />
         <Route path="recipes" element={<RecipePage />} />
         <Route path="search" element={<SearchPage />} />
