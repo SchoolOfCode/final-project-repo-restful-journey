@@ -14,7 +14,13 @@
   display: flex;
   justify-content: space-evenly;
   column-gap: 1.5rem;
+  margin-top: 1rem;
   margin-left: 5rem;
+  margin-bottom: 5rem;
+}
+
+.type {
+  font-weight: bold;
 }
 
 .ingredients {
@@ -26,8 +32,8 @@
 
 .img {
   float: left;
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 5px;
   overflow: scroll;
