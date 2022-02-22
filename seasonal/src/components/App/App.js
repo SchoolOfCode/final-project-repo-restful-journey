@@ -25,10 +25,6 @@ function App() {
         <Route path="/" element={<LoginButton />} />
         <Route path="home/*" element={<Homepage />} />
         <Route path="/" element={<Homepage className={css.homepage} />} />
-        {/* <Route
-          path="home/ingredients"
-          element={<IngredientPage/>}
-        /> */}
         <Route path="recipes" element={<RecipePage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="shoppinglist" element={<ShoppingList />} />
