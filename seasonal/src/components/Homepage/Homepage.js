@@ -2,7 +2,7 @@ import React from "react";
 import { useFetch } from "../hooks/useFetch.js";
 import { seasonQuotes, getSeason } from "../../libs/seasonalData.js";
 import { useNavigate, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import IngredientPage from "../IngredientPage/IngredientPage.js";
 
 const season = getSeason();
@@ -13,7 +13,8 @@ console.log(randomNumber);
 const api = process.env.REACT_APP_API_CALL;
 
 function Homepage() {
-  const [type, setType] = useState("test");
+  const [ingredient, setIngredient] = useState(null);
+
   let navigate = useNavigate();
   function routeChange() {
     let path = "ingredients";
@@ -24,21 +25,15 @@ function Homepage() {
   console.log(getSeason());
 
   function handleClick(e) {
-    setType(e.target.alt);
-    console.log(type);
+    setIngredient(e.target.alt);
+    console.log(ingredient);
     routeChange();
   }
 
-  if (data) {
+  if (data && !ingredient) {
     return (
       <>
         <h1>Hello again!</h1>
-        <Routes>
-          <Route
-            path="/ingredients"
-            element={<IngredientPage ingredient={type} />}
-          />
-        </Routes>
         <h2>{seasonQuotes[season][randomNumber]}</h2>
         {data.payload.map((item, index) => {
           return (
@@ -54,8 +49,17 @@ function Homepage() {
         })}
       </>
     );
-  } else {
+  } else if (!data) {
     return <h1>Hello again!</h1>;
+  } else if (ingredient) {
+    return (
+      <Routes>
+        <Route
+          path="/ingredients"
+          element={<IngredientPage ingredient={ingredient} />}
+        />
+      </Routes>
+    );
   }
 }
 
