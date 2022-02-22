@@ -1,0 +1,15 @@
+.container1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: rgb(175, 250, 250); */
+}
+.container2{
+    margin: 0.5rem;
+    /* background-color: rgb(224, 243, 243); */
+    width: 45%;
+}
+.container3{
+    /* background-color: rgb(100, 153, 87); */
+    /* margin: auto; */
+}
