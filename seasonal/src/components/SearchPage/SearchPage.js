@@ -26,7 +26,7 @@ function SearchPage() {
   }, [ingredient, apiId, apiKey]);
 
   return (
-    <div>
+    <Container maxW="container.md" className={css.mainContainer}>
       <SearchInput ingredient={ingredient} setIngredient={setIngredient} />
       <div className={css.container1}>
       {recipes.map((item, index) => {
@@ -44,7 +44,7 @@ function SearchPage() {
         );
       })}
       </div>
-    </div>
+    </Container>
   );
 }
 

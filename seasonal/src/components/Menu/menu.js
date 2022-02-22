@@ -1,6 +1,8 @@
 import React from "react";
 import { bool } from "prop-types";
 import { StyledMenu } from "./Menu.styled";
+import {Link } from "react-router-dom";
+
 
 const Menu = ({ open }) => {
   return (
