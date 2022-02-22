@@ -12,8 +12,17 @@ console.log(randomNumber);
 //test api used for testing useFetch custom hook. Will be replaced with ingredients back end.
 const api = process.env.REACT_APP_API_CALL;
 
+function filterSelection(ingredient, array) {
+  const filtered = array.filter((item) => {
+    return item.name === ingredient
+  })
+console.log(filtered);
+return filtered;
+} 
+
 function Homepage() {
   const [ingredient, setIngredient] = useState(null);
+  const [filtered, setFiltered] = useState([]);
 
   let navigate = useNavigate();
   function routeChange() {
@@ -27,8 +36,15 @@ function Homepage() {
   function handleClick(e) {
     setIngredient(e.target.alt);
     console.log(ingredient);
+    console.log(filtered)
     routeChange();
+  
   }
+
+  useEffect(() => {
+   if(data){setFiltered(filterSelection(ingredient, data.payload))};
+  }, [ingredient])
+
 
   if (data && !ingredient) {
     return (
@@ -56,7 +72,7 @@ function Homepage() {
       <Routes>
         <Route
           path="/ingredients"
-          element={<IngredientPage ingredient={ingredient} />}
+          element={<IngredientPage ingredient={ingredient} filtered={filtered}/>}
         />
       </Routes>
     );
