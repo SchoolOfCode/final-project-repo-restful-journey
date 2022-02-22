@@ -1,9 +1,12 @@
 import React from "react";
+import { Container } from "@chakra-ui/react";
+import { Flex, Spacer } from "@chakra-ui/react";
 import { useFetch } from "../hooks/useFetch.js";
 import { seasonQuotes, getSeason } from "../../libs/seasonalData.js";
 import { useNavigate, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import IngredientPage from "../IngredientPage/IngredientPage.js";
+import "./Homepage.css";
 
 const season = getSeason();
 const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length);
@@ -72,35 +75,47 @@ const [fruit, setFruit] = useState([]);
   if (data && !ingredient) {
     return (
       <>
+        <Container maxW="container.xl">
+          <div className="greeting">
         <h1>Hello again!</h1>
+        <br/>
         <h2>{seasonQuotes[season][randomNumber]}</h2>
+        </div>
+        </Container>
         <h1> vegetables</h1>
+        <div className="img-container">
         {vegetables.map((item, index) => {
           return (
-            <div key={index}>
-              <h1>{item.name}</h1>
+            <div key={index} className="ingredients">
+            <Container maxW="container.xl">
               <img
                 src={item.imgurl}
                 alt={item.name}
                 onClick={(e) => handleClick(e)}
               ></img>
+            <h1>{item.name}</h1>
+            </Container>
             </div>
           );
         })}
+        </div>
         <h1> fruit</h1>
-      
+         <div className="img-container">
          {fruit.map((item, index) => {
           return (
-            <div key={index}>
-              <h1>{item.name}</h1>
+            <div key={index} className="ingredients">
+            <Container maxW="container.xl">
               <img
                 src={item.imgurl}
                 alt={item.name}
                 onClick={(e) => handleClick(e)}
               ></img>
+            <h1>{item.name}</h1>
+      </Container>
             </div>
           );
         })}
+        </div>
       </>
     );
   } else if (!data) {
