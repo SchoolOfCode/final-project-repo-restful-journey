@@ -5,6 +5,7 @@ import './index.css';
 import App from './components/App/App.js';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const domain = process.env.REACT_APP_DOMAIN;
 const clientId = process.env.REACT_APP_CLIENT_ID;
@@ -16,7 +17,9 @@ ReactDOM.render(
       clientId={clientId}
       redirectUri={window.location.origin}
     >
-      <App />
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
     </Auth0Provider>
   </BrowserRouter>,
   document.getElementById('root')
