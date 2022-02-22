@@ -1,9 +1,12 @@
 import React from "react";
+import { Container } from "@chakra-ui/react";
+import { Flex, Spacer } from "@chakra-ui/react";
 import { useFetch } from "../hooks/useFetch.js";
 import { seasonQuotes, getSeason } from "../../libs/seasonalData.js";
 import { useNavigate, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import IngredientPage from "../IngredientPage/IngredientPage.js";
+import "./Homepage.css";
 
 const season = getSeason();
 const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length);
@@ -32,26 +35,36 @@ function Homepage() {
   if (data) {
     return (
       <>
-        <h1>Hello again!</h1>
+        <Container maxW="container.xl">
+          <div className="greeting">
+            <h1>Hello username! 👋🏼</h1>
+            <br />
+            <h2>{seasonQuotes[season][randomNumber]}</h2>
+          </div>
+        </Container>
         <Routes>
           <Route
             path="/ingredients"
             element={<IngredientPage ingredient={type} />}
           />
         </Routes>
-        <h2>{seasonQuotes[season][randomNumber]}</h2>
-        {data.payload.map((item, index) => {
-          return (
-            <div key={index}>
-              <h1>{item.name}</h1>
-              <img
-                src={item.imgurl}
-                alt={item.name}
-                onClick={(e) => handleClick(e)}
-              ></img>
-            </div>
-          );
-        })}
+        <div className="img-container">
+          {data.payload.map((item, index) => {
+            return (
+              <div key={index} className="ingredients">
+                <Container maxW="container.xl">
+                  <img
+                    className="img"
+                    src={item.imgurl}
+                    alt={item.name}
+                    onClick={(e) => handleClick(e)}
+                  ></img>
+                  <h1>{item.name}</h1>
+                </Container>
+              </div>
+            );
+          })}
+        </div>
       </>
     );
   } else {
