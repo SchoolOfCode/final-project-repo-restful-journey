@@ -20,9 +20,19 @@ console.log(filtered);
 return filtered;
 } 
 
+function filterVegetables(array, boolean) {
+  const vegetables = array.filter((item) => {
+    return item.isfruit === boolean
+  })
+console.log(vegetables);
+return vegetables;
+} 
+
 function Homepage() {
   const [ingredient, setIngredient] = useState(null);
   const [filtered, setFiltered] = useState([]);
+const [vegetables, setVegetables] = useState([]);
+const [fruit, setFruit] = useState([]);
 
   let navigate = useNavigate();
   function routeChange() {
@@ -42,8 +52,21 @@ function Homepage() {
   }
 
   useEffect(() => {
-   if(data){setFiltered(filterSelection(ingredient, data.payload))};
+   if(data){setFiltered(filterSelection(ingredient, data.payload))
+  filterVegetables (data.payload)};
   }, [ingredient])
+
+  useEffect(() => {
+    if(data){ 
+    setVegetables(
+   filterVegetables (data.payload, false))
+   setFruit(
+   filterVegetables (data.payload, true));
+   console.log (vegetables)
+   console.log (fruit)}
+   }, [data])
+
+
 
 
   if (data && !ingredient) {
@@ -51,7 +74,22 @@ function Homepage() {
       <>
         <h1>Hello again!</h1>
         <h2>{seasonQuotes[season][randomNumber]}</h2>
-        {data.payload.map((item, index) => {
+        <h1> vegetables</h1>
+        {vegetables.map((item, index) => {
+          return (
+            <div key={index}>
+              <h1>{item.name}</h1>
+              <img
+                src={item.imgurl}
+                alt={item.name}
+                onClick={(e) => handleClick(e)}
+              ></img>
+            </div>
+          );
+        })}
+        <h1> fruit</h1>
+      
+         {fruit.map((item, index) => {
           return (
             <div key={index}>
               <h1>{item.name}</h1>
