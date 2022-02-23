@@ -126,7 +126,7 @@ function Homepage() {
     return (
       <Routes>
         <Route
-          path="/ingredients"
+          path="/ingredients/*"
           element={
             <IngredientPage ingredient={ingredient} setIngredient={setIngredient} filtered={filtered} />
           }
