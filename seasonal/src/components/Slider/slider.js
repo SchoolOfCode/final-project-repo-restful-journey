@@ -5,8 +5,15 @@ import styled from "styled-components";
 import { Container } from "@chakra-ui/react";
 import "./slider.css";
 
-const Slider = ({ array, video, feedback, margin, background, ingredient, handleClick }) => {
-  
+const Slider = ({
+  array,
+  video,
+  feedback,
+  margin,
+  background,
+  ingredient,
+  handleClick,
+}) => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -40,14 +47,15 @@ const Slider = ({ array, video, feedback, margin, background, ingredient, handle
             {ingredient &&
               ingredient.map((item, index) => {
                 return (
-                  <div key={index} className="ingredients">
+                  <figure key={index} className="ingredients">
                     <img
                       className="scrollimage"
                       src={item.imgurl}
                       alt={item.name}
                       onClick={(e) => handleClick(e)}
                     />
-                  </div>
+                    <figcaption className="caption">{item.name}</figcaption>
+                  </figure>
                 );
               })}
           </Carousel>
@@ -63,6 +71,8 @@ export default Slider;
 
 const StyledSlider = styled.div`
   width: 100vw;
+
+  background-color: rgba(172, 243, 157, 0.5);
   div {
     width: 40vw;
     margin: 5px auto 0;

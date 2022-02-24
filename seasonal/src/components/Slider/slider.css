@@ -42,4 +42,15 @@
 .scrollimage {
   width: 150px;
   height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caption {
+  text-align: center;
+  margin: 5%;
+  padding: 5%;
+
+  font-weight: bold;
 }
