@@ -1,9 +1,25 @@
-import React from 'react';
+import {useState} from 'react';
+import { InputGroup, Input, Button, InputRightElement} from '@chakra-ui/react';
+
 
 function ShoppingList({ list, setList }) {
-  
+  const [input, setInput] = useState('')
+
+function addItem(item){
+  setList([...list, item])
+}
 function handleDelete(index){
   setList([...list.slice(0, index), ...list.slice(index + 1)]);
+}
+
+
+function handleSubmit(e){
+  e.preventDefault()
+  addItem(input)
+  setInput("");
+}
+function handleChange(e){
+  setInput(e.target.value)
 }
 
   return (
@@ -19,6 +35,10 @@ function handleDelete(index){
           );
         })}
       </ul>
+      <form onSubmit={handleSubmit}>
+      <Input type="text" value={input} onChange={handleChange}/>
+      <button type='submit'>+</button>
+      </form>
     </>
   );
 }
