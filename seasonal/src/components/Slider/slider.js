@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
+import { Container } from "@chakra-ui/react";
+import "./slider.css";
 
-const Slider = ({ array, video, feedback, margin, background }) => {
+const Slider = ({ array, video, feedback, margin, background, vegetables }) => {
+  const [slideArray, setArray] = useState([]);
+
+  useEffect(() => {
+    console.log(vegetables);
+    setArray(vegetables);
+    console.log(slideArray);
+  }, [vegetables]);
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -21,27 +32,37 @@ const Slider = ({ array, video, feedback, margin, background }) => {
       items: 1,
     },
   };
-  return (
-    <StyledSlider>
-      <div>
-        <Carousel
-          responsive={responsive}
-          arrows={true}
-          autoPlay={true}
-          infinite={true}
-          autoPlaySpeed={2000}
-          transitionDuration={500}
-        >
-          <h1>Hello!</h1>
-          <h1>Hello!</h1>
-          <h1>Hello!</h1>
-          <h1>Hello!</h1>
-          <h1>Hello!</h1>
-          <h1>Hello!</h1>
-        </Carousel>
-      </div>
-    </StyledSlider>
-  );
+  if (vegetables) {
+    return (
+      <StyledSlider>
+        <div>
+          <Carousel
+            responsive={responsive}
+            arrows={true}
+            autoPlay={true}
+            infinite={true}
+            autoPlaySpeed={2000}
+            transitionDuration={500}
+          >
+            {vegetables &&
+              vegetables.map((item, index) => {
+                return (
+                  <div key={index} className="ingredients">
+                    <img
+                      className="scrollimage"
+                      src={item.imgurl}
+                      alt={item.name}
+                    />
+                  </div>
+                );
+              })}
+          </Carousel>
+        </div>
+      </StyledSlider>
+    );
+  } else {
+    return <StyledSlider></StyledSlider>;
+  }
 };
 
 export default Slider;
