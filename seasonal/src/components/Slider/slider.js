@@ -6,14 +6,7 @@ import { Container } from "@chakra-ui/react";
 import "./slider.css";
 
 const Slider = ({ array, video, feedback, margin, background, vegetables }) => {
-  const [slideArray, setArray] = useState([]);
-
-  useEffect(() => {
-    console.log(vegetables);
-    setArray(vegetables);
-    console.log(slideArray);
-  }, [vegetables]);
-
+  
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -39,7 +32,7 @@ const Slider = ({ array, video, feedback, margin, background, vegetables }) => {
           <Carousel
             responsive={responsive}
             arrows={true}
-            autoPlay={true}
+            autoPlay={false}
             infinite={true}
             autoPlaySpeed={2000}
             transitionDuration={500}
@@ -70,7 +63,7 @@ export default Slider;
 const StyledSlider = styled.div`
   width: 100vw;
   div {
-    width: 80vw;
-    margin: 10px auto 0;
+    width: 40vw;
+    margin: 5px auto 0;
   }
 `;
