@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Container } from "@chakra-ui/react";
 import "./slider.css";
 
-const Slider = ({ array, video, feedback, margin, background, vegetables }) => {
+const Slider = ({ array, video, feedback, margin, background, ingredient, handleClick }) => {
   
   const responsive = {
     superLargeDesktop: {
@@ -25,26 +25,27 @@ const Slider = ({ array, video, feedback, margin, background, vegetables }) => {
       items: 1,
     },
   };
-  if (vegetables) {
+  if (ingredient) {
     return (
       <StyledSlider>
         <div>
           <Carousel
             responsive={responsive}
-            arrows={true}
-            autoPlay={false}
+            arrows={false}
+            autoPlay={true}
             infinite={true}
             autoPlaySpeed={2000}
             transitionDuration={500}
           >
-            {vegetables &&
-              vegetables.map((item, index) => {
+            {ingredient &&
+              ingredient.map((item, index) => {
                 return (
                   <div key={index} className="ingredients">
                     <img
                       className="scrollimage"
                       src={item.imgurl}
                       alt={item.name}
+                      onClick={(e) => handleClick(e)}
                     />
                   </div>
                 );

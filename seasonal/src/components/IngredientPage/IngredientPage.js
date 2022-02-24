@@ -43,9 +43,9 @@ function handleClick() {
       <div>
       <h1>IngredientPage</h1>
         <h2>Ingredient: {ingredient}</h2>
-        {filtered.map((item) => {
+        {filtered.map((item, index) => {
           return (
-            <div>
+            <div key={index}>
               <h1>{item.name}</h1>
               <h2>{item.nutrition}</h2>
               <h2>{item.fact}</h2>

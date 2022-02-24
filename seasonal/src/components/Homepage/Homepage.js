@@ -72,7 +72,7 @@ function Homepage() {
   if (data && !ingredient) {
     return (
       <>
-        <Slider></Slider>
+        
         <Container maxW="container.xl">
           <div className="greeting">
             <h1>Hello username! 👋🏼</h1>
@@ -84,13 +84,14 @@ function Homepage() {
           <h1 className="type">VEGGIES</h1>
         </Container>
         <div className="img-container">
-          <Slider vegetables={vegetables}></Slider>
+          <Slider handleClick={handleClick} ingredient={vegetables}></Slider>
         </div>
         <Container maxW="container.xl">
           <h1 className="type">FRUITS</h1>
         </Container>
         <div className="img-container">
-          {fruit.map((item, index) => {
+        <Slider handleClick={handleClick} ingredient={fruit}></Slider>
+          {/* {fruit.map((item, index) => {
             return (
               <div key={index} className="ingredients">
                 <Container maxW="container.xl">
@@ -104,7 +105,7 @@ function Homepage() {
                 </Container>
               </div>
             );
-          })}
+          })} */}
         </div>
       </>
     );
