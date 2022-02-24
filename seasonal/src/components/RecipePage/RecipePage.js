@@ -21,8 +21,6 @@ function handleClick(item){
   setList([...list, item])
 }
 
-
-
   
   if (userRecipe.length && trolley === false) {
     return (
