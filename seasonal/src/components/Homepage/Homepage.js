@@ -6,6 +6,7 @@ import { useNavigate, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import IngredientPage from "../IngredientPage/IngredientPage.js";
 import "./Homepage.css";
+import Slider from "../Slider/slider.js";
 
 const season = getSeason();
 const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length);
@@ -71,6 +72,7 @@ function Homepage() {
   if (data && !ingredient) {
     return (
       <>
+        
         <Container maxW="container.xl">
           <div className="greeting">
             <h1>Hello username! 👋🏼</h1>
@@ -82,27 +84,14 @@ function Homepage() {
           <h1 className="type">VEGGIES</h1>
         </Container>
         <div className="img-container">
-          {vegetables.map((item, index) => {
-            return (
-              <div key={index} className="ingredients">
-                <Container maxW="container.xl">
-                  <img
-                    className="img"
-                    src={item.imgurl}
-                    alt={item.name}
-                    onClick={(e) => handleClick(e)}
-                  ></img>
-                  <h1>{item.name}</h1>
-                </Container>
-              </div>
-            );
-          })}
+          <Slider handleClick={handleClick} ingredient={vegetables}></Slider>
         </div>
         <Container maxW="container.xl">
           <h1 className="type">FRUITS</h1>
         </Container>
         <div className="img-container">
-          {fruit.map((item, index) => {
+        <Slider handleClick={handleClick} ingredient={fruit}></Slider>
+          {/* {fruit.map((item, index) => {
             return (
               <div key={index} className="ingredients">
                 <Container maxW="container.xl">
@@ -116,7 +105,7 @@ function Homepage() {
                 </Container>
               </div>
             );
-          })}
+          })} */}
         </div>
       </>
     );
@@ -128,7 +117,11 @@ function Homepage() {
         <Route
           path="/ingredients/*"
           element={
-            <IngredientPage ingredient={ingredient} setIngredient={setIngredient} filtered={filtered} />
+            <IngredientPage
+              ingredient={ingredient}
+              setIngredient={setIngredient}
+              filtered={filtered}
+            />
           }
         />
       </Routes>
