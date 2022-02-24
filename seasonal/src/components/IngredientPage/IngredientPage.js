@@ -8,7 +8,7 @@ const apiKey = process.env.REACT_APP_EDAMAM_KEY;
 
 function IngredientPage({ ingredient, filtered, setIngredient }) {
   const [recipes, setRecipes] = useState([]); //20 recipes
-  const[discover, setDiscover] = useState(false);
+  const [discover, setDiscover] = useState(false);
   const [userRecipe, setUserRecipe] = useState([])
 
   let navigate = useNavigate();
@@ -80,10 +80,7 @@ function handleClick() {
           );
         })}
         </div>
-        <h1>Search page</h1>
         <h3 onClick={handleClick}>Discover more {ingredient} recipes here!</h3>
-       <RecipePage userRecipe = {userRecipe}/>
-
       </>
     );
   } else if(
@@ -92,9 +89,11 @@ function handleClick() {
     return(
       <Routes>
       <Route
-        path="/search"
+        path="/search/*"
         element={
-          <SearchPage recipes={recipes} setRecipes={setRecipes} ingredient={ingredient} setIngredient={setIngredient}/>
+          <SearchPage recipes={recipes} setRecipes={setRecipes} ingredient={ingredient} setIngredient={setIngredient}
+            userRecipe={userRecipe} setUserRecipe={setUserRecipe}
+          />
   }
       />
     </Routes>
@@ -107,7 +106,7 @@ function handleClick() {
     return(
       <Routes>
       <Route
-        path="/recipe"
+        path="/recipe/*"
         element={
          <RecipePage userRecipe = {userRecipe}/> 
   }
