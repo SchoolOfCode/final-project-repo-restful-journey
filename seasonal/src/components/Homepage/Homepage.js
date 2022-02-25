@@ -80,6 +80,13 @@ function Homepage() {
           <br />
           <h2>{seasonQuotes[season][randomNumber]}</h2>
         </div>
+        <div className="info">
+          <h2>
+            Here are the fruits and vegetables that are in season this{" "}
+            {[season]} - click on any of the fruits or veggies below that take
+            your fancy to look for recipe inspiration!
+          </h2>
+        </div>
         <Container maxW="container.xl">
           <h1 className="type">VEGGIES</h1>
         </Container>

@@ -68,9 +68,8 @@ const Slider = ({
 export default Slider;
 
 const StyledSlider = styled.div`
-  width: 100vw;
+  width: 115vw;
   div {
-    width: 500px;
-    ${"" /* margin: 5px auto 0; */}
+    width: 400px;
   }
 `;

@@ -1,8 +1,8 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import SearchPage from "../SearchPage/SearchPage";
 import RecipePage from "../RecipePage/RecipePage";
 import { useNavigate, Route, Routes } from "react-router-dom";
-import "./IngredientPage.css" 
+import "./IngredientPage.css";
 
 const apiId = process.env.REACT_APP_EDAMAM_ID;
 const apiKey = process.env.REACT_APP_EDAMAM_KEY;
@@ -10,7 +10,7 @@ const apiKey = process.env.REACT_APP_EDAMAM_KEY;
 function IngredientPage({ ingredient, filtered, setIngredient }) {
   const [recipes, setRecipes] = useState([]); //20 recipes
   const [discover, setDiscover] = useState(false);
-  const [userRecipe, setUserRecipe] = useState([])
+  const [userRecipe, setUserRecipe] = useState([]);
 
   let navigate = useNavigate();
   function routeChange() {
@@ -18,23 +18,22 @@ function IngredientPage({ ingredient, filtered, setIngredient }) {
     navigate(path);
   }
 
+  function handleClick() {
+    setDiscover(true);
+    routeChange();
+    console.log("handleClick is working!");
+  }
 
-function handleClick() {
-  setDiscover(true);
-  routeChange();
-  console.log("handleClick is working!")
-  } 
-  
   function handleRecipe(index) {
-    const recipe= recipes.filter ((_, i )=> (i === index))
-   setUserRecipe(recipe);
-   routeChangeRecipe();
-    } 
+    const recipe = recipes.filter((_, i) => i === index);
+    setUserRecipe(recipe);
+    routeChangeRecipe();
+  }
 
-    function routeChangeRecipe() {
-      let path = "recipe";
+  function routeChangeRecipe() {
+    let path = "recipe";
     navigate(path);
-    }
+  }
 
   useEffect(() => {
     async function fetchRecipe() {
@@ -46,84 +45,79 @@ function handleClick() {
     }
     fetchRecipe();
   }, [ingredient, apiId, apiKey]);
-  
 
   if (!discover && userRecipe.length < 1) {
     return (
       <>
-      <div>
-      <h1>IngredientPage</h1>
-
-        <h2 className="ingredient-title">{ingredient}</h2>
-        {filtered.map((item) => {
-          return (
-            <div className="ingredient-container" key={item.id}>
-            <div>
-              <img className="main-image" src={item.imgurl} alt={item.name} />
-            </div>
-            <div className="ingredient-details">
-              
-              <h2>{item.nutrition}</h2>
-              <h2>{item.fact}</h2>
-            </div>
-            </div>
-          )
-        })}
+        <div>
+          <h2 className="ingredient-title">{ingredient}</h2>
+          {filtered.map((item) => {
+            return (
+              <div className="ingredient-container" key={item.id}>
+                <div>
+                  <img
+                    className="main-image"
+                    src={item.imgurl}
+                    alt={item.name}
+                  />
+                </div>
+                <div className="ingredient-details">
+                  <h2>{item.nutrition}</h2>
+                  <h2>{item.fact}</h2>
+                </div>
+              </div>
+            );
+          })}
         </div>
         <div className="image-container">
-        {recipes.slice(0, 4).map((item, index) => {
-          return (
-            <div className="recipe-container" key={index} >
-              <div className="recipe-container2">
-                <img
-                  src={item.recipe.images.REGULAR.url}
-                  alt={item.label}
-                  onClick={() => handleRecipe(index)}>
-
-                  </img>
-                <p>{item.recipe.label}</p>
+          {recipes.slice(0, 4).map((item, index) => {
+            return (
+              <div className="recipe-container" key={index}>
+                <figure className="recipe-container2">
+                  <img
+                    src={item.recipe.images.REGULAR.url}
+                    alt={item.label}
+                    onClick={() => handleRecipe(index)}
+                  ></img>
+                  <figcaption className="caption">
+                    {item.recipe.label}
+                  </figcaption>
+                </figure>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
         </div>
         <h3 onClick={handleClick}>Discover more {ingredient} recipes here!</h3>
       </>
     );
-  } else if(
-    discover
-  ) {
-    return(
+  } else if (discover) {
+    return (
       <Routes>
-      <Route
-        path="/search/*"
-        element={
-          <SearchPage recipes={recipes} setRecipes={setRecipes} ingredient={ingredient} setIngredient={setIngredient}
-            userRecipe={userRecipe} setUserRecipe={setUserRecipe}
-          />
-  }
-      />
-    </Routes>
-    )
-    
-  }
-  else if(
-    userRecipe.length > 0
-  ) {
-    return(
+        <Route
+          path="/search/*"
+          element={
+            <SearchPage
+              recipes={recipes}
+              setRecipes={setRecipes}
+              ingredient={ingredient}
+              setIngredient={setIngredient}
+              userRecipe={userRecipe}
+              setUserRecipe={setUserRecipe}
+            />
+          }
+        />
+      </Routes>
+    );
+  } else if (userRecipe.length > 0) {
+    return (
       <Routes>
-      <Route
-        path="/recipe/*"
-        element={
-         <RecipePage userRecipe = {userRecipe}/> 
+        <Route
+          path="/recipe/*"
+          element={<RecipePage userRecipe={userRecipe} />}
+        />
+      </Routes>
+    );
   }
-      />
-    </Routes>
-    )
-    
-  }
-
-  
 }
 
 export default IngredientPage;
