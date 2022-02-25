@@ -72,7 +72,6 @@ function Homepage() {
   if (data && !ingredient) {
     return (
       <>
-        
         <Container maxW="container.xl">
           <div className="greeting">
             <h1>Hello username! 👋🏼</h1>
@@ -90,22 +89,7 @@ function Homepage() {
           <h1 className="type">FRUITS</h1>
         </Container>
         <div className="img-container">
-        <Slider handleClick={handleClick} ingredient={fruit}></Slider>
-          {/* {fruit.map((item, index) => {
-            return (
-              <div key={index} className="ingredients">
-                <Container maxW="container.xl">
-                  <img
-                    className="img"
-                    src={item.imgurl}
-                    alt={item.name}
-                    onClick={(e) => handleClick(e)}
-                  ></img>
-                  <h1>{item.name}</h1>
-                </Container>
-              </div>
-            );
-          })} */}
+          <Slider handleClick={handleClick} ingredient={fruit}></Slider>
         </div>
       </>
     );
