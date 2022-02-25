@@ -1,8 +1,28 @@
-import React from 'react';
+import {useState} from 'react';
+import { useNavigate, Route, Routes } from "react-router-dom";
+import ShoppingList from '../ShoppingList/ShoppingList';
 
 function RecipePage({ userRecipe }) {
+const [list, setList] = useState([])
+const [trolley, setTrolley] = useState(false)
+
+let navigate = useNavigate();
+
+function routeChange() {
+  let path = "shoppingList";
+  navigate(path);
+}
+function handleTrolley(){
+  setTrolley(true)
+  routeChange();
+}
+
+function handleClick(item){
+  setList([...list, item])
+}
+
   
-  if (userRecipe.length) {
+  if (userRecipe.length && trolley === false) {
     return (
       <>
         <div>
@@ -32,20 +52,30 @@ function RecipePage({ userRecipe }) {
               return(
                 <div key={i} style={{display: 'flex', justifyContent: 'space-between'}}>
                   <li >{item}</li>
-                  <button>+</button>
+                  <button onClick={()=>handleClick(item)}>+</button>
                 </div>
                 )
               })}
             </ul>
           </div>
-        </div>          
+        </div>
+        <p onClick={() => handleTrolley()}>Check your Shopping list</p>
       </>
     );
-  } else {
+  } else if (trolley) {
+    return(
+      <Routes>
+      <Route
+        path="/shoppingList"
+        element={<ShoppingList list={list} setList={setList}/>}
+      />
+    </Routes>
+    )
+    
+  }  else {
     return (
       <div>
         {' '}
-        <p>Go Back and select a recipe</p>
       </div>
     );
   }
