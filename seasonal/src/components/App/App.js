@@ -7,11 +7,18 @@ import SearchPage from "../SearchPage/SearchPage.js";
 import ShoppingList from "../ShoppingList/ShoppingList.js";
 import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
+import { Box } from "@chakra-ui/react";
 
 function App() {
   return (
-    <div className={css.App}>
-      <nav>
+    <Box
+      maxW="sm"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      className={css.App}
+    >
+      {/* <nav>
         <Link to="/">Login</Link>
         <Link to="/home">Homepage</Link>
         <Link to="/home/ingredients">Ingredients Page</Link>
@@ -19,7 +26,7 @@ function App() {
         <Link to="/search">Search</Link>
         <Link to="/shoppinglist">Shopping List</Link>
         <Link to="/hamburger">hamburgermenu</Link>
-      </nav>
+      </nav> */}
       <NavMenu />
       <Routes>
         <Route path="/" element={<LoginButton />} />
@@ -30,7 +37,7 @@ function App() {
         <Route path="shoppinglist" element={<ShoppingList />} />
         <Route path="hamburger" element={<NavMenu />} />
       </Routes>
-    </div>
+    </Box>
   );
 }
 

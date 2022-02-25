@@ -15,6 +15,8 @@ console.log(randomNumber);
 //test api used for testing useFetch custom hook. Will be replaced with ingredients back end.
 const api = process.env.REACT_APP_API_CALL;
 
+const date = new Date();
+
 function filterSelection(ingredient, array) {
   const filtered = array.filter((item) => {
     return item.name === ingredient;
@@ -72,13 +74,19 @@ function Homepage() {
   if (data && !ingredient) {
     return (
       <>
-        <Container maxW="container.xl">
-          <div className="greeting">
-            <h1>Hello username! 👋🏼</h1>
-            <br />
-            <h2>{seasonQuotes[season][randomNumber]}</h2>
-          </div>
-        </Container>
+        <h1 className="date">{date.toDateString()}</h1>
+        <div className="greeting">
+          <h1>Hello username! 👋🏼</h1>
+          <br />
+          <h2>{seasonQuotes[season][randomNumber]}</h2>
+        </div>
+        <div className="info">
+          <h2>
+            Here are the fruits and vegetables that are in season this{" "}
+            {[season]} - click on any of the fruits or veggies below that take
+            your fancy to look for recipe inspiration!
+          </h2>
+        </div>
         <Container maxW="container.xl">
           <h1 className="type">VEGGIES</h1>
         </Container>
