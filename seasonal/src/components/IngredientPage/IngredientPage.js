@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import SearchPage from "../SearchPage/SearchPage";
 import RecipePage from "../RecipePage/RecipePage";
 import { useNavigate, Route, Routes } from "react-router-dom";
+import "./IngredientPage.css" 
 
 const apiId = process.env.REACT_APP_EDAMAM_ID;
 const apiKey = process.env.REACT_APP_EDAMAM_KEY;
@@ -53,29 +54,33 @@ function handleClick() {
       <div>
       <h1>IngredientPage</h1>
 
-        <h2>{ingredient}</h2>
+        <h2 className="ingredient-title">{ingredient}</h2>
         {filtered.map((item) => {
           return (
-            <div key={item.id}>
-              <img src={item.imgurl} alt={item.name} />
-
-              <h1>{item.name}</h1>
+            <div className="ingredient-container" key={item.id}>
+            <div>
+              <img className="main-image" src={item.imgurl} alt={item.name} />
+            </div>
+            <div className="ingredient-details">
+              
               <h2>{item.nutrition}</h2>
               <h2>{item.fact}</h2>
+            </div>
             </div>
           )
         })}
         </div>
-        <div >
+        <div className="image-container">
         {recipes.slice(0, 4).map((item, index) => {
           return (
-            <div key={index} >
-              <div >
+            <div className="recipe-container" key={index} >
+              <div className="recipe-container2">
                 <img
                   src={item.recipe.images.REGULAR.url}
                   alt={item.label}
-                  onClick={() => handleRecipe(index)}
-                ></img>
+                  onClick={() => handleRecipe(index)}>
+
+                  </img>
                 <p>{item.recipe.label}</p>
               </div>
             </div>
