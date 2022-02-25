@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
-import { Container } from "@chakra-ui/react";
 import "./slider.css";
 
 const Slider = ({
@@ -25,11 +23,11 @@ const Slider = ({
     },
     tablet: {
       breakpoint: { max: 1024, min: 730 },
-      items: 2,
+      items: 3,
     },
     mobile: {
       breakpoint: { max: 730, min: 0 },
-      items: 1,
+      items: 3,
     },
   };
   if (ingredient) {
@@ -71,10 +69,8 @@ export default Slider;
 
 const StyledSlider = styled.div`
   width: 100vw;
-
-  background-color: rgba(172, 243, 157, 0.5);
   div {
-    width: 40vw;
-    margin: 5px auto 0;
+    width: 500px;
+    ${"" /* margin: 5px auto 0; */}
   }
 `;

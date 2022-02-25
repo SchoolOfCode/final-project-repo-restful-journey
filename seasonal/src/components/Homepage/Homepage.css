@@ -1,3 +1,7 @@
+.date {
+  text-align: center;
+}
+
 .greeting {
   background-color: rgba(172, 243, 157, 0.5);
   padding: 3rem;

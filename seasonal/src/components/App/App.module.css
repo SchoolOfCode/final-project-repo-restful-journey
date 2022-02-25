@@ -1,9 +1,7 @@
-/* .App {
+.App {
   text-align: center;
-  flex-direction:row;
   display: flex;
   flex-wrap: wrap;
   width: 1000px;
   justify-content: center;
-} */
-
+}
