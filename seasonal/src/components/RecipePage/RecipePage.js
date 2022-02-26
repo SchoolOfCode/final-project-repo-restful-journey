@@ -1,45 +1,59 @@
-import {useState} from 'react';
-import { useNavigate, Route, Routes } from "react-router-dom";
-import ShoppingList from '../ShoppingList/ShoppingList';
+import { useEffect, useState } from 'react';
+import {Link } from 'react-router-dom';
+const api = process.env.REACT_APP_API_CALL;
 
 function RecipePage({ userRecipe }) {
-const [list, setList] = useState([])
-const [trolley, setTrolley] = useState(false)
-
-let navigate = useNavigate();
-
-function routeChange() {
-  let path = "shoppingList";
-  navigate(path);
-}
-function handleTrolley(){
-  setTrolley(true)
-  routeChange();
-}
-
-function handleClick(item){
-  setList([...list, item])
-}
-
+  const [list, setList] = useState([]);
+  const [ingredient, setIngredient] = useState(null)
+  const userName = 'Antony'
   
-  if (userRecipe.length && trolley === false) {
+  useEffect(() => {
+    async function addIngredient() {
+      try{
+        const res = await fetch(`${api}/list/user/add?name=${userName}`,{
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(ingredient)
+      })} catch (e){
+        console.log(e)
+      };
+    }
+    addIngredient()
+  }, [api, userName, ingredient]);
+
+  function handleClick(ingredient) {
+    setIngredient({item: ingredient})
+    setList([...list, ingredient]);
+  }
+
+  if (userRecipe.length) {
     return (
       <>
         <div>
-          <img src={userRecipe[0].recipe.images.REGULAR.url} alt="userRecipe[0].recipe.label" />
+          <img
+            src={userRecipe[0].recipe.images.REGULAR.url}
+            alt="userRecipe[0].recipe.label"
+          />
         </div>
         <div>
           <p>{userRecipe[0].recipe.label}</p>
         </div>
         <div>
           <div>
-            <p><a href={userRecipe[0].recipe.url}>link to external recipe</a></p>
+            <p>
+              <a href={userRecipe[0].recipe.url}>link to external recipe</a>
+            </p>
           </div>
           <div>
             <p>{userRecipe[0].recipe.totalTime} minutes</p>
           </div>
           <div>
-            <p>{Math.round(userRecipe[0].recipe.totalNutrients.ENERC_KCAL.quantity)} kcal</p>
+            <p>
+              {Math.round(
+                userRecipe[0].recipe.totalNutrients.ENERC_KCAL.quantity
+              )}{' '}
+              kcal
+            </p>
           </div>
         </div>
         <div>
@@ -48,36 +62,22 @@ function handleClick(item){
           </div>
           <div>
             <ul>
-              {userRecipe[0].recipe.ingredientLines.map((item, i)=>{
-              return(
-                <div key={i} style={{display: 'flex', justifyContent: 'space-between'}}>
-                  <li >{item}</li>
-                  <button onClick={()=>handleClick(item)}>+</button>
-                </div>
-                )
+              {userRecipe[0].recipe.ingredientLines.map((ingredient, i) => {
+                return (
+                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <li>{ingredient}</li>
+                    <button onClick={() => handleClick(ingredient)}>+</button>
+                  </div>
+                );
               })}
             </ul>
           </div>
         </div>
-        <p onClick={() => handleTrolley()}>Check your Shopping list</p>
+        <Link to="/shoppinglist"><p>Check your Shopping list</p></Link>
       </>
     );
-  } else if (trolley) {
-    return(
-      <Routes>
-      <Route
-        path="/shoppingList"
-        element={<ShoppingList list={list} setList={setList}/>}
-      />
-    </Routes>
-    )
-    
-  }  else {
-    return (
-      <div>
-        {' '}
-      </div>
-    );
+  } else {
+    return <div>Loading...</div>;
   }
 }
 
