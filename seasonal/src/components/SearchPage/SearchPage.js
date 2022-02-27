@@ -1,58 +1,48 @@
-import {useState}from 'react'
-import RecipePage from "../RecipePage/RecipePage";
+import {useState, useEffect}from 'react'
 import { Container } from '@chakra-ui/react';
 import SearchInput from '../SearchInput/SearchInput';
-import { useNavigate, Route, Routes } from "react-router-dom";
+import {Link, useLocation } from "react-router-dom";
 import css from './SearchPage.module.css';
+const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY
 
-function SearchPage({ingredient,setIngredient, recipes, setRecipes, setUserRecipe, userRecipe}) {
-const [display, setDisplay] = useState(false)
-  
-  let navigate = useNavigate();
 
-  function routeChange() {
-    let path = "recipe";
-    navigate(path);
-  }
-  function handleClick(index) {
-    const recipe = recipes.filter ((_, i )=> (i === index))
-    setDisplay(true)
-    setUserRecipe(recipe);
-    routeChange();
-  }
-  
-if (display === false)
-{return (
+function SearchPage() {
+const location = useLocation()
+const [ingredient, setIngredient] = useState(location.state ? location.state.ingredient : null)
+const [recipes, setRecipes] = useState(location.state ? location.state.recipes : null); 
+
+useEffect(()=>{
+ async function getRecipe(){
+   const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${recipeApiKey}&query=${ingredient}&titleMatch=${ingredient}&number=10`)
+   const data = await response.json()
+   setRecipes(data.results);
+ }
+ getRecipe()
+}, [ingredient])
+
+  return (
     <Container maxW="container.md" className={css.mainContainer}>
       <SearchInput ingredient={ingredient} setIngredient={setIngredient} />
+      
       <div className={css.container1}>
-      {recipes.slice(4, 10).map((item, index) => {
+      {recipes && recipes.slice(4, 10).map((item, index) => {
         return (
-          <div key={index} className={css.container2}>
+          <div key={item.id} className={css.container2}>
             <div className={css.container3}>
+              <Link to='/recipes' state={{recipeId: item.id}}> 
               <img
-                src={item.recipe.images.REGULAR.url}
-                alt={item.label}
-                onClick={() => handleClick(index)}
+                src={item.image}
+                alt={item.title}                
               ></img>
-              <p>{item.recipe.label}</p>
+              </Link>
+              <p>{item.title}</p>
             </div>
           </div>
         );
       })}
       </div>
     </Container>
-  );} else if (display){
-    return(
-      <Routes>
-      <Route
-        path="/recipe/*"
-        element={<RecipePage userRecipe = {userRecipe}/>}
-      />
-    </Routes>
-    )
-  }
-  
+  );
 }
 
 export default SearchPage;
