@@ -2,15 +2,14 @@ import React from "react";
 import { Container } from "@chakra-ui/react";
 import { useFetch } from "../hooks/useFetch.js";
 import { seasonQuotes, getSeason } from "../../libs/seasonalData.js";
-import { useNavigate, Route, Routes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import IngredientPage from "../IngredientPage/IngredientPage.js";
 import "./Homepage.css";
 import Slider from "../Slider/slider.js";
 
 const season = getSeason();
 const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length);
-console.log(randomNumber);
+// console.log(randomNumber);
 
 //test api used for testing useFetch custom hook. Will be replaced with ingredients back end.
 const api = process.env.REACT_APP_API_CALL;
@@ -21,7 +20,7 @@ function filterSelection(ingredient, array) {
   const filtered = array.filter((item) => {
     return item.name === ingredient;
   });
-  console.log(filtered);
+  // console.log(filtered);
   return filtered;
 }
 
@@ -29,12 +28,16 @@ function filterVegetables(array, boolean) {
   const vegetables = array.filter((item) => {
     return item.isfruit === boolean;
   });
-  console.log(vegetables);
+  // console.log(vegetables);
   return vegetables;
 }
 
 function Homepage() {
-  const [ingredient, setIngredient] = useState(null);
+  const [ingredient, setIngredient] = useState(
+    localStorage.getItem("ingredient")
+      ? localStorage.getItem("ingredient")
+      : null
+  );
   const [filtered, setFiltered] = useState([]);
   const [vegetables, setVegetables] = useState([]);
   const [fruit, setFruit] = useState([]);
@@ -66,12 +69,12 @@ function Homepage() {
     if (data) {
       setVegetables(filterVegetables(data.payload, false));
       setFruit(filterVegetables(data.payload, true));
-      console.log(vegetables);
-      console.log(fruit);
+      // console.log(vegetables);
+      // console.log(fruit);
     }
   }, [data]);
 
-  if (data && !ingredient) {
+  if (data) {
     return (
       <>
         <h1 className="date">{date.toDateString()}</h1>
@@ -103,22 +106,22 @@ function Homepage() {
     );
   } else if (!data) {
     return <h1>Hello again!</h1>;
-  } else if (ingredient) {
-    return (
-      <Routes>
-        <Route
-          path="/ingredients/*"
-          element={
-            <IngredientPage
-              ingredient={ingredient}
-              setIngredient={setIngredient}
-              filtered={filtered}
-            />
-          }
-        />
-      </Routes>
-    );
   }
+  // else if (ingredient) {
+  //   return (
+  //     <Routes>
+  //       <Route
+  //         path="/ingredients/*"
+  //         element={
+  //           <IngredientPage
+  //             ingredient={ingredient}
+  //             filtered={filtered}
+  //           />
+  //         }
+  //       />
+  //     </Routes>
+  //   );
+  // }
 }
 
 export default Homepage;
