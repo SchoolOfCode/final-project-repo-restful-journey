@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "@chakra-ui/react";
 import { useFetch } from "../hooks/useFetch.js";
 import { seasonQuotes, getSeason } from "../../libs/seasonalData.js";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Homepage.css";
 import Slider from "../Slider/slider.js";
@@ -16,14 +15,7 @@ const api = process.env.REACT_APP_API_CALL;
 
 const date = new Date();
 
-function filterSelection(ingredient, array) {
-  const filtered = array.filter((item) => {
-    return item.name === ingredient;
-  });
-  // console.log(filtered);
-  return filtered;
-}
-
+// This function filters the fruit and vegetables, so they can be displayed seperately on the homepage
 function filterVegetables(array, boolean) {
   const vegetables = array.filter((item) => {
     return item.isfruit === boolean;
@@ -33,20 +25,10 @@ function filterVegetables(array, boolean) {
 }
 
 function Homepage() {
-  const [ingredient, setIngredient] = useState(
-    localStorage.getItem("ingredient")
-      ? localStorage.getItem("ingredient")
-      : null
-  );
-  const [filtered, setFiltered] = useState([]);
+  const [ingredient, setIngredient] = useState(null);
   const [vegetables, setVegetables] = useState([]);
   const [fruit, setFruit] = useState([]);
 
-  let navigate = useNavigate();
-  function routeChange() {
-    let path = "ingredients";
-    navigate(path);
-  }
   const [data] = useFetch(`${api}/ingredients`);
   console.log(data);
   console.log(getSeason());
@@ -54,16 +36,13 @@ function Homepage() {
   function handleClick(e) {
     setIngredient(e.target.alt);
     console.log(ingredient);
-    console.log(filtered);
-    routeChange();
   }
 
   useEffect(() => {
     if (data) {
-      setFiltered(filterSelection(ingredient, data.payload));
       filterVegetables(data.payload);
     }
-  }, [ingredient]);
+  }, [data]);
 
   useEffect(() => {
     if (data) {
@@ -107,21 +86,6 @@ function Homepage() {
   } else if (!data) {
     return <h1>Hello again!</h1>;
   }
-  // else if (ingredient) {
-  //   return (
-  //     <Routes>
-  //       <Route
-  //         path="/ingredients/*"
-  //         element={
-  //           <IngredientPage
-  //             ingredient={ingredient}
-  //             filtered={filtered}
-  //           />
-  //         }
-  //       />
-  //     </Routes>
-  //   );
-  // }
 }
 
 export default Homepage;
