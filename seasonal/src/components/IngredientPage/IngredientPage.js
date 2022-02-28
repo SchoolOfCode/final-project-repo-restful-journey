@@ -8,7 +8,7 @@ function IngredientPage() {
   const localIngredient = localStorage.getItem('ingredient')
   const afterParse = JSON.parse(localIngredient)
   // console.log(JSON.parse(localIngredient))
-  // console.log(afterParse.name)
+  console.log(afterParse.name)
   const [recipes, setRecipes] = useState([]); 
   const location = useLocation()
   const [ingredient, setIngredient] = useState(location.state ? location.state.ingredient.name : afterParse.name)
