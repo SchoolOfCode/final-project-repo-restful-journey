@@ -1,11 +1,28 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./IngredientPage.css";
 const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY
 
 
-function IngredientPage({ingredient, filtered}) {
+function IngredientPage() {
   const [recipes, setRecipes] = useState([]); 
+  const location = useLocation()
+  const [ingredient, setIngredient] = useState(location.state ? location.state.ingredient.name : localStorage.getItem('ingredient'))
+  const [storeIngredient, setStoreIngredient ]  = useState([])
+console.log(location.state)
+
+useEffect(() => {
+  localStorage.setItem("ingredient", JSON.stringify(location.state.ingredient));
+  let saved = localStorage.getItem('ingredient')
+  setStoreIngredient(JSON.parse(saved))
+  console.log(storeIngredient)
+}, [ingredient]);
+
+
+
+const localIngredient = localStorage.getItem('ingredient')
+// console.log(localIngredient)
+// console.log('localStorage', localStorage.getItem(JSON.parse('ingredient')))
 
 useEffect(()=>{
   async function getRecipe(){
@@ -16,12 +33,28 @@ useEffect(()=>{
   getRecipe()
 }, [ingredient]);
 
+console.log('ingredient page', ingredient)
   
     return (
       <>
         <div>
           <h2 className="ingredient-title">{ingredient}</h2>
-          {filtered.map((item) => {
+          
+              {/* <div className="ingredient-container" >
+                <div>
+                  <img
+                    className="main-image"
+                    src={location.state.ingredient.image}
+                    alt={location.state.ingredient.name}
+                  />
+                </div>
+                <div className="ingredient-details">
+                  <h2>{location.state.ingredient.nutrition}</h2>
+                  <h2>{location.state.ingredient.fact}</h2>
+                </div>
+              </div> */}
+            
+          {/* {filtered.map((item) => {
             return (
               <div className="ingredient-container" key={item.id}>
                 <div>
@@ -37,7 +70,7 @@ useEffect(()=>{
                 </div>
               </div>
             );
-          })}
+          })} */}
         </div>
         <div className="image-container">
           {recipes.slice(0, 4).map((item, index) => {
