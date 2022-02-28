@@ -5,24 +5,25 @@ const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY
 
 
 function IngredientPage() {
+  const localIngredient = localStorage.getItem('ingredient')
+  const afterParse = JSON.parse(localIngredient)
+  // console.log(JSON.parse(localIngredient))
+  // console.log(afterParse.name)
   const [recipes, setRecipes] = useState([]); 
   const location = useLocation()
-  const [ingredient, setIngredient] = useState(location.state ? location.state.ingredient.name : localStorage.getItem('ingredient'))
-  const [storeIngredient, setStoreIngredient ]  = useState([])
-console.log(location.state)
+  const [ingredient, setIngredient] = useState(location.state ? location.state.ingredient.name : afterParse.name)
+  const [storeIngredient, setStoreIngredient ]  = useState(location.state ? location.state.ingredient : afterParse)
+console.log(storeIngredient)
 
 useEffect(() => {
+  if(location.state){
   localStorage.setItem("ingredient", JSON.stringify(location.state.ingredient));
-  let saved = localStorage.getItem('ingredient')
-  setStoreIngredient(JSON.parse(saved))
-  console.log(storeIngredient)
+}
+  // let saved = localStorage.getItem('ingredient')
+  // setStoreIngredient(JSON.parse(saved))
+  // console.log(storeIngredient)
 }, [ingredient]);
 
-
-
-const localIngredient = localStorage.getItem('ingredient')
-// console.log(localIngredient)
-// console.log('localStorage', localStorage.getItem(JSON.parse('ingredient')))
 
 useEffect(()=>{
   async function getRecipe(){
@@ -40,19 +41,19 @@ console.log('ingredient page', ingredient)
         <div>
           <h2 className="ingredient-title">{ingredient}</h2>
           
-              {/* <div className="ingredient-container" >
+              <div className="ingredient-container" >
                 <div>
                   <img
                     className="main-image"
-                    src={location.state.ingredient.image}
-                    alt={location.state.ingredient.name}
+                    src={storeIngredient.imgurl}
+                    alt={storeIngredient.name}
                   />
                 </div>
                 <div className="ingredient-details">
-                  <h2>{location.state.ingredient.nutrition}</h2>
-                  <h2>{location.state.ingredient.fact}</h2>
+                  <h2>{storeIngredient.nutrition}</h2>
+                  <h2>{storeIngredient.fact}</h2>
                 </div>
-              </div> */}
+              </div>
             
           {/* {filtered.map((item) => {
             return (
