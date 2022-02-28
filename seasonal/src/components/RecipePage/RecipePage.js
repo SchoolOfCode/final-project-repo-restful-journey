@@ -8,7 +8,7 @@ function RecipePage() {
   const [list, setList] = useState([]);
   const [ingredient, setIngredient] = useState(null)
   const userName = 'Antony'
-  const [userRecipeId, setUserRecipeId] = useState(location.state.recipeId)
+  const [userRecipeId, setUserRecipeId] = useState(location.state ? location.state.recipeId : null)
   const [recipe, setRecipe] = useState(null)
 
   useEffect(() => {
@@ -91,7 +91,10 @@ function RecipePage() {
       </>
     );
   } else {
-    return <div>Loading...</div>;
+    return <div>
+    <p>No recipe selected</p>
+    <p>Check the <Link to="/home">home</Link> page for some inspiration</p>
+    </div>;
   }
 }
 
