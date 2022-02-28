@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
@@ -45,7 +46,8 @@ const Slider = ({
             {ingredient &&
               ingredient.map((item, index) => {
                 return (
-                  <figure key={index} className="ingredients">
+                  <Link key={index} to="/ingredients" state={{ingredient: item}}>
+                  <figure  className="ingredients">
                     <img
                       className="scrollimage"
                       src={item.imgurl}
@@ -54,6 +56,7 @@ const Slider = ({
                     />
                     <figcaption className="caption">{item.name}</figcaption>
                   </figure>
+                  </Link>
                 );
               })}
           </Carousel>

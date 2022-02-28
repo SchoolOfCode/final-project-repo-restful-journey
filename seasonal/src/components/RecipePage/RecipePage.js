@@ -8,10 +8,12 @@ const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 function RecipePage() {
   const location = useLocation();
   const [list, setList] = useState([]);
+
   const [ingredient, setIngredient] = useState(null);
   const userName = "Antony";
   const [userRecipeId, setUserRecipeId] = useState(location.state.recipeId);
   const [recipe, setRecipe] = useState(null);
+
 
   useEffect(() => {
     async function addIngredient() {
@@ -104,7 +106,10 @@ function RecipePage() {
       </>
     );
   } else {
-    return <div>Loading...</div>;
+    return <div>
+    <p>No recipe selected</p>
+    <p>Check the <Link to="/home">home</Link> page for some inspiration</p>
+    </div>;
   }
 }
 
