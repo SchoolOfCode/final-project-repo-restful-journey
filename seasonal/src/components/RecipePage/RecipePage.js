@@ -1,56 +1,60 @@
-import { useEffect, useState } from 'react';
-import {Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./RecipePage.css";
+
 const api = process.env.REACT_APP_API_CALL;
-const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY
+const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 
 function RecipePage() {
-  const location = useLocation()
+  const location = useLocation();
   const [list, setList] = useState([]);
-  const [ingredient, setIngredient] = useState(null)
-  const userName = 'Antony'
-  const [userRecipeId, setUserRecipeId] = useState(location.state ? location.state.recipeId : null)
-  const [recipe, setRecipe] = useState(null)
+
+  const [ingredient, setIngredient] = useState(null);
+  const userName = "Antony";
+  const [userRecipeId, setUserRecipeId] = useState(location.state.recipeId);
+  const [recipe, setRecipe] = useState(null);
+
 
   useEffect(() => {
     async function addIngredient() {
-      try{
-        const res = await fetch(`${api}/list/user/add?name=${userName}`,{
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(ingredient)
-      })} catch (e){
-        console.log(e)
-      };
+      try {
+        const res = await fetch(`${api}/list/user/add?name=${userName}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(ingredient),
+        });
+      } catch (e) {
+        console.log(e);
+      }
     }
-    addIngredient()
+    addIngredient();
   }, [userName, ingredient]);
 
   function handleClick(ingredient) {
-    setIngredient({item: ingredient})
+    setIngredient({ item: ingredient });
     setList([...list, ingredient]);
   }
 
-  //fetch recipe detailed info 
-  useEffect(()=>{
-    async function getRecipeById(){
-      const response = await fetch(`https://api.spoonacular.com/recipes/${userRecipeId}/information?apiKey=${recipeApiKey}`)
-      const data = await response.json()
-      setRecipe(data)
+  //fetch recipe detailed info
+  useEffect(() => {
+    async function getRecipeById() {
+      const response = await fetch(
+        `https://api.spoonacular.com/recipes/${userRecipeId}/information?apiKey=${recipeApiKey}`
+      );
+      const data = await response.json();
+      setRecipe(data);
     }
-    getRecipeById()
-  }, [userRecipeId])
+    getRecipeById();
+  }, [userRecipeId]);
 
   if (recipe) {
     return (
-      <>      
+      <>
         <div>
-          <img
-            src={recipe.image}
-            alt={recipe.title}
-          />
+          <img src={recipe.image} alt={recipe.title} />
         </div>
         <div>
-          <p>{recipe.title}</p>
+          <h1>{recipe.title}</h1>
         </div>
         <div>
           <div>
@@ -68,9 +72,14 @@ function RecipePage() {
             <ul>
               {recipe.extendedIngredients.map((ingredient, i) => {
                 return (
-                  <div key={ingredient.name} style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <li >{ingredient.original}</li>
-                    <button onClick={() => handleClick(ingredient.original)}>+</button>
+                  <div className="list-container" key={ingredient.name}>
+                    <li>{ingredient.original}</li>
+                    <button
+                      className="add-btn"
+                      onClick={() => handleClick(ingredient.original)}
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
                   </div>
                 );
               })}
@@ -78,13 +87,19 @@ function RecipePage() {
           </div>
         </div>
         <div>
-          <Link to="/shoppinglist"><p style={{color:'red'}}>Check your Shopping list</p></Link>
+          <Link to="/shoppinglist">
+            <p>Check your Shopping list</p>
+          </Link>
         </div>
         <div>
-          <p style={{color:'blue'}}>Instructions</p>
+          <p>Instructions</p>
           <ul>
-            {recipe.analyzedInstructions[0].steps.map((x, i)=>{
-              return<div key={i}><li >{x.step}</li></div>
+            {recipe.analyzedInstructions[0].steps.map((x, i) => {
+              return (
+                <div key={i}>
+                  <li>{x.step}</li>
+                </div>
+              );
             })}
           </ul>
         </div>

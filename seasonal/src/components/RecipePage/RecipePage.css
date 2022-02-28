@@ -1,0 +1,12 @@
+.add-btn {
+  color: green;
+}
+
+.list-container {
+  text-align: left;
+  background-color: white;
+  margin: 1rem;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+}

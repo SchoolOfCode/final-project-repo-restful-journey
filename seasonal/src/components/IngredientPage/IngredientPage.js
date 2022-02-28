@@ -4,36 +4,27 @@ import "./IngredientPage.css";
 const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 
 function IngredientPage() {
-  const localIngredient = localStorage.getItem("ingredient");
-  const afterParse = JSON.parse(localIngredient) || {};
-  // console.log(JSON.parse(localIngredient))
-  console.log(afterParse.name);
+  const localStorageIngredient =
+    JSON.parse(localStorage.getItem("ingredient")) || {};
+  console.log(localStorageIngredient.name);
   const [recipes, setRecipes] = useState([]);
   const location = useLocation();
-  const [ingredient, setIngredient] = useState(
-    location.state ? location.state.ingredient.name : afterParse.name
+  const [ingredient] = useState(
+    location.state ? location.state.ingredient : localStorageIngredient
   );
-  const [storeIngredient, setStoreIngredient] = useState(
-    location.state ? location.state.ingredient : afterParse
-  );
-  console.log(storeIngredient);
+  let ingredientName = ingredient.name;
+  console.log(ingredient);
 
   useEffect(() => {
-    if (location.state) {
-      localStorage.setItem(
-        "ingredient",
-        JSON.stringify(location.state.ingredient)
-      );
+    if (ingredient) {
+      localStorage.setItem("ingredient", JSON.stringify(ingredient));
     }
-    // let saved = localStorage.getItem('ingredient')
-    // setStoreIngredient(JSON.parse(saved))
-    // console.log(storeIngredient)
   }, [ingredient]);
 
   useEffect(() => {
     async function getRecipe() {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${recipeApiKey}&query=${ingredient}&titleMatch=${ingredient}&number=10`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${recipeApiKey}&query=${ingredient.name}&titleMatch=${ingredient.name}&number=10`
       );
       const data = await response.json();
       setRecipes(data.results);
@@ -46,39 +37,21 @@ function IngredientPage() {
   return (
     <>
       <div>
-        <h2 className="ingredient-title">{ingredient}</h2>
+        <h2 className="ingredient-title">{ingredient.name}</h2>
 
         <div className="ingredient-container">
           <div>
             <img
               className="main-image"
-              src={storeIngredient.imgurl}
-              alt={storeIngredient.name}
+              src={ingredient.imgurl}
+              alt={ingredient.name}
             />
           </div>
           <div className="ingredient-details">
-            <h2>{storeIngredient.nutrition}</h2>
-            <h2>{storeIngredient.fact}</h2>
+            <h2>{ingredient.nutrition}</h2>
+            <h2>{ingredient.fact}</h2>
           </div>
         </div>
-
-        {/* {filtered.map((item) => {
-            return (
-              <div className="ingredient-container" key={item.id}>
-                <div>
-                  <img
-                    className="main-image"
-                    src={item.imgurl}
-                    alt={item.name}
-                  />
-                </div>
-                <div className="ingredient-details">
-                  <h2>{item.nutrition}</h2>
-                  <h2>{item.fact}</h2>
-                </div>
-              </div>
-            );
-          })} */}
       </div>
       <div className="image-container">
         {recipes.slice(0, 4).map((item, index) => {
@@ -94,8 +67,8 @@ function IngredientPage() {
           );
         })}
       </div>
-      <Link to="/search" state={{ recipes, ingredient }}>
-        <h3>Discover more {ingredient} recipes here!</h3>
+      <Link to="/search" state={{ recipes, ingredientName }}>
+        <h3>Discover more {ingredient.name} recipes here!</h3>
       </Link>
     </>
   );

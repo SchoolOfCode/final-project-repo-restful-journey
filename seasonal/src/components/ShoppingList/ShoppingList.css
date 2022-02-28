@@ -1,0 +1,35 @@
+.heading {
+  font-weight: bold;
+  text-align: left;
+  margin-top: 5rem;
+}
+
+.input {
+  margin: 0.5rem;
+}
+
+.add-btn {
+  color: green;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #acf39d;
+  margin: 1rem;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.ingredient {
+  padding: 0.5rem;
+}
+
+.delete-btn {
+  color: red;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+}
