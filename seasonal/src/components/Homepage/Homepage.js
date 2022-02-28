@@ -2,9 +2,8 @@ import React from "react";
 import { Container } from "@chakra-ui/react";
 import { useFetch } from "../hooks/useFetch.js";
 import { seasonQuotes, getSeason } from "../../libs/seasonalData.js";
-import { useNavigate, Route, Routes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import IngredientPage from "../IngredientPage/IngredientPage.js";
 import "./Homepage.css";
 import Slider from "../Slider/slider.js";
 
@@ -34,11 +33,14 @@ function filterVegetables(array, boolean) {
 }
 
 function Homepage() {
-  const [ingredient, setIngredient] = useState(localStorage.getItem('ingredient') ? localStorage.getItem('ingredient') : null );
+  const [ingredient, setIngredient] = useState(
+    localStorage.getItem("ingredient")
+      ? localStorage.getItem("ingredient")
+      : null
+  );
   const [filtered, setFiltered] = useState([]);
   const [vegetables, setVegetables] = useState([]);
   const [fruit, setFruit] = useState([]);
-
 
   let navigate = useNavigate();
   function routeChange() {
@@ -46,8 +48,8 @@ function Homepage() {
     navigate(path);
   }
   const [data] = useFetch(`${api}/ingredients`);
-  // console.log(data);
-  // console.log(getSeason());
+  console.log(data);
+  console.log(getSeason());
 
   function handleClick(e) {
     setIngredient(e.target.alt);
@@ -72,7 +74,7 @@ function Homepage() {
     }
   }, [data]);
 
-  if (data && ingredient) {
+  if (data) {
     return (
       <>
         <h1 className="date">{date.toDateString()}</h1>
@@ -104,7 +106,7 @@ function Homepage() {
     );
   } else if (!data) {
     return <h1>Hello again!</h1>;
-  } 
+  }
   // else if (ingredient) {
   //   return (
   //     <Routes>
