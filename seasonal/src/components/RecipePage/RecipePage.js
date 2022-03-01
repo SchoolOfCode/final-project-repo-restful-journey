@@ -51,17 +51,17 @@ function RecipePage() {
     return (
       <>
         <div>
-          <img src={recipe.image} alt={recipe.title} />
-        </div>
+        <img className="img" src={recipe.image} alt={recipe.title} />
+          </div>
         <div>
-          <h1>{recipe.title}</h1>
+          <h1 className="title">{recipe.title}</h1>
         </div>
-        <div>
+        <div className="recipe-info">
           <div>
-            <p>{recipe.readyInMinutes} minutes</p>
+            <p className="duration">{recipe.readyInMinutes} minutes</p>
           </div>
           <div>
-            <p>{recipe.servings} servings</p>
+            <p className="servings">{recipe.servings} servings</p>
           </div>
         </div>
         <div>
@@ -88,16 +88,16 @@ function RecipePage() {
         </div>
         <div>
           <Link to="/shoppinglist">
-            <p>Check your Shopping list</p>
+            <p className="shopping-list-link">Check your Shopping list</p>
           </Link>
         </div>
         <div>
-          <p>Instructions</p>
+          <p className="instructions">Instructions</p>
           <ul>
             {recipe.analyzedInstructions[0].steps.map((x, i) => {
               return (
                 <div key={i}>
-                  <li>{x.step}</li>
+                  <li className="recipe-steps">{x.step}</li>
                 </div>
               );
             })}
