@@ -10,3 +10,50 @@
   border-radius: 5px;
   padding: 0.5rem;
 }
+
+.img {
+border-radius: 5px;
+ margin-top: 5rem;
+ margin-bottom: 1rem;
+  
+  
+}
+
+.title {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 1rem;
+
+}
+
+.recipe-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+  .duration, .servings {
+    background-color: #ACF39D;
+    border-radius: 5px;
+    margin: 1rem;
+    padding:1rem;
+  }
+
+  .shopping-list-link {
+   text-align: right;
+  }
+
+  .instructions {
+
+  }
+
+  .recipe-steps {
+  text-align: left;
+  background-color: white;
+  margin: 1rem;
+  list-style:decimal;
+  border-radius: 5px;
+  padding: 0.5rem;
+  }
