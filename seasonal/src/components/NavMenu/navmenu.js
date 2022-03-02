@@ -18,11 +18,13 @@ function NavMenu() {
     <ThemeProvider theme={menuTheme}>
       <>
         <GlobalStyles />
-        <div ref={node} className={css.navdiv}>
-          <Logo />
+        <div ref={node}>
+          <div className={css.navdiv}>
+            <Logo />
+          </div>
           <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} setOpen={setOpen} />
         </div>
+        <Menu open={open} setOpen={setOpen} />
       </>
     </ThemeProvider>
   );
