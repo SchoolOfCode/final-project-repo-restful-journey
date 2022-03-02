@@ -5,55 +5,69 @@
 .list-container {
   text-align: left;
   background-color: white;
-  margin: 1rem;
+  margin: 2rem;
   list-style: none;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 1.5rem;
 }
 
 .img {
-border-radius: 5px;
- margin-top: 5rem;
- margin-bottom: 1rem;
-  
-  
+  border-radius: 5px;
+  margin-top: 5rem;
+  margin-bottom: 1.5rem;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .title {
-  margin-top: 1rem;
+  font-size: 22px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
-  margin: 0 1rem;
-
 }
 
 .recipe-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  }
+}
 
-  .duration, .servings {
-    background-color: #ACF39D;
-    border-radius: 5px;
-    margin: 1rem;
-    padding:1rem;
-  }
+.duration,
+.servings {
+  background-color: #acf39d;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+}
 
-  .shopping-list-link {
-   text-align: right;
-  }
+.shopping-list-link {
+  width: 75%;
+  text-align: right;
+  margin-bottom: 1.5;
+  text-transform: capitalize;
+}
 
-  .instructions {
+.link {
+  text-align: right;
+}
 
-  }
+.instructions,
+.ingredients {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
-  .recipe-steps {
+.recipe-steps {
   text-align: left;
   background-color: white;
-  margin: 1rem;
-  list-style:decimal;
+  margin: 2rem;
+  list-style: decimal;
   border-radius: 5px;
-  padding: 0.5rem;
-  }
+  padding: 1rem;
+}
