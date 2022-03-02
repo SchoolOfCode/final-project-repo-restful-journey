@@ -29,8 +29,11 @@ function SearchPage() {
 
   return (
     <Container maxW="container.md" className={css.mainContainer}>
-      <SearchInput ingredient={ingredient} setIngredient={setIngredient} />
-
+      <SearchInput
+        placeholder="Search recipes..."
+        ingredient={ingredient}
+        setIngredient={setIngredient}
+      />
       <div className={css.container1}>
         {recipes &&
           recipes.slice(4, 10).map((item, index) => {
@@ -38,9 +41,13 @@ function SearchPage() {
               <div key={item.id} className={css.container2}>
                 <div className={css.container3}>
                   <Link to="/recipes" state={{ recipeId: item.id }}>
-                    <img src={item.image} alt={item.title}></img>
+                    <img
+                      className={css.img}
+                      src={item.image}
+                      alt={item.title}
+                    ></img>
                   </Link>
-                  <p>{item.title}</p>
+                  <p className={css.caption}>{item.title}</p>
                 </div>
               </div>
             );
