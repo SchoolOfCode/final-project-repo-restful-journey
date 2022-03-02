@@ -1,18 +1,15 @@
 .login {
-  background-color: rgb(86, 86, 149);
   width: 100px;
   height: 50 px;
 }
 
 .logout {
-  background-color: rgb(189, 37, 168);
   width: 100px;
   height: 50 px;
 }
 
 .loginPage {
   min-height: 100vh;
-  background-color: rgb(41, 178, 190);
 }
 
 .logButtons {
