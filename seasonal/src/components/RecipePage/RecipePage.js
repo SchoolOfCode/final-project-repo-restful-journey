@@ -11,9 +11,10 @@ function RecipePage() {
 
   const [ingredient, setIngredient] = useState(null);
   const userName = "Antony";
-  const [userRecipeId, setUserRecipeId] = useState(location.state ? location.state.recipeId : null);
+  const [userRecipeId, setUserRecipeId] = useState(
+    location.state ? location.state.recipeId : null
+  );
   const [recipe, setRecipe] = useState(null);
-
 
   useEffect(() => {
     async function addIngredient() {
@@ -51,8 +52,8 @@ function RecipePage() {
     return (
       <>
         <div>
-        <img className="img" src={recipe.image} alt={recipe.title} />
-          </div>
+          <img className="img" src={recipe.image} alt={recipe.title} />
+        </div>
         <div>
           <h1 className="title">{recipe.title}</h1>
         </div>
@@ -66,7 +67,7 @@ function RecipePage() {
         </div>
         <div>
           <div>
-            <p>Ingredients</p>
+            <p className="ingredients">Ingredients</p>
           </div>
           <div>
             <ul>
@@ -86,9 +87,9 @@ function RecipePage() {
             </ul>
           </div>
         </div>
-        <div>
+        <div className="shopping-list-link">
           <Link to="/shoppinglist">
-            <p className="shopping-list-link">Check your Shopping list</p>
+            <p className="link">Go to your Shopping list</p>
           </Link>
         </div>
         <div>
@@ -106,10 +107,14 @@ function RecipePage() {
       </>
     );
   } else {
-    return <div>
-    <p>No recipe selected</p>
-    <p>Check the <Link to="/home">home</Link> page for some inspiration</p>
-    </div>;
+    return (
+      <div>
+        <p>No recipe selected.</p>
+        <p>
+          Check the <Link to="/home">home</Link> page for some inspiration!
+        </p>
+      </div>
+    );
   }
 }
 
