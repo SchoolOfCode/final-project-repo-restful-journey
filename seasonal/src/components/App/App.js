@@ -8,6 +8,7 @@ import ShoppingList from "../ShoppingList/ShoppingList.js";
 import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
 import { Box } from "@chakra-ui/react";
+import { Logo } from "../logo/logo.js";
 
 function App() {
   return (
