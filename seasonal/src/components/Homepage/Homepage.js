@@ -29,7 +29,7 @@ function Homepage() {
   const [vegetables, setVegetables] = useState([]);
   const [fruit, setFruit] = useState([]);
 
-  const [data] = useFetch(`${api}${season}`);
+  const [data] = useFetch(`${api}/ingredients/season/${season}`);
   console.log(data);
   console.log(getSeason());
 
