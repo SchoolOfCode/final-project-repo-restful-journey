@@ -6,3 +6,12 @@
   justify-content: center;
   font-family: "Roboto Slab", serif;
 }
+
+.topMenu {
+  display: flex;
+  background-color: blueviolet;
+}
+
+.logo {
+  display: flex;
+}

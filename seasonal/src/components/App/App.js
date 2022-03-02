@@ -8,6 +8,7 @@ import ShoppingList from "../ShoppingList/ShoppingList.js";
 import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
 import { Box } from "@chakra-ui/react";
+import { Logo } from "../logo/logo.js";
 
 function App() {
   return (
@@ -18,20 +19,11 @@ function App() {
       overflow="hidden"
       className={css.App}
     >
-      {/* <nav>
-        <Link to="/">Login</Link>
-        <Link to="/home">Homepage</Link>
-        <Link to="/home/ingredients">Ingredients Page</Link>
-        <Link to="/recipes">Recipes</Link>
-        <Link to="/search">Search</Link>
-        <Link to="/shoppinglist">Shopping List</Link>
-        <Link to="/hamburger">hamburgermenu</Link>
-      </nav> */}
       <NavMenu />
       <Routes>
         <Route path="/" element={<LoginButton />} />
         <Route path="home/*" element={<Homepage />} />
-        <Route path="ingredients" element={<IngredientPage/>} />
+        <Route path="ingredients" element={<IngredientPage />} />
         <Route path="recipes" element={<RecipePage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="shoppinglist" element={<ShoppingList />} />
