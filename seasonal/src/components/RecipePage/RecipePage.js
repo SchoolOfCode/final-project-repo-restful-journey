@@ -11,7 +11,7 @@ function RecipePage() {
 
   const [ingredient, setIngredient] = useState(null);
   const userName = "Antony";
-  const [userRecipeId, setUserRecipeId] = useState(location.state.recipeId);
+  const [userRecipeId, setUserRecipeId] = useState(location.state ? location.state.recipeId : null);
   const [recipe, setRecipe] = useState(null);
 
 

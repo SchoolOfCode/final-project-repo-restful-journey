@@ -54,7 +54,7 @@ function IngredientPage() {
         </div>
       </div>
       <div className="image-container">
-        {recipes.slice(0, 4).map((item, index) => {
+        {recipes && recipes.slice(0, 4).map((item, index) => {
           return (
             <div className="recipe-container" key={item.id}>
               <Link to="/recipes" state={{ recipeId: item.id }}>
