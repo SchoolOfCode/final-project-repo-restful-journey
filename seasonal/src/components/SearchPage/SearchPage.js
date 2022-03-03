@@ -34,21 +34,17 @@ function SearchPage() {
         ingredient={ingredient}
         setIngredient={setIngredient}
       />
-      <div className={css.container1}>
+      <div className={css.imgContainer}>
         {recipes &&
           recipes.slice(4, 10).map((item, index) => {
             return (
-              <div key={item.id} className={css.container2}>
-                <div className={css.container3}>
+              <div key={item.id} className={css.recipeContainer}>
+                <figure className={css.recipeContainer2}>
                   <Link to="/recipes" state={{ recipeId: item.id }}>
-                    <img
-                      className={css.img}
-                      src={item.image}
-                      alt={item.title}
-                    ></img>
+                    <img src={item.image} alt={item.title}></img>
                   </Link>
-                  <p className={css.caption}>{item.title}</p>
-                </div>
+                  <figcaption className={css.caption}>{item.title}</figcaption>
+                </figure>
               </div>
             );
           })}
