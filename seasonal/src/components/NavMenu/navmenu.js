@@ -4,7 +4,10 @@ import { GlobalStyles } from "../../global";
 import { menuTheme } from "../../theme";
 import Burger from "../Burger/burger.js";
 import Menu from "../Menu/menu.js";
+import { Logo } from "../logo/logo";
 import { useOnClickOutside } from "../../hook";
+// import { css } from "@emotion/react";
+import css from "./navmenu.module.css";
 
 function NavMenu() {
   const [open, setOpen] = useState(false);
@@ -16,9 +19,12 @@ function NavMenu() {
       <>
         <GlobalStyles />
         <div ref={node}>
+          <div className={css.navdiv}>
+            <Logo />
+          </div>
           <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} setOpen={setOpen} />
         </div>
+        <Menu open={open} setOpen={setOpen} />
       </>
     </ThemeProvider>
   );

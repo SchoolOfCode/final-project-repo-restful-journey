@@ -9,22 +9,19 @@ export const StyledMenu = styled.nav`
   text-align: left;
   padding: 2rem;
   z-index: 2;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   transition: transform 0.3s ease-in-out;
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateY(-100%)")};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    width: 100%;
+    width: 50%;
   }
 
   a {
-    font-size: 2rem;
-    text-transform: uppercase;
+    font-size: 0.5rem;
     padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
     color: ${({ theme }) => theme.primaryDark};
     text-decoration: none;
     transition: color 0.3s linear;
