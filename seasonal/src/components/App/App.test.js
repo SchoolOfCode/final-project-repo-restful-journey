@@ -1,8 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from "./App";
+import { screen, renderWithRouter } from "../../test-utils.js";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test("App function sucessfully mounts", async () => {
+  renderWithRouter(<App />);
+  expect(screen.getByTestId("mainbox")).toBeInTheDocument();
 });
