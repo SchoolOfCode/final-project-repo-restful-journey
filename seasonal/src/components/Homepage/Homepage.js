@@ -20,7 +20,6 @@ function filterVegetables(array, boolean) {
   const vegetables = array.filter((item) => {
     return item.isfruit === boolean;
   });
-  // console.log(vegetables);
   return vegetables;
 }
 
@@ -56,7 +55,6 @@ function Homepage() {
   if (data) {
     return (
       <>
-        <h1 className="date">{date.toDateString()}</h1>
         <div className="greeting">
           <h1>Hello username! 👋🏼</h1>
           <br />
@@ -84,7 +82,14 @@ function Homepage() {
       </>
     );
   } else if (!data) {
-    return <h1>Hello again!</h1>;
+    return (
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
   }
 }
 
