@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { InputGroup, Input, Button, InputRightElement } from "@chakra-ui/react";
-import "./ShoppingList.css";
+import { Input } from "@chakra-ui/react";
+import css from "./ShoppingList.module.css";
 
 const api = process.env.REACT_APP_API_CALL;
 
@@ -51,17 +51,17 @@ function ShoppingList() {
 
   return (
     <>
-      <div className="heading">
+      <div className={css.heading}>
         <h2>Here's your shopping list...</h2>
       </div>
       <form onSubmit={handleSubmit}>
         <Input
-          className="input"
+          className={css.input}
           type="text"
           value={input}
           onChange={handleChange}
         />
-        <button className="add-btn" type="submit">
+        <button className={css.addBtn} type="submit">
           <i class="fa-solid fa-plus"></i>
         </button>
       </form>
@@ -69,10 +69,10 @@ function ShoppingList() {
         {userList &&
           userList.map((ingredient, i) => {
             return (
-              <div key={i} className="list-container">
-                <li className="ingredient">{ingredient}</li>
+              <div key={i} className={css.container}>
+                <li className={css.ingredient}>{ingredient}</li>
                 <button
-                  className="delete-btn"
+                  className={css.deleteBtn}
                   onClick={() => handleDelete(ingredient, i)}
                 >
                   <i class="fa-solid fa-xmark"></i>

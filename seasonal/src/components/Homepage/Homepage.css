@@ -24,6 +24,9 @@
 
 .type {
   font-weight: bold;
+  background-color: rgba(172, 243, 157, 0.5);
+  border-radius: 5px;
+  margin: 2rem;
 }
 
 .ingredients {
