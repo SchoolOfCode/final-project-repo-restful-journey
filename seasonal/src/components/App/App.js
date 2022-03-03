@@ -10,9 +10,31 @@ import LoginButton from "../LoginButton/Login";
 import { Box } from "@chakra-ui/react";
 import { Logo } from "../logo/logo.js";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect } from "react";
+
+async function postNewUser(newUser) {
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: newUser,
+  };
+  const response = await fetch(
+    "https://nourish-seasonal.herokuapp.com/users",
+    requestOptions
+  );
+  const data = response.json();
+  console.log(data);
+}
 
 function App() {
-  const {user} = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      const newUser = user.email;
+      postNewUser(newUser);
+    }
+  }, [isAuthenticated]);
 
   return (
     <Box
@@ -25,7 +47,7 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path="/" element={<LoginButton />} />
-        <Route path="home/*" element={<Homepage user={user}/>} />
+        <Route path="home/*" element={<Homepage user={user} />} />
         <Route path="ingredients" element={<IngredientPage />} />
         <Route path="recipes" element={<RecipePage />} />
         <Route path="search" element={<SearchPage />} />
