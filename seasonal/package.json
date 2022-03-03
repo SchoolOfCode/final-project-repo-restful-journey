@@ -26,6 +26,7 @@
     "test app": "./src/components/App/App.test.js",
     "test home": "./src/components/Homepage/Homepage.test.js",
     "test ingredient": "./src/components/IngredientPage/IngredientPage.test.js",
+    "test list": "./src/components/ShoppingList/ShoppingList.test.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

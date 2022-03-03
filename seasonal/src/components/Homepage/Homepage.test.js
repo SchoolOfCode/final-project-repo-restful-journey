@@ -6,7 +6,7 @@ test("doesn't render a date when data doesn't load", () => {
   expect(screen.queryByTestId("homepageDate")).toBeNull();
 });
 
-test("user greeting appears on data load", async () => {
+test("VEGGIES heading appears on data load", async () => {
   // element is initially not present...
   render(<Homepage />);
   // wait for appearance inside an assertion

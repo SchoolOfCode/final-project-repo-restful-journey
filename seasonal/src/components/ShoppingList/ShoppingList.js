@@ -61,11 +61,15 @@ function ShoppingList() {
           value={input}
           onChange={handleChange}
         />
-        <button className={css.addBtn} type="submit">
+        <button
+          aria-label="add-ingredient"
+          className={css.addBtn}
+          type="submit"
+        >
           <i class="fa-solid fa-plus"></i>
         </button>
       </form>
-      <ul>
+      <ul data-testid="shopping-list">
         {userList &&
           userList.map((ingredient, i) => {
             return (
