@@ -58,7 +58,7 @@ function Homepage({user}) {
       <>
         <h1 className="date">{date.toDateString()}</h1>
         <div className="greeting">
-          <h1>Hello {user ? user.name : 'guest'}! 👋🏼</h1>
+          <h1>Hello {user ? user.nickname : 'guest'}! 👋🏼</h1>
           <br />
           <h2>{seasonQuotes[season][randomNumber]}</h2>
         </div>

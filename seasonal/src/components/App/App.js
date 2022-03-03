@@ -16,7 +16,7 @@ async function postNewUser(newUser) {
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: newUser,
+    body: JSON.stringify(newUser),
   };
   const response = await fetch(
     "https://nourish-seasonal.herokuapp.com/users",
