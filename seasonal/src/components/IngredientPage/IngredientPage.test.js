@@ -5,6 +5,7 @@ import {
   fireEvent,
   waitFor,
 } from "../../test-utils.js";
+import SearchPage from "../SearchPage/SearchPage";
 
 // test("clicking a recipe routes to the recipe page", async () => {
 //   renderWithRouter(<IngredientPage />);
@@ -14,22 +15,16 @@ import {
 //   expect(screen.getByTestId("instructions")).toBeInTheDocument();
 // });
 
-test("recipe page appears on click of a recipe", async () => {
+test(`Search page appears on click of "discover more recipes"`, async () => {
   // element is initially not present...
   renderWithRouter(<IngredientPage />);
 
-  fireEvent.click(screen.getByTestId("ingredient"), { button: 0 });
+  fireEvent.click(screen.getByTestId("discover"), { button: 0 });
 
   // wait for appearance inside an assertion
   await waitFor(() => {
-    expect(screen.getByTestId("instructions")).toBeInTheDocument();
+    expect(window.location.pathname).toBe("/search");
   });
-});
-
-test("rendering a component that uses useLocation", () => {
-  const route = "/recipes";
-  renderWithRouter(<IngredientPage />, { route });
-  expect(screen.getByTestId("ingredient")).toHaveTextContent(route);
 });
 
 test("Component renders an image container", () => {
