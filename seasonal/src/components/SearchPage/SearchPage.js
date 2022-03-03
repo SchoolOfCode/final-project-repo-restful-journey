@@ -32,6 +32,8 @@ function SearchPage() {
       <SearchInput
         placeholder="Search recipes..."
         data-testid="search"
+        className={css.search}
+
         ingredient={ingredient}
         setIngredient={setIngredient}
       />
