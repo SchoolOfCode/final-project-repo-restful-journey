@@ -55,6 +55,10 @@ function Homepage() {
   if (data) {
     return (
       <>
+
+        <h1 data-testid="homepageDate" className="date">
+          {date.toDateString()}
+        </h1>
         <div className="greeting">
           <h1>Hello username! 👋🏼</h1>
           <br />
