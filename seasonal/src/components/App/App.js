@@ -22,7 +22,7 @@ async function postNewUser(newUser) {
     "https://nourish-seasonal.herokuapp.com/users",
     requestOptions
   );
-  const data = response.json();
+  const data = await response.json();
   console.log(data);
 }
 
@@ -31,7 +31,11 @@ function App() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      const newUser = user.email;
+      const newUser = {
+        username: user.nickname,
+        email: user.email,
+        favourites: [],
+      };
       postNewUser(newUser);
     }
   }, [isAuthenticated]);
