@@ -9,8 +9,11 @@ import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
 import { Box } from "@chakra-ui/react";
 import { Logo } from "../logo/logo.js";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
+  const {user} = useAuth0();
+
   return (
     <Box
       maxW="sm"
@@ -22,7 +25,7 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path="/" element={<LoginButton />} />
-        <Route path="home/*" element={<Homepage />} />
+        <Route path="home/*" element={<Homepage user={user}/>} />
         <Route path="ingredients" element={<IngredientPage />} />
         <Route path="recipes" element={<RecipePage />} />
         <Route path="search" element={<SearchPage />} />
