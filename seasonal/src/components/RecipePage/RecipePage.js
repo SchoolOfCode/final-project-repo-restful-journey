@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./RecipePage.css";
+import css from "./RecipePage.module.css";
 
 const api = process.env.REACT_APP_API_CALL;
 const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
@@ -52,31 +52,31 @@ function RecipePage() {
     return (
       <>
         <div>
-          <img className="img" src={recipe.image} alt={recipe.title} />
+          <img className={css.img} src={recipe.image} alt={recipe.title} />
         </div>
         <div>
-          <h1 className="title">{recipe.title}</h1>
+          <h1 className={css.title}>{recipe.title}</h1>
         </div>
-        <div className="recipe-info">
+        <div className={css.recipeInfo}>
           <div>
-            <p className="duration">{recipe.readyInMinutes} minutes</p>
+            <p className={css.duration}>{recipe.readyInMinutes} minutes</p>
           </div>
           <div>
-            <p className="servings">{recipe.servings} servings</p>
+            <p className={css.servings}>{recipe.servings} servings</p>
           </div>
         </div>
         <div>
           <div>
-            <p className="ingredients">Ingredients</p>
+            <p className={css.ingredients}>Ingredients</p>
           </div>
           <div>
             <ul>
               {recipe.extendedIngredients.map((ingredient, i) => {
                 return (
-                  <div className="list-container" key={ingredient.name}>
+                  <div className={css.listContainer} key={ingredient.name}>
                     <li>{ingredient.original}</li>
                     <button
-                      className="add-btn"
+                      className={css.addBtn}
                       onClick={() => handleClick(ingredient.original)}
                     >
                       <i class="fa-solid fa-plus"></i>
@@ -87,18 +87,19 @@ function RecipePage() {
             </ul>
           </div>
         </div>
-        <div className="shopping-list-link">
+        <div className={css.shoppingListLink}>
           <Link to="/shoppinglist">
-            <p className="link">Go to your Shopping list</p>
+            <p className={css.link}>Go to your Shopping list</p>
+            <i class="fa-solid fa-cart-shopping"></i>
           </Link>
         </div>
         <div>
-          <p className="instructions">Instructions</p>
+          <p className={css.instructions}>Instructions</p>
           <ul>
             {recipe.analyzedInstructions[0].steps.map((x, i) => {
               return (
                 <div key={i}>
-                  <li className="recipe-steps">{x.step}</li>
+                  <li className={css.recipeSteps}>{x.step}</li>
                 </div>
               );
             })}
@@ -109,8 +110,8 @@ function RecipePage() {
   } else {
     return (
       <div>
-        <p>No recipe selected.</p>
-        <p>
+        <p className={css.noRecipe}>No recipe selected.</p>
+        <p className={css.linkToHome}>
           Check the <Link to="/home">home</Link> page for some inspiration!
         </p>
       </div>

@@ -8,15 +8,15 @@
   margin: 0.5rem;
 }
 
-.add-btn {
+.addBtn {
   color: green;
 }
 
-.list-container {
+.container {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  background-color: #acf39d;
+  background-color: rgba(172, 243, 157, 0.5);
   margin: 1rem;
   list-style: none;
   border-radius: 5px;
@@ -27,7 +27,7 @@
   padding: 0.5rem;
 }
 
-.delete-btn {
+.deleteBtn {
   color: red;
   width: 2rem;
   height: 2rem;
