@@ -1,10 +1,27 @@
+.img {
+  margin-top: 5rem;
+  align-content: center;
+  height: 250px;
+  width: 250px;
+}
+
+.welcome {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.nourish {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
 .login {
-  width: 100px;
   height: 50 px;
 }
 
 .logout {
-  width: 100px;
   height: 50 px;
 }
 
@@ -13,7 +30,9 @@
 }
 
 .logButtons {
-  margin-top: 50vh;
+  display: flex;
+  gap: 20px 30px;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
 }
