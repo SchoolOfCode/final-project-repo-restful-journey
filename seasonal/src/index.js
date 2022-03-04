@@ -16,7 +16,7 @@ ReactDOM.render(
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirectUri={window.location.origin}
+      redirectUri={`${window.location.origin}/home`}
     >
       <ChakraProvider>
         <App />
