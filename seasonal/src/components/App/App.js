@@ -10,7 +10,7 @@ import LoginButton from "../LoginButton/Login";
 import { Box } from "@chakra-ui/react";
 import { Logo } from "../logo/logo.js";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 async function postNewUser(newUser) {
   const requestOptions = {
@@ -27,13 +27,20 @@ async function postNewUser(newUser) {
 }
 
 function App() {
+  // const [id, setid] = useState(null);
   const { user, isAuthenticated } = useAuth0();
-
+  let userId = '';
+  if(user){
+  userId = user.sub.split('|')[1]
+  // setid(userId)
+  }
+  
   useEffect(() => {
     if (isAuthenticated) {
+      
       const newUser = {
         username: user.nickname,
-        email: user.email,
+        email: userId,
         favourites: [],
         list: [],
       };
@@ -41,6 +48,7 @@ function App() {
     }
   }, [isAuthenticated]);
 
+console.log('app', userId)
   return (
     <Box
       maxW="sm"
@@ -55,9 +63,9 @@ function App() {
         <Route path="/" element={<LoginButton />} />
         <Route path="home/*" element={<Homepage user={user} />} />
         <Route path="ingredients" element={<IngredientPage />} />
-        <Route path="recipes" element={<RecipePage />} />
+        <Route path="recipes" element={<RecipePage userId={userId}/>} />
         <Route path="search" element={<SearchPage />} />
-        <Route path="shoppinglist" element={<ShoppingList />} />
+        <Route path="shoppinglist" element={<ShoppingList userId={userId}/>} />
         <Route path="hamburger" element={<NavMenu />} />
       </Routes>
     </Box>

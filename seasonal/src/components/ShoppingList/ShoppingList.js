@@ -4,19 +4,31 @@ import css from "./ShoppingList.module.css";
 
 const api = process.env.REACT_APP_API_CALL;
 
-function ShoppingList() {
+function ShoppingList({userId}) {
   const [input, setInput] = useState("");
   const [userList, setUserList] = useState(null);
   const userName = "Antony";
 
+console.log('id shopping', userId)
+
   useEffect(() => {
     async function getUserList() {
-      const res = await fetch(`${api}/list/user?name=${userName}`);
+      const res = await fetch(`${api}/user/list/${userId}`);
       const data = await res.json();
-      setUserList(data.payload[0].list);
+      // setUserList(data);
+      console.log(data)
+      
     }
     getUserList();
-  }, [api, userName]);
+  }, [api, userId]);
+  // useEffect(() => {
+  //   async function getUserList() {
+  //     const res = await fetch(`${api}/list/user?name=${userName}`);
+  //     const data = await res.json();
+  //     setUserList(data.payload[0].list);
+  //   }
+  //   getUserList();
+  // }, [api, userName]);
 
   async function addIngredient(input) {
     const res = await fetch(`${api}/list/user/add?name=${userName}`, {
