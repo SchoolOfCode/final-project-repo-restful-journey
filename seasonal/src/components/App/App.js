@@ -48,6 +48,7 @@ function App() {
       borderRadius="lg"
       overflow="hidden"
       className={css.App}
+      data-testid="mainbox"
     >
       <NavMenu />
       <Routes>

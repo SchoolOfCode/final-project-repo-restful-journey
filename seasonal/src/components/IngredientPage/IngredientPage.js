@@ -39,7 +39,7 @@ function IngredientPage() {
       <div>
         <h2 className="ingredient-title">{ingredient.name}</h2>
 
-        <div className="ingredient-container">
+        <div data-testid="imageContainer" className="ingredient-container">
           <div>
             <img
               className="main-image"
@@ -54,21 +54,24 @@ function IngredientPage() {
         </div>
       </div>
       <div className="image-container">
-        {recipes && recipes.slice(0, 4).map((item, index) => {
-          return (
-            <div className="recipe-container" key={item.id}>
-              <Link to="/recipes" state={{ recipeId: item.id }}>
-                <figure className="recipe-container2">
-                  <img src={item.image} alt={item.id}></img>
-                  <figcaption className="caption">{item.title}</figcaption>
-                </figure>
-              </Link>
-            </div>
-          );
-        })}
+        {recipes &&
+          recipes.slice(0, 4).map((item, index) => {
+            return (
+              <div className="recipe-container" key={item.id}>
+                <Link to="/recipes" state={{ recipeId: item.id }}>
+                  <figure className="recipe-container2">
+                    <img src={item.image} alt={item.id}></img>
+                    <figcaption className="caption">{item.title}</figcaption>
+                  </figure>
+                </Link>
+              </div>
+            );
+          })}
       </div>
       <Link to="/search" state={{ recipes, ingredientName }}>
-        <h3>Discover more {ingredient.name} recipes here!</h3>
+        <h3 data-testid="discover">
+          Discover more {ingredient.name} recipes here!
+        </h3>
       </Link>
     </>
   );

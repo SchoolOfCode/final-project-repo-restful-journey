@@ -30,7 +30,10 @@ function SearchPage() {
   return (
     <Container maxW="container.md" className={css.mainContainer}>
       <SearchInput
+        placeholder="Search recipes..."
+        data-testid="search"
         className={css.search}
+
         ingredient={ingredient}
         setIngredient={setIngredient}
       />
