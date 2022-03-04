@@ -23,7 +23,7 @@ function filterVegetables(array, boolean) {
   return vegetables;
 }
 
-function Homepage() {
+function Homepage({user}) {
   const [ingredient, setIngredient] = useState(null);
   const [vegetables, setVegetables] = useState([]);
   const [fruit, setFruit] = useState([]);
@@ -60,7 +60,7 @@ function Homepage() {
           {date.toDateString()}
         </h1>
         <div className="greeting">
-          <h1>Hello username! 👋🏼</h1>
+          <h1>Hello {user ? user.nickname : 'guest'}! 👋🏼</h1>
           <br />
           <h2>{seasonQuotes[season][randomNumber]}</h2>
         </div>
