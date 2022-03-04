@@ -35,6 +35,7 @@ function App() {
         username: user.nickname,
         email: user.email,
         favourites: [],
+        list: [],
       };
       postNewUser(newUser);
     }
