@@ -1,8 +1,8 @@
 export const seasonQuotes = {
   spring: [
-    "The first blooms of spring always makes my heart sing",
-    "Spring is natures way of lets party!",
-    "To plant a garden is to believe in tomorrow.",
+    "Radishes are vibrant red veggies containing loads of nutrients and minerals. The most common way to eat radishes is in salads. Try experimenting by adding radishes to cooked dishes, too!",
+    "Spring is the best time to enjoy artichokes, since they are especially sweet and tender during this time. Because their leaves are not prickly, the baby ones are easier to prep, and can be used the same way the hearts are: steamed, grilled or fried.",
+    "Leeks grow well in colder temperatures, making them ideal for a spring harvest. Most recipes call for the leek's white and light green stems, which are great braised, in recipes with goat cheese and blistered or grilled. ",
   ],
 
   summer: [
