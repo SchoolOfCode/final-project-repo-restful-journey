@@ -12,6 +12,7 @@ const Menu = ({ open }) => {
       <a href="/recipes">Recipes</a>
       <a href="/search">Search</a>
       <a href="/shoppinglist">Shopping List</a>
+      <a href="/about">About Page</a>
     </StyledMenu>
   );
 };

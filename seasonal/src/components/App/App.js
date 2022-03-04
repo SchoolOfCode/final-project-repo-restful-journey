@@ -7,6 +7,7 @@ import SearchPage from "../SearchPage/SearchPage.js";
 import ShoppingList from "../ShoppingList/ShoppingList.js";
 import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
+import About from "../About/about.js";
 import { Box } from "@chakra-ui/react";
 import { Logo } from "../logo/logo.js";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -59,6 +60,7 @@ function App() {
         <Route path="search" element={<SearchPage />} />
         <Route path="shoppinglist" element={<ShoppingList />} />
         <Route path="hamburger" element={<NavMenu />} />
+        <Route path="about" element={<About />} />
       </Routes>
     </Box>
   );

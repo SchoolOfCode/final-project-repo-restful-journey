@@ -8,11 +8,13 @@ import { Logo } from "../logo/logo";
 import { useOnClickOutside } from "../../hook";
 // import { css } from "@emotion/react";
 import css from "./navmenu.module.css";
+import { Link } from "react-router-dom";
 
 function NavMenu() {
   const [open, setOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
+  
 
   return (
     <ThemeProvider theme={menuTheme}>
@@ -20,7 +22,7 @@ function NavMenu() {
         <GlobalStyles />
         <div ref={node}>
           <div className={css.navdiv}>
-            <Logo />
+          <Logo />
           </div>
           <Burger open={open} setOpen={setOpen} />
         </div>
