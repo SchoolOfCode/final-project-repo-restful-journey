@@ -4,33 +4,39 @@ import css from "./ShoppingList.module.css";
 
 const api = process.env.REACT_APP_API_CALL;
 
-function ShoppingList() {
+function ShoppingList({ user }) {
   const [input, setInput] = useState("");
   const [userList, setUserList] = useState(null);
-  const userName = "Antony";
+  let userId = "";
+
+  if (user) {
+    userId = user.sub.split("|")[1];
+    console.log("id shopping", userId);
+  }
 
   useEffect(() => {
     async function getUserList() {
-      const res = await fetch(`${api}/list/user?name=${userName}`);
+      const res = await fetch(`${api}/users/list/${userId}`);
       const data = await res.json();
       setUserList(data.payload[0].list);
+      // console.log(data);
     }
     getUserList();
-  }, [api, userName]);
+  }, [api, userId]);
 
   async function addIngredient(input) {
-    const res = await fetch(`${api}/list/user/add?name=${userName}`, {
+    const res = await fetch(`${api}/users/add`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ item: input }),
+      body: JSON.stringify({ email: userId, item: input }),
     });
   }
 
   async function deleteIngredient(input) {
-    const res = await fetch(`${api}/list/user/delete?name=${userName}`, {
+    const res = await fetch(`${api}/users/delete`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ item: input }),
+      body: JSON.stringify({ email: userId, item: input }),
     });
   }
 
