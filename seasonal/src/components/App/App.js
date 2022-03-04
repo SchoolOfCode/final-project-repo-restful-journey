@@ -29,15 +29,15 @@ async function postNewUser(newUser) {
 function App() {
   // const [id, setid] = useState(null);
   const { user, isAuthenticated } = useAuth0();
-  let userId = '';
-  if(user){
-  userId = user.sub.split('|')[1]
-  // setid(userId)
+  let userId = "";
+  if (user) {
+    userId = user.sub.split("|")[1];
+
+    // setid(userId)
   }
-  
+
   useEffect(() => {
     if (isAuthenticated) {
-      
       const newUser = {
         username: user.nickname,
         email: userId,
@@ -48,7 +48,9 @@ function App() {
     }
   }, [isAuthenticated]);
 
-console.log('app', userId)
+  console.log("user  object app", user);
+  console.log(`"app", ${userId}, ${typeof userId}`);
+
   return (
     <Box
       maxW="sm"
@@ -63,9 +65,9 @@ console.log('app', userId)
         <Route path="/" element={<LoginButton />} />
         <Route path="home/*" element={<Homepage user={user} />} />
         <Route path="ingredients" element={<IngredientPage />} />
-        <Route path="recipes" element={<RecipePage userId={userId}/>} />
+        <Route path="recipes" element={<RecipePage user={user} />} />
         <Route path="search" element={<SearchPage />} />
-        <Route path="shoppinglist" element={<ShoppingList userId={userId}/>} />
+        <Route path="shoppinglist" element={<ShoppingList user={user} />} />
         <Route path="hamburger" element={<NavMenu />} />
       </Routes>
     </Box>
