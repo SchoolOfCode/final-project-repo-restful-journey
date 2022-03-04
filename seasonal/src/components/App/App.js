@@ -7,11 +7,12 @@ import SearchPage from "../SearchPage/SearchPage.js";
 import ShoppingList from "../ShoppingList/ShoppingList.js";
 import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
-import About from "../About/about.js";
+import {About} from "../About/About.js";
 import { Box } from "@chakra-ui/react";
 import { Logo } from "../logo/logo.js";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
+
 
 async function postNewUser(newUser) {
   const requestOptions = {
