@@ -5,7 +5,7 @@ import css from "./RecipePage.module.css";
 const api = process.env.REACT_APP_API_CALL;
 const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 
-function RecipePage() {
+function RecipePage({ user }) {
   const location = useLocation();
   const [list, setList] = useState([]);
 
@@ -15,21 +15,27 @@ function RecipePage() {
     location.state ? location.state.recipeId : null
   );
   const [recipe, setRecipe] = useState(null);
+  let userId;
+
+  if (user) {
+    userId = user.sub.split("|")[1];
+    console.log("id recipe", userId);
+  }
 
   useEffect(() => {
     async function addIngredient() {
       try {
-        const res = await fetch(`${api}/list/user/add?name=${userName}`, {
+        const res = await fetch(`${api}/users/add`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(ingredient),
+          body: JSON.stringify({ email: userId, item: ingredient.item }),
         });
       } catch (e) {
         console.log(e);
       }
     }
     addIngredient();
-  }, [userName, ingredient]);
+  }, [userId, ingredient]);
 
   function handleClick(ingredient) {
     setIngredient({ item: ingredient });

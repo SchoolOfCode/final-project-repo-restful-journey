@@ -1,5 +1,10 @@
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+
 export function Logo() {
-  return (
+
+    return (
+    <Link to="/home">
     <svg
       width="90"
       height="20"
@@ -12,5 +17,6 @@ export function Logo() {
         fill="#22330B"
       />
     </svg>
-  );
+    </Link>
+  );  
 }
