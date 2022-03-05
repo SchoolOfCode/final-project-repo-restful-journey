@@ -1,8 +1,9 @@
 export const seasonQuotes = {
   spring: [
-    "The first blooms of spring always makes my heart sing",
-    "Spring is natures way of lets party!",
-    "To plant a garden is to believe in tomorrow.",
+    "On the first day of spring, a person at the North Pole would see the sun skimming across the horizon, beginning six months of uninterrupted daylight. A person at the South Pole would see the sun skimming across the horizon, signaling the start of six months of darkness.",
+    "Holidays that occur in spring include Easter, Passover, April Fool’s Day, Earth Day, Arbor Day, Mother’s Day, Father’s Day, Cinco De Mayo, and Holi (festival of colors in India).",
+    "The first spring flowers are typically dandelions, daffodils, lilacs, lilies, iris and tulips to name a few.",
+    "The first day of spring, the vernal equinox, has 12 hours of daylight and 12 hours of darkness.The term vernal is Latin for “spring” and equinox is Latin for “equal night.“",
   ],
 
   summer: [
