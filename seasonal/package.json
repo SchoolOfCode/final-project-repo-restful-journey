@@ -27,6 +27,7 @@
     "test home": "./src/components/Homepage/Homepage.test.js",
     "test ingredient": "./src/components/IngredientPage/IngredientPage.test.js",
     "test list": "./src/components/ShoppingList/ShoppingList.test.js",
+    "discover": "npx cypress run --spec cypress/integration/unauth_discover_user_journey.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^9.5.1"
   }
 }
