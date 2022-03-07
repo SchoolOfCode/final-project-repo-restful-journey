@@ -8,18 +8,14 @@ const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 function RecipePage({ user }) {
   const location = useLocation();
   const [list, setList] = useState([]);
-
   const [ingredient, setIngredient] = useState(null);
-
+  const [recipe, setRecipe] = useState(null);
+  const [favourites, setFavourites] = useState(null);
   const [userRecipeId, setUserRecipeId] = useState(
     location.state ? location.state.recipeId : null
   );
-  const [recipe, setRecipe] = useState(null);
+  
   let userId;
-
-  const email = 117441255094162799546;
-  const [favourites, setFavourites] = useState(null);
-
   if (user) {
     userId = user.sub.split("|")[1];
     console.log("id recipe", userId);
@@ -46,6 +42,7 @@ function RecipePage({ user }) {
   }
 
   function handleFavourites() {
+    console.log('clicked')
     setFavourites(recipe);
   }
 
@@ -57,7 +54,6 @@ function RecipePage({ user }) {
       );
       const data = await response.json();
       setRecipe(data);
-      console.log(recipe);
     }
     getRecipeById();
   }, [userRecipeId]);
@@ -65,17 +61,18 @@ function RecipePage({ user }) {
   useEffect(() => {
     async function addFavourite() {
       try {
+        if (favourites){
         const res = await fetch(`${api}/users/favourites`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: userId, recipe }),
-        });
+          body: JSON.stringify({ email: userId, recipe: JSON.stringify(recipe) }),
+        });}
       } catch (e) {
         console.log(e);
       }
     }
     addFavourite();
-  }, [userId, recipe]);
+  }, [userId, recipe, favourites]);
 
   if (recipe) {
     return (
