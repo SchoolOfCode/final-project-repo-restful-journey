@@ -62,7 +62,7 @@ function App() {
       className={css.App}
       data-testid="mainbox"
     >
-      <NavMenu />
+      <NavMenu cssSeason={cssSeason} />
       <Routes>
         <Route path="/" element={<LoginButton />} />
         <Route
@@ -76,7 +76,6 @@ function App() {
         <Route path="recipes" element={<RecipePage user={user} cssSeason={cssSeason} />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="shoppinglist" element={<ShoppingList user={user} />} />
-        <Route path="hamburger" element={<NavMenu />} />
         <Route path="about" element={<About cssSeason={cssSeason} />} />
       </Routes>
     </Box>

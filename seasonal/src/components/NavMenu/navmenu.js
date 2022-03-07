@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../../global";
 import { menuTheme } from "../../theme";
@@ -10,19 +10,18 @@ import { useOnClickOutside } from "../../hook";
 import css from "./navmenu.module.css";
 import { Link } from "react-router-dom";
 
-function NavMenu() {
+function NavMenu({ cssSeason }) {
   const [open, setOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
-  
 
   return (
-    <ThemeProvider theme={menuTheme}>
+    <ThemeProvider theme={menuTheme(cssSeason)}>
       <>
         <GlobalStyles />
         <div ref={node}>
           <div className={css.navdiv}>
-          <Logo />
+            <Logo />
           </div>
           <Burger open={open} setOpen={setOpen} />
         </div>

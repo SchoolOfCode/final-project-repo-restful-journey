@@ -153,20 +153,20 @@
 }
 
 .ingredientDetailswinter {
-  background-color: rgba(40, 190, 236, 0.5);
+  background-color: #d2e2ee;
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 5rem;
   margin: 1rem;
   border-radius: 10px;
-  border: 1.5px solid #0a0c8d;
+  border: 1.5px solid #3a5683;
   font-weight: bold;
   max-width: 100%;
   height: 100%;
 }
 
 .discoverwinter {
-  background-color: rgba(40, 190, 236, 0.5);
+  background-color: #d2e2ee;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
