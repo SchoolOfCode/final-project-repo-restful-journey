@@ -71,7 +71,7 @@ function App() {
         <Route path="search" element={<SearchPage />} />
         <Route path="shoppinglist" element={<ShoppingList user={user} />} />
         <Route path="hamburger" element={<NavMenu />} />
-        <Route path="about" element={<About />} />
+        <Route path="about" element={<About cssSeason={cssSeason} />} />
       </Routes>
     </Box>
   );
