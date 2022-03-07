@@ -29,7 +29,7 @@ async function postNewUser(newUser) {
 
 function App() {
   // const [id, setid] = useState(null);
-  const [cssSeason, setCssSeason] = useState("winter")
+  const [cssSeason, setCssSeason] = useState("winter");
   const { user, isAuthenticated } = useAuth0();
   let userId = "";
   if (user) {
@@ -65,8 +65,14 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path="/" element={<LoginButton />} />
-        <Route path="home/*" element={<Homepage user={user} cssSeason={cssSeason} />} />
-        <Route path="ingredients" element={<IngredientPage />} />
+        <Route
+          path="home/*"
+          element={<Homepage user={user} cssSeason={cssSeason} />}
+        />
+        <Route
+          path="ingredients"
+          element={<IngredientPage cssSeason={cssSeason} />}
+        />
         <Route path="recipes" element={<RecipePage user={user} />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="shoppinglist" element={<ShoppingList user={user} />} />
