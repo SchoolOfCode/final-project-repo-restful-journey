@@ -60,13 +60,12 @@
   text-align: center;
   margin: 5%;
   padding: 5%;
-
   font-weight: bold;
 }
 
 .discover {
   background-color: rgba(172, 243, 157, 0.5);
-  border-radius:10px;
+  border-radius: 10px;
   padding: 1rem;
   text-align: center;
   margin-top: 1.5rem;

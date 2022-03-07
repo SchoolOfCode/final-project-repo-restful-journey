@@ -14,7 +14,7 @@ function RecipePage({ user }) {
   const [userRecipeId, setUserRecipeId] = useState(
     location.state ? location.state.recipeId : null
   );
-  
+
   let userId;
   if (user) {
     userId = user.sub.split("|")[1];
@@ -24,7 +24,7 @@ function RecipePage({ user }) {
   useEffect(() => {
     async function addIngredient() {
       try {
-        const res = await fetch(`${api}/users/add`, {
+        await fetch(`${api}/users/add`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: userId, item: ingredient.item }),
@@ -42,7 +42,7 @@ function RecipePage({ user }) {
   }
 
   function handleFavourites() {
-    console.log('clicked')
+    console.log("clicked");
     setFavourites(recipe);
   }
 
@@ -58,15 +58,20 @@ function RecipePage({ user }) {
     getRecipeById();
   }, [userRecipeId]);
 
+  //fetch favourite recipes
   useEffect(() => {
     async function addFavourite() {
       try {
-        if (favourites){
-        const res = await fetch(`${api}/users/favourites`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: userId, recipe: JSON.stringify(recipe) }),
-        });}
+        if (favourites) {
+          const res = await fetch(`${api}/users/favourites`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: userId,
+              recipe: JSON.stringify(recipe),
+            }),
+          });
+        }
       } catch (e) {
         console.log(e);
       }
