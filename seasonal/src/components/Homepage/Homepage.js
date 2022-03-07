@@ -5,6 +5,7 @@ import { seasonQuotes, getSeason } from "../../libs/seasonalData.js";
 import { useState, useEffect } from "react";
 import Slider from "../Slider/slider.js";
 import css from "./Homepage.module.css";
+import { Select } from "@chakra-ui/react";
 
 const season = getSeason();
 const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length);
@@ -23,7 +24,7 @@ function filterVegetables(array, boolean) {
   return vegetables;
 }
 
-function Homepage({ user, cssSeason }) {
+function Homepage({ user, cssSeason, handleSeason }) {
   const [ingredient, setIngredient] = useState(null);
   const [vegetables, setVegetables] = useState([]);
   const [fruit, setFruit] = useState([]);
@@ -62,6 +63,16 @@ function Homepage({ user, cssSeason }) {
           <h1 className={css[`hello${cssSeason}`]}>
             Hello {user ? user.nickname : "guest"}! 👋🏼
           </h1>
+          <Select
+            onChange={handleSeason}
+            placeholder="What season are you interested in?"
+            size="sm"
+          >
+            <option value="summer">Summer ☀️</option>
+            <option value="autumn">Autumn 🍂</option>
+            <option value="winter">Winter ❄️</option>
+            <option value="spring">Spring 🌱</option>
+          </Select>
           <br />
           <h2>{seasonQuotes[season][randomNumber]}</h2>
         </div>
