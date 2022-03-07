@@ -5,7 +5,7 @@ import css from "./RecipePage.module.css";
 const api = process.env.REACT_APP_API_CALL;
 const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 
-function RecipePage({ user }) {
+function RecipePage({ user, cssSeason }) {
   const location = useLocation();
   const [list, setList] = useState([]);
 
@@ -58,31 +58,31 @@ function RecipePage({ user }) {
     return (
       <>
         <div>
-          <img className={css.img} src={recipe.image} alt={recipe.title} />
+          <img className={css[`img${cssSeason}`]} src={recipe.image} alt={recipe.title} />
         </div>
         <div>
-          <h1 className={css.title}>{recipe.title}</h1>
+          <h1 className={css[`title${cssSeason}`]}>{recipe.title}</h1>
         </div>
-        <div className={css.recipeInfo}>
+        <div className={css[`recipeinfo${cssSeason}`]}>
           <div>
-            <p className={css.duration}>{recipe.readyInMinutes} minutes</p>
+            <p className={css[`duration${cssSeason}`]}>{recipe.readyInMinutes} minutes</p>
           </div>
           <div>
-            <p className={css.servings}>{recipe.servings} servings</p>
+            <p className={css[`servings${cssSeason}`]}>{recipe.servings} servings</p>
           </div>
         </div>
         <div>
           <div>
-            <p className={css.ingredients}>Ingredients</p>
+            <p className={css[`ingredients${cssSeason}`]}>Ingredients</p>
           </div>
           <div>
             <ul>
               {recipe.extendedIngredients.map((ingredient, i) => {
                 return (
-                  <div className={css.listContainer} key={ingredient.name}>
+                  <div className={css[`listContainer${cssSeason}`]} key={ingredient.name}>
                     <li>{ingredient.original}</li>
                     <button
-                      className={css.addBtn}
+                      className={css[`addBtn${cssSeason}`]}
                       onClick={() => handleClick(ingredient.original)}
                     >
                       <i class="fa-solid fa-plus"></i>
@@ -93,19 +93,19 @@ function RecipePage({ user }) {
             </ul>
           </div>
         </div>
-        <div className={css.shoppingListLink}>
+        <div className={css[`shoppingListLink${cssSeason}`]}>
           <Link to="/shoppinglist">
-            <p className={css.link}>Go to your Shopping list</p>
+            <p className={css[`link${cssSeason}`]}>Go to your Shopping list</p>
             <i class="fa-solid fa-cart-shopping"></i>
           </Link>
         </div>
         <div>
-          <p className={css.instructions}>Instructions</p>
+          <p className={css[`instructions${cssSeason}`]}>Instructions</p>
           <ul>
             {recipe.analyzedInstructions[0].steps.map((x, i) => {
               return (
                 <div key={i}>
-                  <li className={css.recipeSteps}>{x.step}</li>
+                  <li className={css[`recipeSteps${cssSeason}`]}>{x.step}</li>
                 </div>
               );
             })}
@@ -116,8 +116,8 @@ function RecipePage({ user }) {
   } else {
     return (
       <div>
-        <p className={css.noRecipe}>No recipe selected.</p>
-        <p className={css.linkToHome}>
+        <p className={css[`noRecipe${cssSeason}`]}>No recipe selected.</p>
+        <p className={css[`linkToHome${cssSeason}`]}>
           Check the <Link to="/home">home</Link> page for some inspiration!
         </p>
       </div>
