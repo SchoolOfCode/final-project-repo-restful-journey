@@ -1,88 +1,109 @@
-.aboutUssspring {
-    font-weight: bold;
-    margin-top: 100px;
-    font-size: 40px;
-    color:#22330B;
+.aboutUsspring {
+font-weight: bold;
+margin-top: 100px;
+font-size: 40px;
+padding: 20px;
 }
+
+.textspring {
+    
+font-size: 14px;
+display: flex;
+font-weight: bold;
+justify-content: center;
+padding: 5px;
+text-align: center;
+background-color: rgba(172, 243, 157, 0.5);
+border-radius: 10px;
+margin: 1rem;
+padding: 1rem;
+margin-top: 5rem;
+};
+
 .image {
-    display:flex;
-    justify-content: center;
-    border: solid;
-    border-radius: 5px;
-    border-color: white;
-     height: auto;
-     width:auto;
-     padding: 5px;
+display:flex;
+justify-content: center;
+border: solid;
+border-radius:10px;
+border-color: white;
+height: auto;
+width:auto;
+padding: 5px;
+margin-top:50px;
      
 }
 /* summer */
 
-.aboutUsssummer {
-    font-weight: bold;
-    margin-top: 100px;
-    font-size: 40px;
+.aboutUssummer {
+font-weight: bold;
+margin-top: 100px;
+font-size: 40px;
+padding: 20px;
     
 }
 
 .textsummer {
     
-    font-size: 14px;
-    display: flex;
-    font-weight: bold;
-    justify-content: center;
-    padding: 5px;
-    text-align: center;
-    background-color: #F7ECA1;
-    border-radius: 10px;
-    margin: 1rem;
-    padding: 1rem;
-    margin-top: 5rem;
-    };
+font-size: 14px;
+display: flex;
+font-weight: bold;
+justify-content: center;
+padding: 5px;
+text-align: center;
+background-color: #F7ECA1;
+border-radius: 10px;
+margin: 1rem;
+padding: 1rem;
+margin-top: 5rem;
+};
 
     /* autumn */
-    .aboutUsautumn {
-        font-weight: bold;
-        margin-top: 100px;
-        font-size: 40px;
+.aboutUsautumn {
+font-weight: bold;
+margin-top: 100px;
+font-size: 40px;
+padding: 20px;
        
-    }
+}
 
-    .textautumn {
+.textautumn {
         
-        font-size: 14px;
-        display: flex;
-        font-weight: bold;
-        justify-content: center;
-        padding: 5px;
-        text-align: center;
-        background-color: #EDCDC0;
-        border-radius: 10px;
-        margin: 1rem;
-        padding: 1rem;
-        margin-top: 5rem;
-        };
+font-size: 14px;
+display: flex;
+font-weight: bold;
+justify-content: center;
+padding: 5px;
+text-align: center;
+background-color: #EDCDC0;
+border-radius: 10px;
+margin: 1rem;
+padding: 1rem;
+margin-top: 5rem;
+};
 
         /* winter */
-        .aboutUswinter {
-            font-weight: bold;
-            margin-top: 100px;
-            font-size: 40px;
-            color:#22330B;
-        }
-        .textwinter {
-            color: #3A5683;
-            font-size: 14px;
-            display: flex;
-            font-weight: bold;
-            justify-content: center;
-            padding: 5px;
-            text-align: center;
-            background-color: #D2E2EE;
-            border-radius: 10px;
-            margin: 1rem;
-            padding: 1rem;
-            margin-top: 5rem;
-            };
+.aboutUswinter {
+font-weight: bold;
+margin-top: 100px;
+font-size: 40px;
+padding: 20px;
+            
+}
+        
+.textwinter {
+color: #3A5683;
+font-size: 14px;
+display: flex;
+font-weight: bold;
+justify-content: center;
+padding: 5px;
+text-align: center;
+background-color: #D2E2EE;
+border-radius: 10px;
+margin: 1rem;
+padding: 1rem;
+margin-top: 5rem;
+};
 
             
 

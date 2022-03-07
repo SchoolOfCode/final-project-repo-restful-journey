@@ -15,7 +15,7 @@ export function About ({cssSeason}) {
 
 <div>
 <h1 className={css[`aboutUs${cssSeason}`]}>About Us</h1>
-<img className={css[`image${cssSeason}`]} src={require("../../Images/image.png")} alt="four seasons tree" />
+<img className={css.image} src={require("../../Images/image.png")} alt="four seasons tree" />
 <p className={css[`text${cssSeason}`]}>Eating seasonally means eating food that's naturally ripe and ready for harvest in your local area at the time, 
 instead of imported foods from different climates around the world. Eating organic, seasonal food, or food that you've 
 grown at home can make a large difference in cutting down your food miles, helping to make your diet more sustainable and
