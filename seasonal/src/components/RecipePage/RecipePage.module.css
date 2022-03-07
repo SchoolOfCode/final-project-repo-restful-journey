@@ -91,14 +91,14 @@
 /* summer */
 
 .addBtnsummer {
-  color: green;
+  color: #e2c350;
 }
 
 .listContainersummer {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  background-color: #acf39d;
+  background-color: #f7eca1;
   margin: 2rem;
   list-style: none;
   border-radius: 5px;
@@ -107,14 +107,14 @@
 
 .durationsummer,
 .servingssummer {
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #f7eca1;
   border-radius: 5px;
   margin: 1rem;
   padding: 1rem;
 }
 
 .shoppingListLinksummer {
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #f7eca1;
   border-radius: 5px;
   padding: 1rem;
   text-align: center;
@@ -126,20 +126,20 @@
 .linkToHomesummer {
   display: flex;
   justify-content: center;
-  background-color: #acf39d;
+  background-color: #f7eca1;
   padding: 1.5rem;
 }
 
 /* autumn */
 .addBtnautumn {
-  color: green;
+  color: #b7410e;
 }
 
 .listContainerautumn {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  background-color: #acf39d;
+  background-color: #edcdc0;
   margin: 2rem;
   list-style: none;
   border-radius: 5px;
@@ -148,14 +148,14 @@
 
 .durationautumn,
 .servingsautumn {
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #edcdc0;
   border-radius: 5px;
   margin: 1rem;
   padding: 1rem;
 }
 
 .shoppingListLinkautumn {
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #edcdc0;
   border-radius: 5px;
   padding: 1rem;
   text-align: center;
@@ -167,21 +167,21 @@
 .linkToHomeautumn {
   display: flex;
   justify-content: center;
-  background-color: #acf39d;
+  background-color: #edcdc0;
   padding: 1.5rem;
 }
 
 /* winter */
 
 .addBtnwinter {
-  color: #3A5683;
+  color: #3a5683;
 }
 
 .listContainerwinter {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  background-color: #D2E2EE;
+  background-color: #d2e2ee;
   margin: 2rem;
   list-style: none;
   border-radius: 5px;
@@ -190,14 +190,14 @@
 
 .durationwinter,
 .servingswinter {
-  background-color: #D2E2EE;
+  background-color: #d2e2ee;
   border-radius: 5px;
   margin: 1rem;
   padding: 1rem;
 }
 
 .shoppingListLinkwinter {
-  background-color: #D2E2EE;
+  background-color: #d2e2ee;
   border-radius: 5px;
   padding: 1rem;
   text-align: center;
@@ -209,6 +209,6 @@
 .linkToHomewinter {
   display: flex;
   justify-content: center;
-  background-color: #D2E2EE;
+  background-color: #d2e2ee;
   padding: 1.5rem;
 }

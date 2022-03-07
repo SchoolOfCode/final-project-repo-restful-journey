@@ -25,7 +25,7 @@ export function menuTheme(season) {
  else if (season === "summer") {
   return {
     primaryDark: "#F4F3ED",
-    primaryLight: "#D36D4A",
+    primaryLight: "#FD6A02",
     primaryHover: "#F7ECA1",
     mobile: "576px",
   };
