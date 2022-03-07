@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 import Slider from "../Slider/slider.js";
 import css from "./Homepage.module.css";
 
-
-
 const season = getSeason();
 const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length);
 // console.log(randomNumber);
@@ -25,15 +23,16 @@ function filterVegetables(array, boolean) {
   return vegetables;
 }
 
-function Homepage({user, cssSeason}) {
+function Homepage({ user, cssSeason }) {
   const [ingredient, setIngredient] = useState(null);
   const [vegetables, setVegetables] = useState([]);
   const [fruit, setFruit] = useState([]);
-  
+
+  console.log(`Season determined from app level ${cssSeason}`);
 
   const [data] = useFetch(`${api}/ingredients/season/${season}`);
   console.log(data);
-  console.log(getSeason());
+  console.log(`Season determined from actual date ${getSeason()}`);
 
   function handleClick(e) {
     setIngredient(e.target.alt);
@@ -58,12 +57,11 @@ function Homepage({user, cssSeason}) {
   if (data) {
     return (
       <>
-
-        <h1 data-testid="homepageDate" className={css.date}>
-          
-        </h1>
+        <h1 data-testid="homepageDate" className={css.date}></h1>
         <div className={css[`greeting${cssSeason}`]}>
-          <h1 className={css[`hello${cssSeason}`]}>Hello {user ? user.nickname : 'guest'}! 👋🏼</h1>
+          <h1 className={css[`hello${cssSeason}`]}>
+            Hello {user ? user.nickname : "guest"}! 👋🏼
+          </h1>
           <br />
           <h2>{seasonQuotes[season][randomNumber]}</h2>
         </div>
