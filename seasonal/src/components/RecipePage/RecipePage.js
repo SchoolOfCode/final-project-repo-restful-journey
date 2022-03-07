@@ -58,12 +58,12 @@ function RecipePage({ user, cssSeason }) {
     return (
       <>
         <div>
-          <img className={css[`img${cssSeason}`]} src={recipe.image} alt={recipe.title} />
+          <img className={css.img} src={recipe.image} alt={recipe.title} />
         </div>
         <div>
-          <h1 className={css[`title${cssSeason}`]}>{recipe.title}</h1>
+          <h1 className={css.title}>{recipe.title}</h1>
         </div>
-        <div className={css[`recipeinfo${cssSeason}`]}>
+        <div className={css.recipeInfo}>
           <div>
             <p className={css[`duration${cssSeason}`]}>{recipe.readyInMinutes} minutes</p>
           </div>
@@ -73,7 +73,7 @@ function RecipePage({ user, cssSeason }) {
         </div>
         <div>
           <div>
-            <p className={css[`ingredients${cssSeason}`]}>Ingredients</p>
+            <p className={css.ingredients}>Ingredients</p>
           </div>
           <div>
             <ul>
@@ -95,17 +95,17 @@ function RecipePage({ user, cssSeason }) {
         </div>
         <div className={css[`shoppingListLink${cssSeason}`]}>
           <Link to="/shoppinglist">
-            <p className={css[`link${cssSeason}`]}>Go to your Shopping list</p>
+            <p className={css.link}>Go to your Shopping list</p>
             <i class="fa-solid fa-cart-shopping"></i>
           </Link>
         </div>
         <div>
-          <p className={css[`instructions${cssSeason}`]}>Instructions</p>
+          <p className={css.instructions}>Instructions</p>
           <ul>
             {recipe.analyzedInstructions[0].steps.map((x, i) => {
               return (
                 <div key={i}>
-                  <li className={css[`recipeSteps${cssSeason}`]}>{x.step}</li>
+                  <li className={css.recipeSteps}>{x.step}</li>
                 </div>
               );
             })}
