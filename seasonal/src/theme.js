@@ -17,17 +17,20 @@ export function menuTheme(season) {
   } else if (season === "autumn") {
     return {
       primaryDark: "#F4F3ED",
-      primaryLight: "#D36D4A",
-      primaryHover: "#F0E8A8",
+      primaryLight: "#B7410E",
+      primaryHover: "#D48D6E",
       mobile: "576px",
     };
   }
+ else if (season === "summer") {
+  return {
+    primaryDark: "#F4F3ED",
+    primaryLight: "#D36D4A",
+    primaryHover: "#F7ECA1",
+    mobile: "576px",
+  };
+}
 }
 
-// if(themeSeason === "spring"){
-// {
-//   primaryDark: "#F4F3ED",
-//   primaryLight: "#22330B",
-//   primaryHover: "#ACF39D",
-//   mobile: "576px",
-// }}
+
+

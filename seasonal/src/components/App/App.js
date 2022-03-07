@@ -29,7 +29,7 @@ async function postNewUser(newUser) {
 
 function App() {
   // const [id, setid] = useState(null);
-  const [cssSeason, setCssSeason] = useState("winter");
+  const [cssSeason, setCssSeason] = useState("summer");
   const { user, isAuthenticated } = useAuth0();
   let userId = "";
   if (user) {

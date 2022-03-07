@@ -115,7 +115,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #F7ECA1;
   padding: 1.5rem;
   border-radius: 10px;
   font-weight: bold;
@@ -125,7 +125,7 @@
 }
 
 .infosummer {
-  border: 3.5px solid rgba(172, 243, 157, 0.5);
+  border: 3.5px solid #F7ECA1;
   border-radius: 10px;
   margin: 0 1rem;
   margin-bottom: 1.5rem;
@@ -134,7 +134,7 @@
 
 .typesummer {
   font-weight: bold;
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #F7ECA1;
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
@@ -146,7 +146,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #acf39d;
+  background: #F7ECA1;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
@@ -156,7 +156,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #EDCDC0;
   padding: 1.5rem;
   border-radius: 10px;
   font-weight: bold;
@@ -166,7 +166,7 @@
 }
 
 .infoautumn {
-  border: 3.5px solid rgba(172, 243, 157, 0.5);
+  border: 3.5px solid #B7410E;
   border-radius: 10px;
   margin: 0 1rem;
   margin-bottom: 1.5rem;
@@ -175,7 +175,7 @@
 
 .typeautumn {
   font-weight: bold;
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #EDCDC0;
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
@@ -187,7 +187,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #acf39d;
+  background: #EDCDC0;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
