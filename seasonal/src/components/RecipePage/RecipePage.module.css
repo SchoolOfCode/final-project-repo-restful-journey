@@ -132,14 +132,14 @@
 
 /* autumn */
 .addBtnautumn {
-  color: green;
+  color: #b7410e;
 }
 
 .listContainerautumn {
   display: flex;
   justify-content: space-between;
   text-align: left;
-  background-color: #acf39d;
+  background-color: #edcdc0;
   margin: 2rem;
   list-style: none;
   border-radius: 5px;
@@ -148,14 +148,14 @@
 
 .durationautumn,
 .servingsautumn {
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #edcdc0;
   border-radius: 5px;
   margin: 1rem;
   padding: 1rem;
 }
 
 .shoppingListLinkautumn {
-  background-color: rgba(172, 243, 157, 0.5);
+  background-color: #edcdc0;
   border-radius: 5px;
   padding: 1rem;
   text-align: center;
@@ -167,7 +167,7 @@
 .linkToHomeautumn {
   display: flex;
   justify-content: center;
-  background-color: #acf39d;
+  background-color: #edcdc0;
   padding: 1.5rem;
 }
 
