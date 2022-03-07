@@ -73,9 +73,15 @@ function App() {
           path="ingredients"
           element={<IngredientPage cssSeason={cssSeason} />}
         />
-        <Route path="recipes" element={<RecipePage user={user} cssSeason={cssSeason} />} />
+        <Route
+          path="recipes"
+          element={<RecipePage user={user} cssSeason={cssSeason} />}
+        />
         <Route path="search" element={<SearchPage />} />
-        <Route path="shoppinglist" element={<ShoppingList user={user} />} />
+        <Route
+          path="shoppinglist"
+          element={<ShoppingList user={user} cssSeason={cssSeason} />}
+        />
         <Route path="about" element={<About cssSeason={cssSeason} />} />
       </Routes>
     </Box>
