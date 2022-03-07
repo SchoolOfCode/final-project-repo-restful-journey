@@ -10,12 +10,15 @@ function RecipePage({ user }) {
   const [list, setList] = useState([]);
 
   const [ingredient, setIngredient] = useState(null);
-  const userName = "Antony";
+
   const [userRecipeId, setUserRecipeId] = useState(
     location.state ? location.state.recipeId : null
   );
   const [recipe, setRecipe] = useState(null);
   let userId;
+
+  const email = 117441255094162799546;
+  const [favourites, setFavourites] = useState(null);
 
   if (user) {
     userId = user.sub.split("|")[1];
@@ -42,6 +45,10 @@ function RecipePage({ user }) {
     setList([...list, ingredient]);
   }
 
+  function handleFavourites() {
+    setFavourites(recipe);
+  }
+
   //fetch recipe detailed info
   useEffect(() => {
     async function getRecipeById() {
@@ -50,15 +57,32 @@ function RecipePage({ user }) {
       );
       const data = await response.json();
       setRecipe(data);
+      console.log(recipe);
     }
     getRecipeById();
   }, [userRecipeId]);
+
+  useEffect(() => {
+    async function addFavourite() {
+      try {
+        const res = await fetch(`${api}/users/favourites`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: userId, recipe }),
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    addFavourite();
+  }, [userId, recipe]);
 
   if (recipe) {
     return (
       <>
         <div>
           <img className={css.img} src={recipe.image} alt={recipe.title} />
+          <button onClick={handleFavourites}>❤️</button>
         </div>
         <div>
           <h1 className={css.title}>{recipe.title}</h1>

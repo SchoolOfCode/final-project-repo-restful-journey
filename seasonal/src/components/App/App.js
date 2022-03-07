@@ -7,6 +7,7 @@ import SearchPage from "../SearchPage/SearchPage.js";
 import ShoppingList from "../ShoppingList/ShoppingList.js";
 import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
+import Favourites from "../Favourites/favourites";
 import { About } from "../About/about.js";
 import { Box } from "@chakra-ui/react";
 import { Logo } from "../logo/logo.js";
@@ -42,7 +43,7 @@ function App() {
       const newUser = {
         username: user.nickname,
         email: userId,
-        favourites: [],
+        favourites: JSON.stringify([]),
         list: [],
       };
       postNewUser(newUser);
@@ -71,6 +72,7 @@ function App() {
         <Route path="shoppinglist" element={<ShoppingList user={user} />} />
         <Route path="hamburger" element={<NavMenu />} />
         <Route path="about" element={<About />} />
+        <Route path="favourites" element={<Favourites />} />
       </Routes>
     </Box>
   );
