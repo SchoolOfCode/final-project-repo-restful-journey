@@ -11,7 +11,7 @@ import { About } from "../About/about.js";
 import { Box } from "@chakra-ui/react";
 import { Logo } from "../logo/logo.js";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 async function postNewUser(newUser) {
   const requestOptions = {
@@ -29,6 +29,7 @@ async function postNewUser(newUser) {
 
 function App() {
   // const [id, setid] = useState(null);
+  const [cssSeason, setCssSeason] = useState("winter")
   const { user, isAuthenticated } = useAuth0();
   let userId = "";
   if (user) {
@@ -64,7 +65,7 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path="/" element={<LoginButton />} />
-        <Route path="home/*" element={<Homepage user={user} />} />
+        <Route path="home/*" element={<Homepage user={user} cssSeason={cssSeason} />} />
         <Route path="ingredients" element={<IngredientPage />} />
         <Route path="recipes" element={<RecipePage user={user} />} />
         <Route path="search" element={<SearchPage />} />
