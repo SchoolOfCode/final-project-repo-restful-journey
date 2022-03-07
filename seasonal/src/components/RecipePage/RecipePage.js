@@ -18,7 +18,7 @@ function RecipePage({ user }) {
   let userId;
   if (user) {
     userId = user.sub.split("|")[1];
-    console.log("id recipe", userId);
+    console.log("User id", userId);
   }
 
   useEffect(() => {

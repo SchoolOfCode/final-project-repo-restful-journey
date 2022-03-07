@@ -29,13 +29,10 @@ async function postNewUser(newUser) {
 }
 
 function App() {
-  // const [id, setid] = useState(null);
   const { user, isAuthenticated } = useAuth0();
   let userId = "";
   if (user) {
     userId = user.sub.split("|")[1];
-
-    // setid(userId)
   }
 
   useEffect(() => {
@@ -72,7 +69,7 @@ function App() {
         <Route path="shoppinglist" element={<ShoppingList user={user} />} />
         <Route path="hamburger" element={<NavMenu />} />
         <Route path="about" element={<About />} />
-        <Route path="favourites" element={<Favourites />} />
+        <Route path="favourites" element={<Favourites user={user}/>} />
       </Routes>
     </Box>
   );
