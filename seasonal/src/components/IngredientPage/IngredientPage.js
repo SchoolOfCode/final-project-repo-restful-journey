@@ -69,7 +69,7 @@ function IngredientPage() {
           })}
       </div>
       <Link to="/search" state={{ recipes, ingredientName }}>
-        <h3 data-testid="discover">
+        <h3 data-testid="discover" className="discover">
           Discover more {ingredient.name} recipes here!
         </h3>
       </Link>

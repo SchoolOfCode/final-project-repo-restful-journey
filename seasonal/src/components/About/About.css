@@ -4,6 +4,17 @@
     font-size: 40px;
     color:#22330B;
 }
+.image {
+    display:flex;
+    justify-content: center;
+    border: solid;
+    border-radius: 5px;
+    border-color: white;
+     height: auto;
+     width:auto;
+     padding: 5px;
+     
+}
 
 
 .text {
