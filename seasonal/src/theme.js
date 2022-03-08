@@ -3,7 +3,7 @@ export function menuTheme(season) {
   if (season === "spring") {
     return {
       primaryDark: "#F4F3ED",
-      primaryLight: "#22330B",
+      primaryLight: "#435E3E",
       primaryHover: "#ACF39D",
       mobile: "576px",
     };
@@ -21,16 +21,12 @@ export function menuTheme(season) {
       primaryHover: "#D48D6E",
       mobile: "576px",
     };
+  } else if (season === "summer") {
+    return {
+      primaryDark: "#F4F3ED",
+      primaryLight: "#F05E23",
+      primaryHover: "#F7ECA1",
+      mobile: "576px",
+    };
   }
- else if (season === "summer") {
-  return {
-    primaryDark: "#F4F3ED",
-    primaryLight: "#F05E23",
-    primaryHover: "#F7ECA1",
-    mobile: "576px",
-  };
 }
-}
-
-
-
