@@ -34,7 +34,8 @@ async function postNewUser(newUser) {
 
 function App() {
   // const [id, setid] = useState(null);
-  const [cssSeason, setCssSeason] = useState(season);
+  const savedSeason = localStorage.getItem("localSeason")
+  const [cssSeason, setCssSeason] = useState(savedSeason ? savedSeason: season);
   const { user, isAuthenticated } = useAuth0();
   let userId = "";
   if (user) {
@@ -47,6 +48,12 @@ function App() {
     setCssSeason(e);
     console.log(cssSeason);
   }
+
+useEffect(() => {
+  if (cssSeason) {
+    localStorage.setItem("localSeason", cssSeason)
+  }
+},[cssSeason])
 
   useEffect(() => {
     if (isAuthenticated) {
