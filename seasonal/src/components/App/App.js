@@ -28,11 +28,14 @@ async function postNewUser(newUser) {
   console.log(data);
 }
 
+
 function App() {
   const { user, isAuthenticated } = useAuth0();
   let userId = "";
   if (user) {
     userId = user.sub.split("|")[1];
+    localStorage.setItem('userId', userId);
+
   }
 
   useEffect(() => {

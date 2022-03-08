@@ -8,19 +8,19 @@ import css from "./favourites.module.css";
 const api = process.env.REACT_APP_API_CALL;
 
 function Favourites({user}) {
-  const id = "117441255094162799546";
+  // const id = "117441255094162799546";
+  const id = localStorage.getItem("userId")
   const url = `${api}/users/favourites/${id}`;
 
   const [favourites, setFavourites] = useState(null);
   const [data] = useFetch(`${url}`);
   const [recipe, setRecipe] = useState(null);
-
+  
   // let userId;
   // if (user) {
   //   userId = user.sub.split("|")[1];
   //   console.log("id recipe", userId);
   // }
-  console.log('user', user)
   useEffect(() => {
     if (data) {
       setFavourites(data.payload[0].favourites);
