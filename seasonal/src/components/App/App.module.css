@@ -6,8 +6,9 @@
   flex-wrap: wrap;
   width: 1000px;
   justify-content: center;
-  font-family: "DM Serif Display", serif;
-}
+
+  font-family: "Roboto Slab", serif;
+ }
 
 .topMenu {
   display: flex;
