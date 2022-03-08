@@ -109,6 +109,7 @@ useEffect(() => {
         
           
         <Route path="about" element={<About cssSeason={cssSeason} />} />
+        <Route path="logout" element={<About cssSeason={cssSeason} />} />
       </Routes>
     </Box>
   );
