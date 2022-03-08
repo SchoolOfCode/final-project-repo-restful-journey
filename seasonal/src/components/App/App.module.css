@@ -6,9 +6,13 @@
   flex-wrap: wrap;
   width: 1000px;
   justify-content: center;
+  font-family: "DM Serif Display", serif;
+}
 
-  font-family: "Roboto Slab", serif;
- }
+h2,
+li {
+  font-family: "Quando", serif;
+}
 
 .topMenu {
   display: flex;

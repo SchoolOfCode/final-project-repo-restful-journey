@@ -3,7 +3,7 @@
 .heading {
   font-weight: bold;
   text-align: left;
-  margin-top: 5rem;
+  margin-top: 5.5rem;
 }
 
 .input {
@@ -19,7 +19,7 @@
   justify-content: space-between;
   text-align: left;
   background-color: rgba(172, 243, 157, 0.5);
-  margin: 1rem;
+  margin: 2rem;
   list-style: none;
   border-radius: 5px;
   padding: 0.5rem;
@@ -30,7 +30,7 @@
 }
 
 .deleteBtn {
-  color: red;
+  color: rgba(255, 0, 0, 0.555);
   width: 2rem;
   height: 2rem;
   font-size: 1rem;
@@ -114,7 +114,7 @@
   justify-content: space-between;
   text-align: left;
   background-color: #d2e2ee;
-  margin: 1rem;
+  margin: 2rem;
   list-style: none;
   border-radius: 5px;
   padding: 0.5rem;
@@ -151,7 +151,7 @@
   justify-content: space-between;
   text-align: left;
   background-color: #edcdc0;
-  margin: 1rem;
+  margin: 2rem;
   list-style: none;
   border-radius: 5px;
   padding: 0.5rem;
@@ -188,7 +188,7 @@
   justify-content: space-between;
   text-align: left;
   background-color: #f7eca1;
-  margin: 1rem;
+  margin: 2rem;
   list-style: none;
   border-radius: 5px;
   padding: 0.5rem;

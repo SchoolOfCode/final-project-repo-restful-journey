@@ -1,6 +1,7 @@
 /* spring */
 
 .ingredientTitlespring {
+  background-color: rgba(255, 255, 255, 0.479);
   margin-top: 5rem;
   font-weight: bold;
   font-size: 24px;
@@ -21,10 +22,25 @@
   margin-bottom: 5rem;
   margin: 1rem;
   border-radius: 10px;
-  border: 1.5px solid #22330b;
+  border: 1.5px solid rgb(67, 94, 62);
   font-weight: bold;
   max-width: 100%;
   height: 100%;
+}
+
+.hrspring {
+  border: 2px solid rgb(67, 94, 62);
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.factspring {
+  background-color: rgba(171, 243, 157, 0.205);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .imageContainer {
@@ -80,6 +96,7 @@
 /* summer */
 
 .ingredientTitlesummer {
+  background-color: rgba(255, 255, 255, 0.479);
   margin-top: 5rem;
   font-weight: bold;
   font-size: 24px;
@@ -87,16 +104,31 @@
 }
 
 .ingredientDetailssummer {
-  background-color: #f7eca1;
+  background-color: rgb(247, 236, 161);
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 5rem;
   margin: 1rem;
   border-radius: 10px;
-  border: 1.5px solid #e2c350;
+  border: 1.5px solid rgb(226, 195, 80);
   font-weight: bold;
   max-width: 100%;
   height: 100%;
+}
+
+.hrsummer {
+  border: 2px solid rgb(226, 195, 80);
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.factsummer {
+  background-color: rgba(247, 236, 161, 0.267);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .discoversummer {
@@ -113,6 +145,7 @@
 /* autumn */
 
 .ingredientTitleautumn {
+  background-color: rgba(255, 255, 255, 0.479);
   margin-top: 5rem;
   font-weight: bold;
   font-size: 24px;
@@ -120,20 +153,35 @@
 }
 
 .ingredientDetailsautumn {
-  background-color: #EDCDC0;
+  background-color: rgb(237, 205, 192);
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 5rem;
   margin: 1rem;
   border-radius: 10px;
-  border: 1.5px solid #B7410E;
+  border: 1.5px solid rgb(183, 65, 14);
   font-weight: bold;
   max-width: 100%;
   height: 100%;
 }
 
+.hrautumn {
+  border: 2px solid rgb(183, 65, 14);
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.factautumn {
+  background-color: rgba(237, 205, 192, 0.24);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
 .discoverautumn {
-  background-color: #EDCDC0;
+  background-color: #edcdc0;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
@@ -146,6 +194,7 @@
 /* winter */
 
 .ingredientTitlewinter {
+  background-color: rgba(255, 255, 255, 0.479);
   margin-top: 5rem;
   font-weight: bold;
   font-size: 24px;
@@ -153,16 +202,31 @@
 }
 
 .ingredientDetailswinter {
-  background-color: #d2e2ee;
+  background-color: rgb(210, 226, 238);
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 5rem;
   margin: 1rem;
   border-radius: 10px;
-  border: 1.5px solid #3a5683;
+  border: 1.5px solid rgb(58, 86, 131);
   font-weight: bold;
   max-width: 100%;
   height: 100%;
+}
+
+.hrwinter {
+  border: 2px solid rgb(58, 86, 131);
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.factwinter {
+  background-color: rgba(210, 226, 238, 0.212);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .discoverwinter {

@@ -43,7 +43,7 @@ function RecipePage({ user, cssSeason }) {
   }
 
   function handleRecipe(e, x) {
-    e.target.innerHTML = `${x.step} 👍`;
+    e.target.innerHTML = `${x.step} `;
   }
 
   function handleFavourites() {
@@ -86,14 +86,17 @@ function RecipePage({ user, cssSeason }) {
   if (recipe) {
     return (
       <>
-        <div >
+        <div>
           <img className={css.img} src={recipe.image} alt={recipe.title} />
-          <div className={css.favouriteHeart} >
-            <i  onClick={handleFavourites} className={favourites ? css.liked : css.heart}></i>
+          <div className={css.favouriteHeart}>
+            <i
+              onClick={handleFavourites}
+              className={favourites ? css.liked : css.heart}
+            ></i>
           </div>
         </div>
         <div>
-          <h1 className={css.title}>{recipe.title}</h1>
+          <h1 className={css.title}>- {recipe.title} -</h1>
         </div>
         <div className={css.recipeInfo}>
           <div>

@@ -15,8 +15,6 @@ const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length);
 //test api used for testing useFetch custom hook. Will be replaced with ingredients back end.
 const api = process.env.REACT_APP_API_CALL;
 
-const date = new Date();
-
 // This function filters the fruit and vegetables, so they can be displayed seperately on the homepage
 function filterVegetables(array, boolean) {
   const vegetables = array.filter((item) => {
@@ -59,10 +57,9 @@ function Homepage({ user, cssSeason, handleSeason }) {
   if (data) {
     return (
       <>
-        <h1 data-testid="homepageDate" className={css.date}></h1>
         <div className={css[`greeting${cssSeason}`]}>
           <h1 className={css[`hello${cssSeason}`]}>
-            Hello {user ? user.nickname : "guest"}! 👋🏼
+            Hello, {user ? user.nickname : "guest"}! 👋🏼
           </h1>
           <Select
             onChange={handleSeason}
@@ -85,24 +82,22 @@ function Homepage({ user, cssSeason, handleSeason }) {
           </h2>
         </div>
         <Container maxW="container.xl">
-          <h1 className={css[`type${cssSeason}`]}>VEGGIES</h1>
+          <h1 className={css[`type${cssSeason}`]}>- VEGGIES -</h1>
         </Container>
         <div className={css.imgContainer}>
           <Slider handleClick={handleClick} ingredient={vegetables}></Slider>
         </div>
         <Container maxW="container.xl">
-          <h1 className={css[`type${cssSeason}`]}>FRUITS</h1>
+          <h1 className={css[`type${cssSeason}`]}>- FRUITS -</h1>
         </Container>
         <div className={css.imgContainer}>
           <Slider handleClick={handleClick} ingredient={fruit}></Slider>
         </div>
         <div>
-        <Link to="/about">
-        <h3 className={css[`aboutus${cssSeason}`]}>
-          Why shop seasonally?
-        </h3>
-      </Link>
-      </div>
+          <Link to="/about">
+            <h3 className={css[`aboutus${cssSeason}`]}>Why shop seasonally?</h3>
+          </Link>
+        </div>
         <div className={css.footer}></div>
       </>
     );
