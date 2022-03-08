@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container } from "@chakra-ui/react";
 import { useFetch } from "../hooks/useFetch.js";
 import { seasonQuotes, getSeason } from "../../libs/seasonalData.js";
@@ -95,6 +96,13 @@ function Homepage({ user, cssSeason, handleSeason }) {
         <div className={css.imgContainer}>
           <Slider handleClick={handleClick} ingredient={fruit}></Slider>
         </div>
+        <div>
+        <Link to="/about">
+        <h3 className={css[`aboutus${cssSeason}`]}>
+          Why shop seasonally?
+        </h3>
+      </Link>
+      </div>
         <div className={css.footer}></div>
       </>
     );

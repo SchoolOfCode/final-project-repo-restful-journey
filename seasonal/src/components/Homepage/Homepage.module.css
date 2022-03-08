@@ -51,6 +51,18 @@
   border-color: white;
 }
 
+.aboutusspring {
+  background-color: rgba(172, 243, 157, 0.5);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
 .footer {
   margin-bottom: 5rem;
 }
@@ -135,6 +147,17 @@
   padding: 1.5rem;
 }
 
+.aboutussummer {
+  background-color: #f7eca1;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 .typesummer {
   font-weight: bold;
   background-color: #f7eca1;
@@ -176,6 +199,17 @@
   padding: 1.5rem;
 }
 
+.aboutusautumn {
+  background-color: #edcdc0;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 .typeautumn {
   font-weight: bold;
   background-color: #edcdc0;
@@ -183,6 +217,8 @@
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
 }
+
+
 
 .ldsEllipsisautumn div {
   position: absolute;
@@ -223,6 +259,17 @@
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
+}
+
+.aboutuswinter {
+  background-color: #d2e2ee;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .ldsEllipsiswinter div {

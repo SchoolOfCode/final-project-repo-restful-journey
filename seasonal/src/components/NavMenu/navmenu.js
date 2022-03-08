@@ -4,7 +4,7 @@ import { GlobalStyles } from "../../global";
 import { menuTheme } from "../../theme";
 import Burger from "../Burger/burger.js";
 import Menu from "../Menu/menu.js";
-import { Logo } from "../Logo/Logo.js";
+import { Logo } from "../Logo/logo.js";
 import { useOnClickOutside } from "../../hook";
 // import { css } from "@emotion/react";
 import css from "./navmenu.module.css";
