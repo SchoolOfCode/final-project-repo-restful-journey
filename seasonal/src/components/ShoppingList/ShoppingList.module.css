@@ -36,6 +36,74 @@
   font-size: 1rem;
 }
 
+.noauthspring {
+  background-color: rgba(172, 243, 157, 0.5);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 10rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.ldsEllipsis {
+  margin-top: 25rem;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.ldsEllipsisspring div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #acf39d;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ldsEllipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.ldsEllipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
 /* winter */
 .addBtnwinter {
   color: #3a5683;
@@ -50,6 +118,27 @@
   list-style: none;
   border-radius: 5px;
   padding: 0.5rem;
+}
+
+.noauthwinter {
+  background-color: #d2e2ee;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 10rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.ldsEllipsiswinter div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #d2e2ee;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
 /* autumn */
@@ -68,6 +157,27 @@
   padding: 0.5rem;
 }
 
+.noauthautumn {
+  background-color: #edcdc0;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 10rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.ldsEllipsisautumn div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #edcdc0;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
 /* summer */
 .addBtnsummer {
   color: #e2c350;
@@ -82,4 +192,25 @@
   list-style: none;
   border-radius: 5px;
   padding: 0.5rem;
+}
+
+.noauthsummer {
+  background-color: #f7eca1;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 10rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.ldsEllipsissummer div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #f7eca1;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }

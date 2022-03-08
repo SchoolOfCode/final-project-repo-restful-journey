@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { Input } from "@chakra-ui/react";
 import css from "./ShoppingList.module.css";
+import { Link } from "react-router-dom";
 
 const api = process.env.REACT_APP_API_CALL;
 
-function ShoppingList({ user, cssSeason }) {
+function ShoppingList({ user, cssSeason, isAuthenticated }) {
   const [input, setInput] = useState("");
   const [userList, setUserList] = useState(null);
   let userId = "";
+  console.log(isAuthenticated);
 
   if (user) {
     userId = user.sub.split("|")[1];
@@ -16,12 +18,18 @@ function ShoppingList({ user, cssSeason }) {
 
   useEffect(() => {
     async function getUserList() {
-      const res = await fetch(`${api}/users/list/${userId}`);
-      const data = await res.json();
-      setUserList(data.payload[0].list);
+      try {
+        const res = await fetch(`${api}/users/list/${userId}`);
+        const data = await res.json();
+        setUserList(data.payload[0].list);
+      } catch (e) {
+        console.log(e);
+      }
       // console.log(data);
     }
-    getUserList();
+    if (userId) {
+      getUserList();
+    }
   }, [api, userId]);
 
   async function addIngredient(input) {
@@ -55,44 +63,63 @@ function ShoppingList({ user, cssSeason }) {
     setInput(e.target.value);
   }
 
-  return (
-    <>
-      <div className={css.heading}>
-        <h2>Here's your shopping list...</h2>
+  if (isAuthenticated) {
+    return (
+      <>
+        <div className={css.heading}>
+          <h2>Here's your shopping list...</h2>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <Input
+            className={css.input}
+            type="text"
+            value={input}
+            onChange={handleChange}
+          />
+          <button
+            aria-label="add-ingredient"
+            className={css[`addBtn${cssSeason}`]}
+            type="submit"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </form>
+        <ul data-testid="shopping-list">
+          {userList &&
+            userList.map((ingredient, i) => {
+              return (
+                <div key={i} className={css[`container${cssSeason}`]}>
+                  <li className={css.ingredient}>{ingredient}</li>
+                  <button
+                    className={css.deleteBtn}
+                    onClick={() => handleDelete(ingredient, i)}
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              );
+            })}
+        </ul>
+      </>
+    );
+  } else if (!isAuthenticated) {
+    return (
+      <Link to="/">
+        <h3 className={css[`noauth${cssSeason}`]}>
+          Log in to Nourish to create your own shopping list! 🛒
+        </h3>
+      </Link>
+    );
+  } else {
+    return (
+      <div className={css.ldsEllipsis}>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-      <form onSubmit={handleSubmit}>
-        <Input
-          className={css.input}
-          type="text"
-          value={input}
-          onChange={handleChange}
-        />
-        <button
-          aria-label="add-ingredient"
-          className={css[`addBtn${cssSeason}`]}
-          type="submit"
-        >
-          <i class="fa-solid fa-plus"></i>
-        </button>
-      </form>
-      <ul data-testid="shopping-list">
-        {userList &&
-          userList.map((ingredient, i) => {
-            return (
-              <div key={i} className={css[`container${cssSeason}`]}>
-                <li className={css.ingredient}>{ingredient}</li>
-                <button
-                  className={css.deleteBtn}
-                  onClick={() => handleDelete(ingredient, i)}
-                >
-                  <i class="fa-solid fa-xmark"></i>
-                </button>
-              </div>
-            );
-          })}
-      </ul>
-    </>
-  );
+    );
+  }
 }
 
 export default ShoppingList;
