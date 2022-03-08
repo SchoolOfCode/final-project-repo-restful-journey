@@ -4,7 +4,7 @@ import { GlobalStyles } from "../../global";
 import Burger from "../Burger/burger.js";
 import Menu from "../Menu/menu.js";
 import css from "./About.module.css";
-import Logo from "../Logo/logo.js";
+
 export function About({ cssSeason }) {
   return (
     <div>
