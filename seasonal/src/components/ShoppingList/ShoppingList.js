@@ -4,7 +4,7 @@ import css from "./ShoppingList.module.css";
 
 const api = process.env.REACT_APP_API_CALL;
 
-function ShoppingList({ user }) {
+function ShoppingList({ user, cssSeason }) {
   const [input, setInput] = useState("");
   const [userList, setUserList] = useState(null);
   let userId = "";
@@ -69,7 +69,7 @@ function ShoppingList({ user }) {
         />
         <button
           aria-label="add-ingredient"
-          className={css.addBtn}
+          className={css[`addBtn${cssSeason}`]}
           type="submit"
         >
           <i class="fa-solid fa-plus"></i>
@@ -79,7 +79,7 @@ function ShoppingList({ user }) {
         {userList &&
           userList.map((ingredient, i) => {
             return (
-              <div key={i} className={css.container}>
+              <div key={i} className={css[`container${cssSeason}`]}>
                 <li className={css.ingredient}>{ingredient}</li>
                 <button
                   className={css.deleteBtn}
