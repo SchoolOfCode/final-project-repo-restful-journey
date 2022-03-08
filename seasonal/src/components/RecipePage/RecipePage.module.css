@@ -1,8 +1,8 @@
-.addBtn {
+.addBtnspring {
   color: green;
 }
 
-.listContainer {
+.listContainerspring {
   display: flex;
   justify-content: space-between;
   text-align: left;
@@ -38,15 +38,15 @@
   align-items: center;
 }
 
-.duration,
-.servings {
+.durationspring,
+.servingsspring {
   background-color: rgba(172, 243, 157, 0.5);
   border-radius: 5px;
   margin: 1rem;
   padding: 1rem;
 }
 
-.shoppingListLink {
+.shoppingListLinkspring {
   background-color: rgba(172, 243, 157, 0.5);
   border-radius: 5px;
   padding: 1rem;
@@ -80,10 +80,135 @@
   margin-top: 10rem;
 }
 
-.noRecipe,
-.linkToHome {
+.noRecipespring,
+.linkToHomespring {
   display: flex;
   justify-content: center;
   background-color: #acf39d;
+  padding: 1.5rem;
+}
+
+/* summer */
+
+.addBtnsummer {
+  color: #e2c350;
+}
+
+.listContainersummer {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #f7eca1;
+  margin: 2rem;
+  list-style: none;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.durationsummer,
+.servingssummer {
+  background-color: #f7eca1;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.shoppingListLinksummer {
+  background-color: #f7eca1;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+}
+
+.noRecipesummer,
+.linkToHomesummer {
+  display: flex;
+  justify-content: center;
+  background-color: #f7eca1;
+  padding: 1.5rem;
+}
+
+/* autumn */
+.addBtnautumn {
+  color: #b7410e;
+}
+
+.listContainerautumn {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #edcdc0;
+  margin: 2rem;
+  list-style: none;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.durationautumn,
+.servingsautumn {
+  background-color: #edcdc0;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.shoppingListLinkautumn {
+  background-color: #edcdc0;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+}
+
+.noRecipeautumn,
+.linkToHomeautumn {
+  display: flex;
+  justify-content: center;
+  background-color: #edcdc0;
+  padding: 1.5rem;
+}
+
+/* winter */
+
+.addBtnwinter {
+  color: #3a5683;
+}
+
+.listContainerwinter {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #d2e2ee;
+  margin: 2rem;
+  list-style: none;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.durationwinter,
+.servingswinter {
+  background-color: #d2e2ee;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.shoppingListLinkwinter {
+  background-color: #d2e2ee;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+}
+
+.noRecipewinter,
+.linkToHomewinter {
+  display: flex;
+  justify-content: center;
+  background-color: #d2e2ee;
   padding: 1.5rem;
 }

@@ -1,3 +1,5 @@
+/* spring */
+
 .heading {
   font-weight: bold;
   text-align: left;
@@ -8,11 +10,11 @@
   margin: 0.5rem;
 }
 
-.addBtn {
+.addBtnspring {
   color: green;
 }
 
-.container {
+.containerspring {
   display: flex;
   justify-content: space-between;
   text-align: left;
@@ -32,4 +34,52 @@
   width: 2rem;
   height: 2rem;
   font-size: 1rem;
+}
+
+/* winter */
+.addBtnwinter {
+  color: #3a5683;
+}
+
+.containerwinter {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #d2e2ee;
+  margin: 1rem;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+/* autumn */
+.addBtnautumn {
+  color: #b7410e;
+}
+
+.containerautumn {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #edcdc0;
+  margin: 1rem;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+/* summer */
+.addBtnsummer {
+  color: #e2c350;
+}
+
+.containersummer {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #f7eca1;
+  margin: 1rem;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
