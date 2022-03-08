@@ -42,7 +42,6 @@ function RecipePage({ user, cssSeason }) {
   }
 
   function handleFavourites() {
-    console.log("clicked");
     setFavourites(recipe);
   }
 
@@ -84,17 +83,24 @@ function RecipePage({ user, cssSeason }) {
       <>
         <div>
           <img className={css.img} src={recipe.image} alt={recipe.title} />
-          <button onClick={handleFavourites}>❤️</button>
+          <div className={css.favouriteHeart} onClick={handleFavourites}>
+            <i className={css.heart}></i>
+            <span>Saved!</span>
+          </div>
         </div>
         <div>
           <h1 className={css.title}>{recipe.title}</h1>
         </div>
         <div className={css.recipeInfo}>
           <div>
-            <p className={css[`duration${cssSeason}`]}>{recipe.readyInMinutes} minutes</p>
+            <p className={css[`duration${cssSeason}`]}>
+              {recipe.readyInMinutes} minutes
+            </p>
           </div>
           <div>
-            <p className={css[`servings${cssSeason}`]}>{recipe.servings} servings</p>
+            <p className={css[`servings${cssSeason}`]}>
+              {recipe.servings} servings
+            </p>
           </div>
         </div>
         <div>
@@ -105,7 +111,10 @@ function RecipePage({ user, cssSeason }) {
             <ul>
               {recipe.extendedIngredients.map((ingredient, i) => {
                 return (
-                  <div className={css[`listContainer${cssSeason}`]} key={ingredient.name}>
+                  <div
+                    className={css[`listContainer${cssSeason}`]}
+                    key={ingredient.name}
+                  >
                     <li>{ingredient.original}</li>
                     <button
                       className={css[`addBtn${cssSeason}`]}
