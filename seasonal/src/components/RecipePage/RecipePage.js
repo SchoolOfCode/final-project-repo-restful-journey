@@ -81,11 +81,10 @@ function RecipePage({ user, cssSeason }) {
   if (recipe) {
     return (
       <>
-        <div>
+        <div >
           <img className={css.img} src={recipe.image} alt={recipe.title} />
-          <div className={css.favouriteHeart} onClick={handleFavourites}>
-            <i className={css.heart}></i>
-            <span>Saved!</span>
+          <div className={css.favouriteHeart} >
+            <i  onClick={handleFavourites} className={favourites ? css.liked : css.heart}></i>
           </div>
         </div>
         <div>
