@@ -8,24 +8,23 @@ const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 function RecipePage({ user, cssSeason }) {
   const location = useLocation();
   const [list, setList] = useState([]);
-
   const [ingredient, setIngredient] = useState(null);
-  const userName = "Antony";
+  const [recipe, setRecipe] = useState(null);
+  const [favourites, setFavourites] = useState(null);
   const [userRecipeId, setUserRecipeId] = useState(
     location.state ? location.state.recipeId : null
   );
-  const [recipe, setRecipe] = useState(null);
-  let userId;
 
+  let userId;
   if (user) {
     userId = user.sub.split("|")[1];
-    console.log("id recipe", userId);
+    console.log("User id", userId);
   }
 
   useEffect(() => {
     async function addIngredient() {
       try {
-        const res = await fetch(`${api}/users/add`, {
+        await fetch(`${api}/users/add`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: userId, item: ingredient.item }),
@@ -42,6 +41,11 @@ function RecipePage({ user, cssSeason }) {
     setList([...list, ingredient]);
   }
 
+  function handleFavourites() {
+    console.log("clicked");
+    setFavourites(recipe);
+  }
+
   //fetch recipe detailed info
   useEffect(() => {
     async function getRecipeById() {
@@ -54,11 +58,33 @@ function RecipePage({ user, cssSeason }) {
     getRecipeById();
   }, [userRecipeId]);
 
+  //fetch favourite recipes
+  useEffect(() => {
+    async function addFavourite() {
+      try {
+        if (favourites) {
+          const res = await fetch(`${api}/users/favourites`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: userId,
+              recipe: JSON.stringify(recipe),
+            }),
+          });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    addFavourite();
+  }, [userId, recipe, favourites]);
+
   if (recipe) {
     return (
       <>
         <div>
           <img className={css.img} src={recipe.image} alt={recipe.title} />
+          <button onClick={handleFavourites}>❤️</button>
         </div>
         <div>
           <h1 className={css.title}>{recipe.title}</h1>
