@@ -36,7 +36,8 @@ function App() {
   const [cssSeason, setCssSeason] = useState(
     savedSeason ? savedSeason : season
   );
-  const { user, isAuthenticated } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log(isLoading);
   let userId = "";
   if (user) {
     userId = user.sub.split("|")[1];
@@ -104,7 +105,14 @@ function App() {
         <Route path="search" element={<SearchPage />} />
         <Route
           path="shoppinglist"
-          element={<ShoppingList user={user} cssSeason={cssSeason} />}
+          element={
+            <ShoppingList
+              user={user}
+              cssSeason={cssSeason}
+              isAuthenticated={isAuthenticated}
+              isLoading={isLoading}
+            />
+          }
         />
         <Route path="about" element={<About cssSeason={cssSeason} />} />
         <Route path="favourites" element={<Favourites user={user} />} />

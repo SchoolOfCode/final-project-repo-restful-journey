@@ -36,9 +36,14 @@ function RecipePage({ user, cssSeason }) {
     addIngredient();
   }, [userId, ingredient]);
 
-  function handleClick(ingredient) {
+  function handleClick(ingredient, e) {
     setIngredient({ item: ingredient });
     setList([...list, ingredient]);
+    e.target.innerHTML = "✔️";
+  }
+
+  function handleRecipe(e, x) {
+    e.target.innerHTML = `${x.step} 👍`;
   }
 
   function handleFavourites() {
@@ -117,9 +122,9 @@ function RecipePage({ user, cssSeason }) {
                     <li>{ingredient.original}</li>
                     <button
                       className={css[`addBtn${cssSeason}`]}
-                      onClick={() => handleClick(ingredient.original)}
+                      onClick={(e) => handleClick(ingredient.original, e)}
                     >
-                      <i class="fa-solid fa-plus"></i>
+                      {"➕"}
                     </button>
                   </div>
                 );
@@ -139,7 +144,12 @@ function RecipePage({ user, cssSeason }) {
             {recipe.analyzedInstructions[0].steps.map((x, i) => {
               return (
                 <div key={i}>
-                  <li className={css.recipeSteps}>{x.step}</li>
+                  <li
+                    onClick={(e) => handleRecipe(e, x)}
+                    className={css.recipeSteps}
+                  >
+                    {x.step}
+                  </li>
                 </div>
               );
             })}
