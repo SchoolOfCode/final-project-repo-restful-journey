@@ -9,7 +9,7 @@ import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
 import { About } from "../About/about.js";
 import { Box } from "@chakra-ui/react";
-import { Logo } from "../logo/logo.js";
+import { Logo } from "../Logo/Logo.js";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
 import { getSeason } from "../../libs/seasonalData";

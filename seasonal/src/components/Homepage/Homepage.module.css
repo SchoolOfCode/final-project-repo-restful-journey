@@ -31,7 +31,6 @@
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
-  
 }
 
 .ingredients {
@@ -50,6 +49,10 @@
   overflow: scroll;
   border: solid;
   border-color: white;
+}
+
+.footer {
+  margin-bottom: 5rem;
 }
 
 .ldsEllipsis {
@@ -115,7 +118,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
-  background-color: #F7ECA1;
+  background-color: #f7eca1;
   padding: 1.5rem;
   border-radius: 10px;
   font-weight: bold;
@@ -125,7 +128,7 @@
 }
 
 .infosummer {
-  border: 3.5px solid #F7ECA1;
+  border: 3.5px solid #f7eca1;
   border-radius: 10px;
   margin: 0 1rem;
   margin-bottom: 1.5rem;
@@ -134,7 +137,7 @@
 
 .typesummer {
   font-weight: bold;
-  background-color: #F7ECA1;
+  background-color: #f7eca1;
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
@@ -146,7 +149,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #F7ECA1;
+  background: #f7eca1;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
@@ -156,7 +159,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
-  background-color: #EDCDC0;
+  background-color: #edcdc0;
   padding: 1.5rem;
   border-radius: 10px;
   font-weight: bold;
@@ -166,7 +169,7 @@
 }
 
 .infoautumn {
-  border: 3.5px solid #B7410E;
+  border: 3.5px solid #b7410e;
   border-radius: 10px;
   margin: 0 1rem;
   margin-bottom: 1.5rem;
@@ -175,7 +178,7 @@
 
 .typeautumn {
   font-weight: bold;
-  background-color: #EDCDC0;
+  background-color: #edcdc0;
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
@@ -187,7 +190,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #EDCDC0;
+  background: #edcdc0;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
@@ -197,7 +200,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
-  background-color: #D2E2EE;
+  background-color: #d2e2ee;
   padding: 1.5rem;
   border-radius: 10px;
   font-weight: bold;
@@ -207,7 +210,7 @@
 }
 
 .infowinter {
-  border: 3.5px solid #D2E2EE;
+  border: 3.5px solid #d2e2ee;
   border-radius: 10px;
   margin: 0 1rem;
   margin-bottom: 1.5rem;
@@ -216,7 +219,7 @@
 
 .typewinter {
   font-weight: bold;
-  background-color: #D2E2EE;
+  background-color: #d2e2ee;
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
@@ -228,6 +231,6 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #D2E2EE;
+  background: #d2e2ee;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }

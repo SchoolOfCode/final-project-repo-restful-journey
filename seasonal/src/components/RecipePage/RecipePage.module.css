@@ -76,12 +76,9 @@
   padding: 1rem;
 }
 
-.noRecipe {
-  margin-top: 10rem;
-}
-
 .noRecipespring,
 .linkToHomespring {
+  margin-top: 10rem;
   display: flex;
   justify-content: center;
   background-color: #acf39d;
