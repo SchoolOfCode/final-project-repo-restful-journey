@@ -103,14 +103,11 @@ useEffect(() => {
           element={<RecipePage user={user} cssSeason={cssSeason} />}
         />
         <Route path="search" element={<SearchPage />} />
-        <Route path="shoppinglist" element={<ShoppingList user={user} />} />
-        <Route path="hamburger" element={<NavMenu />} />
-        <Route path="about" element={<About />} />
+        <Route path="shoppinglist" element={<ShoppingList user={user} cssSeason={cssSeason} />} />
+        <Route path="about" element={<About cssSeason={cssSeason} />} />
         <Route path="favourites" element={<Favourites user={user}/>} />
-        <Route
-          path="shoppinglist"
-          element={<ShoppingList user={user} cssSeason={cssSeason} />}
-        />
+        
+          
         <Route path="about" element={<About cssSeason={cssSeason} />} />
       </Routes>
     </Box>
