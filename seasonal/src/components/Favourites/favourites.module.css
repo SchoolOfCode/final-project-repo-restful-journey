@@ -1,15 +1,19 @@
+.greeting {
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: left;
+}
+
 .container {
   margin-top: 5rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 12px;
   margin: 0 1 rem;
+  font-size: 12px;
 }
 
 .recipeContainer {
   margin: 0 auto;
-  max-width: 42vw;
+  display: flex;
+  align-items: flex-start;
 }
 
 .recipeContainer2 {
@@ -20,6 +24,20 @@
   text-align: center;
 }
 
+.deleteBtn {
+  padding: 0.75rem;
+  color: rgb(207, 13, 13);
+  font-size: 1rem;
+}
+
 .image {
   border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.caption {
+  padding: 0.5rem;
+  background-color: rgba(172, 243, 157, 0.5);
+  border-radius: 10px;
+  font-weight: bold;
 }

@@ -209,3 +209,52 @@
   background-color: #d2e2ee;
   padding: 1.5rem;
 }
+
+/* Favourites Heart button */
+
+.favouriteHeart {
+  height: 100px;
+  position: relative;
+  margin-bottom: -3.5rem;
+}
+
+i:before {
+  font-family: fontawesome;
+  content: "\f004";
+  font-style: normal;
+}
+
+.heart {
+  cursor: pointer;
+  padding: 10px 12px 8px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  color: #aaa;
+  transition: 0.2s;
+}
+
+.liked {
+  cursor: pointer;
+  padding: 10px 12px 8px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  color: rgb(235, 11, 11);
+  transition: 0.2s;
+}
+
+
+span {
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  transition: 0.6s;
+  z-index: -2;
+  font-size: 2px;
+  color: transparent;
+  font-weight: 400;
+}
+
