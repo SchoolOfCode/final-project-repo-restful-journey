@@ -7,6 +7,7 @@ import SearchPage from "../SearchPage/SearchPage.js";
 import ShoppingList from "../ShoppingList/ShoppingList.js";
 import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
+import Favourites from "../Favourites/favourites";
 import { About } from "../About/about.js";
 import { Box } from "@chakra-ui/react";
 import { Logo } from "../logo/logo.js";
@@ -30,6 +31,7 @@ async function postNewUser(newUser) {
   console.log(data);
 }
 
+
 function App() {
   // const [id, setid] = useState(null);
   const [cssSeason, setCssSeason] = useState(season);
@@ -37,8 +39,8 @@ function App() {
   let userId = "";
   if (user) {
     userId = user.sub.split("|")[1];
+    localStorage.setItem('userId', userId);
 
-    // setid(userId)
   }
 
   function handleSeason(e) {
@@ -51,7 +53,7 @@ function App() {
       const newUser = {
         username: user.nickname,
         email: userId,
-        favourites: [],
+        favourites: JSON.stringify([]),
         list: [],
       };
       postNewUser(newUser);
@@ -94,6 +96,10 @@ function App() {
           element={<RecipePage user={user} cssSeason={cssSeason} />}
         />
         <Route path="search" element={<SearchPage />} />
+        <Route path="shoppinglist" element={<ShoppingList user={user} />} />
+        <Route path="hamburger" element={<NavMenu />} />
+        <Route path="about" element={<About />} />
+        <Route path="favourites" element={<Favourites user={user}/>} />
         <Route
           path="shoppinglist"
           element={<ShoppingList user={user} cssSeason={cssSeason} />}
