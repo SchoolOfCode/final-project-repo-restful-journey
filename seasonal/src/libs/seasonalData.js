@@ -3,6 +3,12 @@ export const seasonQuotes = {
     "Radishes are vibrant red veggies containing loads of nutrients and minerals. The most common way to eat radishes is in salads. Try experimenting by adding radishes to cooked dishes, too!",
     "Spring is the best time to enjoy artichokes, since they are especially sweet and tender during this time. Because their leaves are not prickly, the baby ones are easier to prep, and can be used the same way the hearts are: steamed, grilled or fried.",
     "Leeks grow well in colder temperatures, making them ideal for a spring harvest. Most recipes call for the leek's white and light green stems, which are great braised, in recipes with goat cheese and blistered or grilled. ",
+    "On the first day of spring, a person at the North Pole would see the sun skimming across the horizon, beginning six months of uninterrupted daylight. A person at the South Pole would see the sun skimming across the horizon, signaling the start of six months of darkness.",
+    "Holidays that occur in spring include Easter, Passover, April Fool’s Day, Earth Day, Arbor Day, Mother’s Day, Father’s Day, Cinco De Mayo, and Holi (festival of colors in India).",
+    "The first spring flowers are typically dandelions, daffodils, lilacs, lilies, iris and tulips to name a few.",
+    "The first day of spring, the vernal equinox, has 12 hours of daylight and 12 hours of darkness.The term vernal is Latin for “spring” and equinox is Latin for “equal night.“",
+
+
   ],
 
   summer: [

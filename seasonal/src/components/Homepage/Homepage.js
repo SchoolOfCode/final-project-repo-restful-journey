@@ -3,8 +3,9 @@ import { Container } from "@chakra-ui/react";
 import { useFetch } from "../hooks/useFetch.js";
 import { seasonQuotes, getSeason } from "../../libs/seasonalData.js";
 import { useState, useEffect } from "react";
-import "./Homepage.css";
 import Slider from "../Slider/slider.js";
+import css from "./Homepage.module.css";
+import { Select } from "@chakra-ui/react";
 
 const season = getSeason();
 const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length);
@@ -23,14 +24,16 @@ function filterVegetables(array, boolean) {
   return vegetables;
 }
 
-function Homepage({user}) {
+function Homepage({ user, cssSeason, handleSeason }) {
   const [ingredient, setIngredient] = useState(null);
   const [vegetables, setVegetables] = useState([]);
   const [fruit, setFruit] = useState([]);
 
+  console.log(`Season determined from app level ${cssSeason}`);
+
   const [data] = useFetch(`${api}/ingredients/season/${season}`);
   console.log(data);
-  console.log(getSeason());
+  console.log(`Season determined from actual date ${getSeason()}`);
 
   function handleClick(e) {
     setIngredient(e.target.alt);
@@ -55,16 +58,25 @@ function Homepage({user}) {
   if (data) {
     return (
       <>
-
-        <h1 data-testid="homepageDate" className="date">
-          {date.toDateString()}
-        </h1>
-        <div className="greeting">
-          <h1>Hello {user ? user.nickname : 'guest'}! 👋🏼</h1>
+        <h1 data-testid="homepageDate" className={css.date}></h1>
+        <div className={css[`greeting${cssSeason}`]}>
+          <h1 className={css[`hello${cssSeason}`]}>
+            Hello {user ? user.nickname : "guest"}! 👋🏼
+          </h1>
+          <Select
+            onChange={handleSeason}
+            placeholder="What season are you interested in?"
+            size="sm"
+          >
+            <option value="summer">Summer ☀️</option>
+            <option value="autumn">Autumn 🍂</option>
+            <option value="winter">Winter ❄️</option>
+            <option value="spring">Spring 🌱</option>
+          </Select>
           <br />
           <h2>{seasonQuotes[season][randomNumber]}</h2>
         </div>
-        <div className="info">
+        <div className={css[`info${cssSeason}`]}>
           <h2>
             Here are the fruits and vegetables that are in season this{" "}
             {[season]} - click on any of the fruits or veggies below that take
@@ -72,22 +84,22 @@ function Homepage({user}) {
           </h2>
         </div>
         <Container maxW="container.xl">
-          <h1 className="type">VEGGIES</h1>
+          <h1 className={css[`type${cssSeason}`]}>VEGGIES</h1>
         </Container>
-        <div className="img-container">
+        <div className={css.imgContainer}>
           <Slider handleClick={handleClick} ingredient={vegetables}></Slider>
         </div>
         <Container maxW="container.xl">
-          <h1 className="type">FRUITS</h1>
+          <h1 className={css[`type${cssSeason}`]}>FRUITS</h1>
         </Container>
-        <div className="img-container">
+        <div className={css.imgContainer}>
           <Slider handleClick={handleClick} ingredient={fruit}></Slider>
         </div>
       </>
     );
   } else if (!data) {
     return (
-      <div class="lds-ellipsis">
+      <div className={css.ldsEllipsis}>
         <div></div>
         <div></div>
         <div></div>

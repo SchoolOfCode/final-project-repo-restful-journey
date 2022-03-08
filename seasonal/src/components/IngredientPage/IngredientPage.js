@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./IngredientPage.css";
+import css from "./IngredientPage.module.css";
 const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 
-function IngredientPage() {
+function IngredientPage({ cssSeason }) {
   const localStorageIngredient =
     JSON.parse(localStorage.getItem("ingredient")) || {};
   console.log(localStorageIngredient.name);
@@ -37,31 +37,35 @@ function IngredientPage() {
   return (
     <>
       <div>
-        <h2 className="ingredient-title">{ingredient.name}</h2>
+        <h2 className={css[`ingredientTitle${cssSeason}`]}>
+          {ingredient.name}
+        </h2>
 
-        <div data-testid="imageContainer" className="ingredient-container">
+        <div data-testid="imageContainer" className={css.ingredientContainer}>
           <div>
             <img
-              className="main-image"
+              className={css.mainImage}
               src={ingredient.imgurl}
               alt={ingredient.name}
             />
           </div>
-          <div className="ingredient-details">
+          <div className={css[`ingredientDetails${cssSeason}`]}>
             <h2>{ingredient.nutrition}</h2>
             <h2>{ingredient.fact}</h2>
           </div>
         </div>
       </div>
-      <div className="image-container">
+      <div className={css.imageContainer}>
         {recipes &&
           recipes.slice(0, 4).map((item, index) => {
             return (
-              <div className="recipe-container" key={item.id}>
+              <div className={css.recipeContainer} key={item.id}>
                 <Link to="/recipes" state={{ recipeId: item.id }}>
-                  <figure className="recipe-container2">
+                  <figure className={css.recipeContainer2}>
                     <img src={item.image} alt={item.id}></img>
-                    <figcaption className="caption">{item.title}</figcaption>
+                    <figcaption className={css.caption}>
+                      {item.title}
+                    </figcaption>
                   </figure>
                 </Link>
               </div>
@@ -69,7 +73,7 @@ function IngredientPage() {
           })}
       </div>
       <Link to="/search" state={{ recipes, ingredientName }}>
-        <h3 data-testid="discover">
+        <h3 data-testid="discover" className={css[`discover${cssSeason}`]}>
           Discover more {ingredient.name} recipes here!
         </h3>
       </Link>
