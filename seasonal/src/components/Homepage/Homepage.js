@@ -95,10 +95,12 @@ function Homepage({ user, cssSeason, handleSeason }) {
         <div className={css.imgContainer}>
           <Slider handleClick={handleClick} ingredient={fruit}></Slider>
         </div>
+        <div className={css.footer}></div>
       </>
     );
   } else if (!data) {
     return (
+      // Loading Spinner
       <div className={css.ldsEllipsis}>
         <div></div>
         <div></div>

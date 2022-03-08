@@ -91,10 +91,14 @@ function RecipePage({ user, cssSeason }) {
         </div>
         <div className={css.recipeInfo}>
           <div>
-            <p className={css[`duration${cssSeason}`]}>{recipe.readyInMinutes} minutes</p>
+            <p className={css[`duration${cssSeason}`]}>
+              {recipe.readyInMinutes} minutes
+            </p>
           </div>
           <div>
-            <p className={css[`servings${cssSeason}`]}>{recipe.servings} servings</p>
+            <p className={css[`servings${cssSeason}`]}>
+              {recipe.servings} servings
+            </p>
           </div>
         </div>
         <div>
@@ -105,7 +109,10 @@ function RecipePage({ user, cssSeason }) {
             <ul>
               {recipe.extendedIngredients.map((ingredient, i) => {
                 return (
-                  <div className={css[`listContainer${cssSeason}`]} key={ingredient.name}>
+                  <div
+                    className={css[`listContainer${cssSeason}`]}
+                    key={ingredient.name}
+                  >
                     <li>{ingredient.original}</li>
                     <button
                       className={css[`addBtn${cssSeason}`]}
@@ -144,7 +151,8 @@ function RecipePage({ user, cssSeason }) {
       <div>
         <p className={css[`noRecipe${cssSeason}`]}>No recipe selected.</p>
         <p className={css[`linkToHome${cssSeason}`]}>
-          Check the <Link to="/home">home</Link> page for some inspiration!
+          Check the <Link to="/home"> &nbsp;home</Link> page for some
+          inspiration!
         </p>
       </div>
     );
