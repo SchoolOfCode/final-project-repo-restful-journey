@@ -14,7 +14,6 @@ function Favourites({ user, cssSeason }) {
   const [favourites, setFavourites] = useState(null);
   const [data] = useFetch(`${url}`);
   const [recipe, setRecipe] = useState(null);
-
   // let userId;
   // if (user) {
   //   userId = user.sub.split("|")[1];
@@ -26,13 +25,12 @@ function Favourites({ user, cssSeason }) {
       console.log(data.payload[0].favourites);
     }
   }, [data]);
-
   useEffect(() => {
     if (recipe) {
       async function deleteRecipe() {
         console.log(typeof recipe);
         try {
-          await fetch(`${api}/users/favourites`, {
+            await fetch(`${api}/users/favourites`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: id, recipeIndex: recipe }),
