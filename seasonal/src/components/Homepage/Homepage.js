@@ -9,7 +9,6 @@ import css from "./Homepage.module.css";
 import { Select } from "@chakra-ui/react";
 
 const season = getSeason();
-const randomNumber = Math.floor(Math.random() * seasonQuotes[season].length);
 // console.log(randomNumber);
 
 //test api used for testing useFetch custom hook. Will be replaced with ingredients back end.
@@ -29,6 +28,7 @@ function Homepage({ user, cssSeason, handleSeason }) {
   const [fruit, setFruit] = useState([]);
 
   console.log(`Season determined from app level ${cssSeason}`);
+  const randomNumber = Math.floor(Math.random() * seasonQuotes[cssSeason].length);
 
   const [data] = useFetch(`${api}/ingredients/season/${cssSeason}`);
   console.log(data);
