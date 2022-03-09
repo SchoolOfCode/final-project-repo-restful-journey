@@ -6,7 +6,7 @@ import css from "./LoginButton.module.css";
 import { Button } from "@chakra-ui/react";
 
 const LoginButton = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
     <div className={css.loginPage}>
@@ -31,7 +31,8 @@ const LoginButton = () => {
         >
           Log In
         </Button>
-        <LogoutButton className={css.logout} />
+        {isAuthenticated?<LogoutButton className={css.logout} />: ''}
+        {/* <LogoutButton className={css.logout} /> */}
       </div>
     </div>
   );
