@@ -11,11 +11,12 @@ const Menu = ({ open }) => {
     <StyledMenu open={open}>
     <Link to={'/'}>{!isAuthenticated ?'Login': 'Logout' }</Link>
     <Link to={'/home'}>Home</Link>
+    <Link to={'/about'}>About</Link>
     <Link to={'/ingredients'}>Ingredients</Link>
     <Link to={'/recipes'}>Recipes</Link>
     <Link to={'/search'}>Search</Link>
+    <Link to={"/timeline"}>Seasonal Calendar</Link>
     {isAuthenticated && <Link to={'/shoppinglist'}>Shopping List</Link>}
-    <Link to={'/about'}>About</Link>
     {isAuthenticated && <Link to={'/favourites'}>Favourites</Link>}
     </StyledMenu>
   );

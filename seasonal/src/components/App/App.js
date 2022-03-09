@@ -8,11 +8,13 @@ import ShoppingList from "../ShoppingList/ShoppingList.js";
 import NavMenu from "../NavMenu/navmenu";
 import LoginButton from "../LoginButton/Login";
 import Favourites from "../Favourites/favourites";
+import Timeline from "../Timeline/timeline";
 import { About } from "../About/about.js";
 import { Box } from "@chakra-ui/react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
 import { getSeason } from "../../libs/seasonalData";
+
 
 const season = getSeason();
 
@@ -121,6 +123,7 @@ function App() {
         />
 
         <Route path="about" element={<About cssSeason={cssSeason} />} />
+        <Route path="timeline" element={<Timeline cssSeason={cssSeason} />} />
         <Route path="logout" element={<About cssSeason={cssSeason} />} />
       </Routes>
     </Box>
