@@ -14,14 +14,15 @@
 }
 
 .hellospring {
-  font-size: 20px;
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1rem;
 }
 
 .infospring {
   border: 3.5px solid rgba(172, 243, 157, 0.5);
   border-radius: 10px;
   margin: 0 1rem;
-  margin-bottom: 1.5rem;
   padding: 1.5rem;
 }
 
@@ -31,7 +32,6 @@
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
-  
 }
 
 .ingredients {
@@ -50,6 +50,21 @@
   overflow: scroll;
   border: solid;
   border-color: white;
+}
+
+.aboutusspring {
+  background-color: rgba(172, 243, 157, 0.5);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer {
+  margin-bottom: 5rem;
 }
 
 .ldsEllipsis {
@@ -115,7 +130,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
-  background-color: #F7ECA1;
+  background-color: #f7eca1;
   padding: 1.5rem;
   border-radius: 10px;
   font-weight: bold;
@@ -124,17 +139,33 @@
   height: 100%;
 }
 
+.hellosummer {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
 .infosummer {
-  border: 3.5px solid #F7ECA1;
+  border: 3.5px solid #f7eca1;
   border-radius: 10px;
   margin: 0 1rem;
-  margin-bottom: 1.5rem;
   padding: 1.5rem;
+}
+
+.aboutussummer {
+  background-color: #f7eca1;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .typesummer {
   font-weight: bold;
-  background-color: #F7ECA1;
+  background-color: #f7eca1;
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
@@ -146,7 +177,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #F7ECA1;
+  background: #f7eca1;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
@@ -156,7 +187,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
-  background-color: #EDCDC0;
+  background-color: #edcdc0;
   padding: 1.5rem;
   border-radius: 10px;
   font-weight: bold;
@@ -165,17 +196,33 @@
   height: 100%;
 }
 
+.helloautumn {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
 .infoautumn {
-  border: 3.5px solid #B7410E;
+  border: 3.5px solid #b7410e;
   border-radius: 10px;
   margin: 0 1rem;
-  margin-bottom: 1.5rem;
   padding: 1.5rem;
+}
+
+.aboutusautumn {
+  background-color: #edcdc0;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .typeautumn {
   font-weight: bold;
-  background-color: #EDCDC0;
+  background-color: #edcdc0;
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
@@ -187,7 +234,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #EDCDC0;
+  background: #edcdc0;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
@@ -197,7 +244,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1.5rem;
-  background-color: #D2E2EE;
+  background-color: #d2e2ee;
   padding: 1.5rem;
   border-radius: 10px;
   font-weight: bold;
@@ -206,20 +253,36 @@
   height: 100%;
 }
 
+.hellowinter {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
 .infowinter {
-  border: 3.5px solid #D2E2EE;
+  border: 3.5px solid #d2e2ee;
   border-radius: 10px;
   margin: 0 1rem;
-  margin-bottom: 1.5rem;
   padding: 1.5rem;
 }
 
 .typewinter {
   font-weight: bold;
-  background-color: #D2E2EE;
+  background-color: #d2e2ee;
   border-radius: 6px;
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
+}
+
+.aboutuswinter {
+  background-color: #d2e2ee;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .ldsEllipsiswinter div {
@@ -228,6 +291,6 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #D2E2EE;
+  background: #d2e2ee;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }

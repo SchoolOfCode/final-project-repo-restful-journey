@@ -36,13 +36,17 @@ function RecipePage({ user, cssSeason }) {
     addIngredient();
   }, [userId, ingredient]);
 
-  function handleClick(ingredient) {
+  function handleClick(ingredient, e) {
     setIngredient({ item: ingredient });
     setList([...list, ingredient]);
+    e.target.innerHTML = "✔️";
+  }
+
+  function handleRecipe(e, x) {
+    e.target.innerHTML = `${x.step} `;
   }
 
   function handleFavourites() {
-    console.log("clicked");
     setFavourites(recipe);
   }
 
@@ -84,17 +88,26 @@ function RecipePage({ user, cssSeason }) {
       <>
         <div>
           <img className={css.img} src={recipe.image} alt={recipe.title} />
-          <button onClick={handleFavourites}>❤️</button>
+          <div className={css.favouriteHeart}>
+            <i
+              onClick={handleFavourites}
+              className={favourites ? css.liked : css.heart}
+            ></i>
+          </div>
         </div>
         <div>
-          <h1 className={css.title}>{recipe.title}</h1>
+          <h1 className={css.title}>- {recipe.title} -</h1>
         </div>
         <div className={css.recipeInfo}>
           <div>
-            <p className={css[`duration${cssSeason}`]}>{recipe.readyInMinutes} minutes</p>
+            <p className={css[`duration${cssSeason}`]}>
+              {recipe.readyInMinutes} minutes
+            </p>
           </div>
           <div>
-            <p className={css[`servings${cssSeason}`]}>{recipe.servings} servings</p>
+            <p className={css[`servings${cssSeason}`]}>
+              {recipe.servings} servings
+            </p>
           </div>
         </div>
         <div>
@@ -105,13 +118,16 @@ function RecipePage({ user, cssSeason }) {
             <ul>
               {recipe.extendedIngredients.map((ingredient, i) => {
                 return (
-                  <div className={css[`listContainer${cssSeason}`]} key={ingredient.name}>
+                  <div
+                    className={css[`listContainer${cssSeason}`]}
+                    key={ingredient.name}
+                  >
                     <li>{ingredient.original}</li>
                     <button
                       className={css[`addBtn${cssSeason}`]}
-                      onClick={() => handleClick(ingredient.original)}
+                      onClick={(e) => handleClick(ingredient.original, e)}
                     >
-                      <i class="fa-solid fa-plus"></i>
+                      {"➕"}
                     </button>
                   </div>
                 );
@@ -131,7 +147,12 @@ function RecipePage({ user, cssSeason }) {
             {recipe.analyzedInstructions[0].steps.map((x, i) => {
               return (
                 <div key={i}>
-                  <li className={css.recipeSteps}>{x.step}</li>
+                  <li
+                    onClick={(e) => handleRecipe(e, x)}
+                    className={css.recipeSteps}
+                  >
+                    {x.step}
+                  </li>
                 </div>
               );
             })}
@@ -144,7 +165,8 @@ function RecipePage({ user, cssSeason }) {
       <div>
         <p className={css[`noRecipe${cssSeason}`]}>No recipe selected.</p>
         <p className={css[`linkToHome${cssSeason}`]}>
-          Check the <Link to="/home">home</Link> page for some inspiration!
+          Check the <Link to="/home"> &nbsp;home</Link> page for some
+          inspiration!
         </p>
       </div>
     );

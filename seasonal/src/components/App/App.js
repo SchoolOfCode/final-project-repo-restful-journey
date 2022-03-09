@@ -10,7 +10,6 @@ import LoginButton from "../LoginButton/Login";
 import Favourites from "../Favourites/favourites";
 import { About } from "../About/about.js";
 import { Box } from "@chakra-ui/react";
-import { Logo } from "../logo/logo.js";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
 import { getSeason } from "../../libs/seasonalData";
@@ -31,22 +30,30 @@ async function postNewUser(newUser) {
   console.log(data);
 }
 
-
 function App() {
   // const [id, setid] = useState(null);
-  const [cssSeason, setCssSeason] = useState(season);
-  const { user, isAuthenticated } = useAuth0();
+  const savedSeason = localStorage.getItem("localSeason");
+  const [cssSeason, setCssSeason] = useState(
+    savedSeason ? savedSeason : season
+  );
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log(isLoading);
   let userId = "";
   if (user) {
     userId = user.sub.split("|")[1];
-    localStorage.setItem('userId', userId);
-
+    localStorage.setItem("userId", userId);
   }
 
   function handleSeason(e) {
     setCssSeason(e);
     console.log(cssSeason);
   }
+
+  useEffect(() => {
+    if (cssSeason) {
+      localStorage.setItem("localSeason", cssSeason);
+    }
+  }, [cssSeason]);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -96,15 +103,25 @@ function App() {
           element={<RecipePage user={user} cssSeason={cssSeason} />}
         />
         <Route path="search" element={<SearchPage />} />
-        <Route path="shoppinglist" element={<ShoppingList user={user} />} />
-        <Route path="hamburger" element={<NavMenu />} />
-        <Route path="about" element={<About />} />
-        <Route path="favourites" element={<Favourites user={user}/>} />
         <Route
           path="shoppinglist"
-          element={<ShoppingList user={user} cssSeason={cssSeason} />}
+          element={
+            <ShoppingList
+              user={user}
+              cssSeason={cssSeason}
+              isAuthenticated={isAuthenticated}
+              isLoading={isLoading}
+            />
+          }
         />
         <Route path="about" element={<About cssSeason={cssSeason} />} />
+        <Route
+          path="favourites"
+          element={<Favourites user={user} cssSeason={cssSeason} />}
+        />
+
+        <Route path="about" element={<About cssSeason={cssSeason} />} />
+        <Route path="logout" element={<About cssSeason={cssSeason} />} />
       </Routes>
     </Box>
   );

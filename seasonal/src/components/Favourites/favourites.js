@@ -4,18 +4,17 @@ import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 import css from "./favourites.module.css";
 
-
 const api = process.env.REACT_APP_API_CALL;
 
-function Favourites({user}) {
+function Favourites({ user, cssSeason }) {
   // const id = "117441255094162799546";
-  const id = localStorage.getItem("userId")
+  const id = localStorage.getItem("userId");
   const url = `${api}/users/favourites/${id}`;
 
   const [favourites, setFavourites] = useState(null);
   const [data] = useFetch(`${url}`);
   const [recipe, setRecipe] = useState(null);
-  
+
   // let userId;
   // if (user) {
   //   userId = user.sub.split("|")[1];
@@ -56,6 +55,9 @@ function Favourites({user}) {
 
   return (
     <div className={css.container}>
+      <hr className={css[`hr${cssSeason}`]} />
+      <h1 className={css.greeting}>Favourites</h1>
+      <h2>Welcome to your saved recipes...</h2>
       {favourites &&
         favourites.map((item, index) => {
           return (
@@ -68,9 +70,18 @@ function Favourites({user}) {
                     alt={item.id}
                   ></img>
                 </Link>
-                <figcaption className={css.caption}>{item.title}</figcaption>
-                <button onClick={() => handleDelete(index)}>❌</button>
+                <figcaption className={css[`caption${cssSeason}`]}>
+                  {item.title}
+                </figcaption>
               </figure>
+              <div className={css.btn}>
+                <button
+                  className={css.deleteBtn}
+                  onClick={() => handleDelete(index)}
+                >
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </div>
             </div>
           );
         })}

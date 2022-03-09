@@ -37,9 +37,9 @@ function IngredientPage({ cssSeason }) {
   return (
     <>
       <div>
-        <h2 className={css[`ingredientTitle${cssSeason}`]}>
-          {ingredient.name}
-        </h2>
+        <h1 className={css[`ingredientTitle${cssSeason}`]}>
+          - {ingredient.name} -
+        </h1>
 
         <div data-testid="imageContainer" className={css.ingredientContainer}>
           <div>
@@ -51,7 +51,10 @@ function IngredientPage({ cssSeason }) {
           </div>
           <div className={css[`ingredientDetails${cssSeason}`]}>
             <h2>{ingredient.nutrition}</h2>
-            <h2>{ingredient.fact}</h2>
+          </div>
+          <div className={css[`fact${cssSeason}`]}>
+            <hr className={css[`hr${cssSeason}`]} />
+            <h2>Did you know💡: {ingredient.fact}</h2>
           </div>
         </div>
       </div>

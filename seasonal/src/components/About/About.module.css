@@ -1,111 +1,104 @@
 .aboutUsspring {
-font-weight: bold;
-margin-top: 100px;
-font-size: 40px;
-padding: 20px;
+  background-color: rgba(172, 243, 157, 0.502);
+  border-radius: 10px;
+  margin: 0 1rem;
+  font-weight: bold;
+  margin-top: 5.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .textspring {
-    
-font-size: 14px;
-display: flex;
-font-weight: bold;
-justify-content: center;
-padding: 5px;
-text-align: center;
-background-color: rgba(172, 243, 157, 0.5);
-border-radius: 10px;
-margin: 1rem;
-padding: 1rem;
-margin-top: 5rem;
-};
+  font-size: 1rem;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  text-align: left;
+  background-color: rgba(172, 243, 157, 0.5);
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
 
 .image {
-display:flex;
-justify-content: center;
-border: solid;
-border-radius:10px;
-border-color: white;
-height: auto;
-width:auto;
-padding: 5px;
-margin-top:50px;
-     
+  display: flex;
+  justify-content: center;
+  height: auto;
+  width: auto;
 }
 /* summer */
 
 .aboutUssummer {
-font-weight: bold;
-margin-top: 100px;
-font-size: 40px;
-padding: 20px;
-    
+  background-color: rgba(247, 236, 161, 0.876);
+  border-radius: 10px;
+  margin: 0 1rem;
+  font-weight: bold;
+  margin-top: 5.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .textsummer {
-    
-font-size: 14px;
-display: flex;
-font-weight: bold;
-justify-content: center;
-padding: 5px;
-text-align: center;
-background-color: #F7ECA1;
-border-radius: 10px;
-margin: 1rem;
-padding: 1rem;
-margin-top: 5rem;
-};
+  font-size: 14px;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  padding: 5px;
+  text-align: left;
+  background-color: rgba(247, 236, 161, 0.876);
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1rem;
+  margin-top: 5rem;
+}
 
-    /* autumn */
+/* autumn */
 .aboutUsautumn {
-font-weight: bold;
-margin-top: 100px;
-font-size: 40px;
-padding: 20px;
-       
+  background-color: rgba(237, 205, 192, 0.883);
+  border-radius: 10px;
+  margin: 0 1rem;
+  font-weight: bold;
+  margin-top: 5.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .textautumn {
-        
-font-size: 14px;
-display: flex;
-font-weight: bold;
-justify-content: center;
-padding: 5px;
-text-align: center;
-background-color: #EDCDC0;
-border-radius: 10px;
-margin: 1rem;
-padding: 1rem;
-margin-top: 5rem;
-};
-
-        /* winter */
-.aboutUswinter {
-font-weight: bold;
-margin-top: 100px;
-font-size: 40px;
-padding: 20px;
-            
+  font-size: 14px;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  padding: 5px;
+  text-align: left;
+  background-color: rgba(237, 205, 192, 0.808);
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1rem;
 }
-        
+
+/* winter */
+.aboutUswinter {
+  background-color: rgba(210, 226, 238, 0.76);
+  border-radius: 10px;
+  margin: 0 1rem;
+  font-weight: bold;
+  margin-top: 5.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
 .textwinter {
-color: #3A5683;
-font-size: 14px;
-display: flex;
-font-weight: bold;
-justify-content: center;
-padding: 5px;
-text-align: center;
-background-color: #D2E2EE;
-border-radius: 10px;
-margin: 1rem;
-padding: 1rem;
-margin-top: 5rem;
-};
-
-            
-
-
-
+  color: #3a5683;
+  font-size: 14px;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  padding: 5px;
+  text-align: left;
+  background-color: rgba(210, 226, 238, 0.871);
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1rem;
+  margin-top: 5rem;
+}
