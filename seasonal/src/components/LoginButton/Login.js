@@ -31,8 +31,7 @@ const LoginButton = () => {
         >
           Log In
         </Button>
-        {isAuthenticated?<LogoutButton className={css.logout} />: ''}
-        {/* <LogoutButton className={css.logout} /> */}
+        <LogoutButton className={css.logout} />
       </div>
     </div>
   );
