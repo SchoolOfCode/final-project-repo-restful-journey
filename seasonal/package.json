@@ -31,6 +31,8 @@
     "test ingredient": "./src/components/IngredientPage/IngredientPage.test.js",
     "test list": "./src/components/ShoppingList/ShoppingList.test.js",
     "discover": "npx cypress run --spec cypress/integration/unauth_discover_user_journey.js",
+    "discoverAuth": "npx cypress run --spec cypress/integration/auth_shopping_list.js",
+    
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

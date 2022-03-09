@@ -28,7 +28,10 @@ function Homepage({ user, cssSeason, handleSeason }) {
   const [fruit, setFruit] = useState([]);
 
   console.log(`Season determined from app level ${cssSeason}`);
-  const randomNumber = Math.floor(Math.random() * seasonQuotes[cssSeason].length);
+
+  const randomNumber = Math.floor(
+    Math.random() * seasonQuotes[cssSeason].length
+  );
 
   const [data] = useFetch(`${api}/ingredients/season/${cssSeason}`);
   console.log(data);
@@ -61,10 +64,12 @@ function Homepage({ user, cssSeason, handleSeason }) {
           <h1 className={css[`hello${cssSeason}`]}>
             Hello, {user ? user.nickname : "guest"}! 👋🏼
           </h1>
+          <h4>What season are you interested in?</h4>
           <Select
             onChange={handleSeason}
-            placeholder="What season are you interested in?"
+            // placeholder="What season are you interested in?"
             size="sm"
+            value={cssSeason}
           >
             <option value="summer">Summer ☀️</option>
             <option value="autumn">Autumn 🍂</option>

@@ -1,19 +1,23 @@
 import React from "react";
 import { bool } from "prop-types";
 import { StyledMenu } from "./Menu.styled";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+
 const Menu = ({ open }) => {
+  const {isAuthenticated } = useAuth0();
+
   return (
     <StyledMenu open={open}>
-      <Link to={"/"}>Login </Link>
-      <Link to={"/home"}>Home</Link>
-      <Link to={"/ingredients"}>Ingredients</Link>
-      <Link to={"/recipes"}>Recipes</Link>
-      <Link to={"/search"}>Search</Link>
-      <Link to={"/shoppinglist"}>Shopping List</Link>
-      <Link to={"/about"}>About</Link>
-      <Link to={"/timeline"}>Seasonal Calendar</Link>
-      <Link to={"/favourites"}>Favourites</Link>
+    <Link to={'/'}>{!isAuthenticated ?'Login': 'Logout' }</Link>
+    <Link to={'/home'}>Home</Link>
+    <Link to={'/about'}>About</Link>
+    <Link to={'/ingredients'}>Ingredients</Link>
+    <Link to={'/recipes'}>Recipes</Link>
+    <Link to={'/search'}>Search</Link>
+    <Link to={"/timeline"}>Seasonal Calendar</Link>
+    {isAuthenticated && <Link to={'/shoppinglist'}>Shopping List</Link>}
+    {isAuthenticated && <Link to={'/favourites'}>Favourites</Link>}
     </StyledMenu>
   );
 };

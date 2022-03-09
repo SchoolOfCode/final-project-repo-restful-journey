@@ -14,6 +14,7 @@ function IngredientPage({ cssSeason }) {
   );
   let ingredientName = ingredient.name;
   console.log(ingredient);
+  console.log(recipes.length);
 
   useEffect(() => {
     if (ingredient) {
@@ -75,11 +76,15 @@ function IngredientPage({ cssSeason }) {
             );
           })}
       </div>
-      <Link to="/search" state={{ recipes, ingredientName }}>
-        <h3 data-testid="discover" className={css[`discover${cssSeason}`]}>
-          Discover more {ingredient.name} recipes here!
-        </h3>
-      </Link>
+      {recipes.length > 4 ? (
+        <Link to="/search" state={{ recipes, ingredientName }}>
+          <h3 data-testid="discover" className={css[`discover${cssSeason}`]}>
+            Discover more {ingredient.name} recipes here!
+          </h3>
+        </Link>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
