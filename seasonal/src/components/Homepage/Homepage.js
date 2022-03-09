@@ -30,7 +30,7 @@ function Homepage({ user, cssSeason, handleSeason }) {
 
   console.log(`Season determined from app level ${cssSeason}`);
 
-  const [data] = useFetch(`${api}/ingredients/season/${season}`);
+  const [data] = useFetch(`${api}/ingredients/season/${cssSeason}`);
   console.log(data);
   console.log(`Season determined from actual date ${getSeason()}`);
 
@@ -72,7 +72,7 @@ function Homepage({ user, cssSeason, handleSeason }) {
             <option value="spring">Spring 🌱</option>
           </Select>
           <br />
-          <h2>{seasonQuotes[season][randomNumber]}</h2>
+          <h2>{seasonQuotes[cssSeason][randomNumber]}</h2>
         </div>
         <div className={css[`info${cssSeason}`]}>
           <h2>
