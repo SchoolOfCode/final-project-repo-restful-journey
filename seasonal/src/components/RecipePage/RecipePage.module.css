@@ -121,6 +121,7 @@
 
 .noRecipesummer,
 .linkToHomesummer {
+  margin-top: 10rem;
   display: flex;
   justify-content: center;
   background-color: #f7eca1;
@@ -162,6 +163,7 @@
 
 .noRecipeautumn,
 .linkToHomeautumn {
+  margin-top: 10rem;
   display: flex;
   justify-content: center;
   background-color: #edcdc0;
@@ -204,6 +206,7 @@
 
 .noRecipewinter,
 .linkToHomewinter {
+  margin-top: 10rem;
   display: flex;
   justify-content: center;
   background-color: #d2e2ee;
@@ -244,7 +247,6 @@ i:before {
   transition: 0.2s;
 }
 
-
 span {
   position: absolute;
   bottom: 70px;
@@ -257,4 +259,3 @@ span {
   color: transparent;
   font-weight: 400;
 }
-

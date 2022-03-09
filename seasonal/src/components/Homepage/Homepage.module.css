@@ -14,14 +14,15 @@
 }
 
 .hellospring {
-  font-size: 20px;
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1rem;
 }
 
 .infospring {
   border: 3.5px solid rgba(172, 243, 157, 0.5);
   border-radius: 10px;
   margin: 0 1rem;
-  margin-bottom: 1.5rem;
   padding: 1.5rem;
 }
 
@@ -61,7 +62,6 @@
   font-weight: bold;
   margin-bottom: 20px;
 }
-
 
 .footer {
   margin-bottom: 5rem;
@@ -139,11 +139,16 @@
   height: 100%;
 }
 
+.hellosummer {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
 .infosummer {
   border: 3.5px solid #f7eca1;
   border-radius: 10px;
   margin: 0 1rem;
-  margin-bottom: 1.5rem;
   padding: 1.5rem;
 }
 
@@ -191,11 +196,16 @@
   height: 100%;
 }
 
+.helloautumn {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
 .infoautumn {
   border: 3.5px solid #b7410e;
   border-radius: 10px;
   margin: 0 1rem;
-  margin-bottom: 1.5rem;
   padding: 1.5rem;
 }
 
@@ -217,8 +227,6 @@
   margin: 2rem;
   text-shadow: 2px 2px 4px white;
 }
-
-
 
 .ldsEllipsisautumn div {
   position: absolute;
@@ -245,11 +253,16 @@
   height: 100%;
 }
 
+.hellowinter {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
 .infowinter {
   border: 3.5px solid #d2e2ee;
   border-radius: 10px;
   margin: 0 1rem;
-  margin-bottom: 1.5rem;
   padding: 1.5rem;
 }
 

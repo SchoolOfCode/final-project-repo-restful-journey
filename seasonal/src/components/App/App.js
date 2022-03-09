@@ -115,7 +115,10 @@ function App() {
           }
         />
         <Route path="about" element={<About cssSeason={cssSeason} />} />
-        <Route path="favourites" element={<Favourites user={user} />} />
+        <Route
+          path="favourites"
+          element={<Favourites user={user} cssSeason={cssSeason} />}
+        />
 
         <Route path="about" element={<About cssSeason={cssSeason} />} />
         <Route path="logout" element={<About cssSeason={cssSeason} />} />

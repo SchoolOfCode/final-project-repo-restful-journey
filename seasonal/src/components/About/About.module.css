@@ -1,8 +1,11 @@
 .aboutUsspring {
+  background-color: rgba(172, 243, 157, 0.502);
+  border-radius: 10px;
+  margin: 0 1rem;
   font-weight: bold;
-  margin-top: 5rem;
-  font-size: 2rem;
-  padding: 1rem;
+  margin-top: 5.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .textspring {
@@ -10,7 +13,7 @@
   display: flex;
   font-weight: bold;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   background-color: rgba(172, 243, 157, 0.5);
   border-radius: 10px;
   margin: 1rem;
@@ -27,10 +30,13 @@
 /* summer */
 
 .aboutUssummer {
+  background-color: rgba(247, 236, 161, 0.876);
+  border-radius: 10px;
+  margin: 0 1rem;
   font-weight: bold;
-  margin-top: 5rem;
-  font-size: 2rem;
-  padding: 1rem;
+  margin-top: 5.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .textsummer {
@@ -39,8 +45,8 @@
   font-weight: bold;
   justify-content: center;
   padding: 5px;
-  text-align: center;
-  background-color: #f7eca1;
+  text-align: left;
+  background-color: rgba(247, 236, 161, 0.876);
   border-radius: 10px;
   margin: 1rem;
   padding: 1rem;
@@ -49,10 +55,13 @@
 
 /* autumn */
 .aboutUsautumn {
+  background-color: rgba(237, 205, 192, 0.883);
+  border-radius: 10px;
+  margin: 0 1rem;
   font-weight: bold;
-  margin-top: 5rem;
-  font-size: 2rem;
-  padding: 1rem;
+  margin-top: 5.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .textautumn {
@@ -61,20 +70,22 @@
   font-weight: bold;
   justify-content: center;
   padding: 5px;
-  text-align: center;
-  background-color: #edcdc0;
+  text-align: left;
+  background-color: rgba(237, 205, 192, 0.808);
   border-radius: 10px;
   margin: 1rem;
   padding: 1rem;
-  margin-top: 5rem;
 }
 
 /* winter */
 .aboutUswinter {
+  background-color: rgba(210, 226, 238, 0.76);
+  border-radius: 10px;
+  margin: 0 1rem;
   font-weight: bold;
-  margin-top: 5rem;
-  font-size: 2rem;
-  padding: 1rem;
+  margin-top: 5.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 .textwinter {
@@ -84,8 +95,8 @@
   font-weight: bold;
   justify-content: center;
   padding: 5px;
-  text-align: center;
-  background-color: #d2e2ee;
+  text-align: left;
+  background-color: rgba(210, 226, 238, 0.871);
   border-radius: 10px;
   margin: 1rem;
   padding: 1rem;
