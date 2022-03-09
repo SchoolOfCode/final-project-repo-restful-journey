@@ -1,8 +1,5 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "../../global";
-import Burger from "../Burger/burger.js";
-import Menu from "../Menu/menu.js";
+import { Link } from "react-router-dom";
 import css from "./About.module.css";
 
 export function About({ cssSeason }) {
@@ -28,6 +25,11 @@ export function About({ cssSeason }) {
         environment. Additionally, it is often more affordable, as it hasn't had
         to be imported, and is more readily available during that month.
       </h2>
+      <Link to="/timeline">
+        <h3 className={css[`discover${cssSeason}`]}>
+          Click here for a month-to-month guide on how to eat seasonally
+        </h3>
+      </Link>
     </div>
   );
 }
