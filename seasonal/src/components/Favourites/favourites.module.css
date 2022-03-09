@@ -1,6 +1,13 @@
+/* spring */
+
 .greeting {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+h2 {
+  margin-top: 1rem;
   text-align: left;
 }
 
@@ -26,7 +33,7 @@
 
 .deleteBtn {
   padding: 0.75rem;
-  color: rgb(207, 13, 13);
+  color: rgba(207, 13, 13, 0.644);
   font-size: 1rem;
 }
 
@@ -35,9 +42,60 @@
   margin-bottom: 1rem;
 }
 
-.caption {
+.captionspring {
   padding: 0.5rem;
   background-color: rgba(172, 243, 157, 0.5);
   border-radius: 10px;
   font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.hrspring {
+  border: 2.5px solid rgba(172, 243, 157, 0.5);
+  margin-bottom: 1rem;
+}
+
+/* summer */
+
+.captionsummer {
+  padding: 0.5rem;
+  background-color: rgba(245, 225, 95, 0.404);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.hrsummer {
+  border: 2px solid rgba(245, 225, 95, 0.404);
+  margin-bottom: 1rem;
+}
+
+/* autumn */
+
+.captionautumn {
+  padding: 0.5rem;
+  background-color: rgba(237, 205, 192, 0.24);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.hrautumn {
+  border: 2px solid rgba(237, 205, 192, 0.24);
+  margin-bottom: 1rem;
+}
+
+/* winter */
+
+.captionwinter {
+  padding: 0.5rem;
+  background-color: rgba(73, 138, 187, 0.301);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.hrwinter {
+  border: 2px solid rgba(73, 138, 187, 0.301);
+  margin-bottom: 1rem;
 }

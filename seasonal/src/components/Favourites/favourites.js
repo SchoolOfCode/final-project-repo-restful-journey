@@ -6,7 +6,7 @@ import css from "./favourites.module.css";
 
 const api = process.env.REACT_APP_API_CALL;
 
-function Favourites({ user }) {
+function Favourites({ user, cssSeason }) {
   // const id = "117441255094162799546";
   const id = localStorage.getItem("userId");
   const url = `${api}/users/favourites/${id}`;
@@ -55,7 +55,9 @@ function Favourites({ user }) {
 
   return (
     <div className={css.container}>
-      <h1 className={css.greeting}>Welcome to your saved recipes...</h1>
+      <hr className={css[`hr${cssSeason}`]} />
+      <h1 className={css.greeting}>Favourites</h1>
+      <h2>Welcome to your saved recipes...</h2>
       {favourites &&
         favourites.map((item, index) => {
           return (
@@ -68,14 +70,16 @@ function Favourites({ user }) {
                     alt={item.id}
                   ></img>
                 </Link>
-                <figcaption className={css.caption}>{item.title}</figcaption>
+                <figcaption className={css[`caption${cssSeason}`]}>
+                  {item.title}
+                </figcaption>
               </figure>
               <div className={css.btn}>
                 <button
                   className={css.deleteBtn}
                   onClick={() => handleDelete(index)}
                 >
-                  <i class="fa-solid fa-delete-left"></i>
+                  <i class="fa-solid fa-trash-can"></i>
                 </button>
               </div>
             </div>
