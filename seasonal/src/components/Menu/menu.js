@@ -12,6 +12,7 @@ const Menu = ({ open }) => {
     <Link to={'/search'}>Search</Link>
     <Link to={'/shoppinglist'}>Shopping List</Link>
     <Link to={'/about'}>About</Link>
+    <Link to={'/timeline'}>Timeline</Link>
     <Link to={'/favourites'}>Favourites</Link>
     </StyledMenu>
   );
