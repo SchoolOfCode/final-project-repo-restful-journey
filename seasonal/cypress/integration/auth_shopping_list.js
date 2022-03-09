@@ -10,9 +10,10 @@ describe("The login page", () => {
 
 describe(`Clicking "login" on the loginpage`, () => {
   it(" takes the user to the auth page", () => {
-    cy.get(
-      '[class="chakra-button LoginButton_login__reQXg css-1w642ok"]'
-    ).click();
+    cy.contains('Log In').click()
+    // cy.get(
+    //   '[class="chakra-button LoginButton_login__reQXg css-1w642ok"]'
+    // ).click();
 
     cy.get('[class="input cdf74ce7b ce07c2f58"]')
       .type("nourishtest@protonmail.com")
@@ -32,9 +33,23 @@ describe("Entering username and password", () => {
 
     cy.url().should("include", "/home");
 
-    cy.get(".Homepage_hellospring__XlrxQ").should("contain", "nourishtest");
+    cy.get(".Homepage_hellospring__doBV8").should("contain", "nourishtest");
   });
 });
+
+describe("Selecting desired ingredient", () => {
+  it("takes the user to recipe page", () => {
+    
+    cy.get('[alt="Spinach"]').first().click({
+      waitForAnimations: false,
+      force: true,
+    });
+    cy.url().should("include", "/ingredients");
+    
+
+  });
+});
+
 
 describe("Using the hamburger menu and shopping list link", () => {
   it(" takes the user to the shopping list page", () => {
@@ -48,11 +63,13 @@ describe("Using the hamburger menu and shopping list link", () => {
 
 describe("When the shopping list loads for the authorised test user", () => {
   it(" the list shows eggs, milk and bread", () => {
-    cy.get('[class="ShoppingList_ingredient__VV1Kg"]').should(
+    cy.get('[class="ShoppingList_ingredient__tXHLw"]').should(
       "contain",
       "milk"
     );
 
-    cy.get('[data-testid="shopping-list"]').should("have.length", 2);
+    // cy.get('[data-testid="shopping-list"]').should("have.length", 2);
+     cy.get('.ShoppingList_ingredient__tXHLw').should("have.length", 3);
+
   });
 });
