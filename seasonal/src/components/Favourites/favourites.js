@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import FadeIn from "react-fade-in";
 import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 import css from "./favourites.module.css";
@@ -30,7 +31,7 @@ function Favourites({ user, cssSeason }) {
       async function deleteRecipe() {
         console.log(typeof recipe);
         try {
-            await fetch(`${api}/users/favourites`, {
+          await fetch(`${api}/users/favourites`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: id, recipeIndex: recipe }),
@@ -52,38 +53,40 @@ function Favourites({ user, cssSeason }) {
   }
 
   return (
-    <div className={css.container}>
-      <hr className={css[`hr${cssSeason}`]} />
-      <h1 className={css.greeting}>Favourites</h1>
-      <h2>Welcome to your saved recipes...</h2>
-      {favourites &&
-        favourites.map((item, index) => {
-          return (
-            <div className={css.recipeContainer} key={item.id}>
-              <figure className={css.recipeContainer2}>
-                <Link to="/recipes" state={{ recipeId: item.id }}>
-                  <img
-                    className={css.image}
-                    src={item.image}
-                    alt={item.id}
-                  ></img>
-                </Link>
-                <figcaption className={css[`caption${cssSeason}`]}>
-                  {item.title}
-                </figcaption>
-              </figure>
-              <div className={css.btn}>
-                <button
-                  className={css.deleteBtn}
-                  onClick={() => handleDelete(index)}
-                >
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
+    <FadeIn>
+      <div className={css.container}>
+        <hr className={css[`hr${cssSeason}`]} />
+        <h1 className={css.greeting}>Favourites</h1>
+        <h2>Welcome to your saved recipes...</h2>
+        {favourites &&
+          favourites.map((item, index) => {
+            return (
+              <div className={css.recipeContainer} key={item.id}>
+                <figure className={css.recipeContainer2}>
+                  <Link to="/recipes" state={{ recipeId: item.id }}>
+                    <img
+                      className={css.image}
+                      src={item.image}
+                      alt={item.id}
+                    ></img>
+                  </Link>
+                  <figcaption className={css[`caption${cssSeason}`]}>
+                    {item.title}
+                  </figcaption>
+                </figure>
+                <div className={css.btn}>
+                  <button
+                    className={css.deleteBtn}
+                    onClick={() => handleDelete(index)}
+                  >
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                </div>
               </div>
-            </div>
-          );
-        })}
-    </div>
+            );
+          })}
+      </div>
+    </FadeIn>
   );
 }
 

@@ -54,3 +54,10 @@
 .verticalTimeline::before {
   z-index: -5;
 }
+
+.produce {
+  background-color: #f4f3eda2;
+  border-radius: 10px;
+  border: 1px solid #dbdad3;
+  padding: 1rem;
+}

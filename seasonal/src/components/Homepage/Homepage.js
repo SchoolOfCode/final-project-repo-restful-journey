@@ -52,8 +52,6 @@ function Homepage({ user, cssSeason, handleSeason }) {
     if (data) {
       setVegetables(filterVegetables(data.payload, false));
       setFruit(filterVegetables(data.payload, true));
-      // console.log(vegetables);
-      // console.log(fruit);
     }
   }, [data]);
 
@@ -64,13 +62,8 @@ function Homepage({ user, cssSeason, handleSeason }) {
           <h1 className={css[`hello${cssSeason}`]}>
             Hello, {user ? user.nickname : "guest"}! 👋🏼
           </h1>
-          <h4>What season are you interested in?</h4>
-          <Select
-            onChange={handleSeason}
-            // placeholder="What season are you interested in?"
-            size="sm"
-            value={cssSeason}
-          >
+          <h4 className={css.option}>What season are you interested in?</h4>
+          <Select onChange={handleSeason} size="sm" value={cssSeason}>
             <option value="summer">Summer ☀️</option>
             <option value="autumn">Autumn 🍂</option>
             <option value="winter">Winter ❄️</option>

@@ -114,7 +114,7 @@ function RecipePage({ user, cssSeason }) {
         </div>
         <div>
           <div>
-            <p className={css.ingredients}>Ingredients</p>
+            <p className={css.ingredients}>- Ingredients -</p>
           </div>
           <div>
             <ul>
@@ -154,7 +154,7 @@ function RecipePage({ user, cssSeason }) {
         )}
 
         <div>
-          <p className={css.instructions}>Instructions</p>
+          <p className={css.instructions}>- Instructions -</p>
           <ul>
             {recipe.analyzedInstructions[0].steps.map((x, i) => {
               return (
