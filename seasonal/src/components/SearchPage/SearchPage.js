@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Container } from "@chakra-ui/react";
 import SearchInput from "../SearchInput/SearchInput";
 import { Link, useLocation } from "react-router-dom";
+import FadeIn from "react-fade-in";
 import css from "./SearchPage.module.css";
 const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 
@@ -28,30 +29,34 @@ function SearchPage() {
   }, [ingredient]);
 
   return (
-    <Container maxW="container.md" className={css.mainContainer}>
-      <SearchInput
-        placeholder="Search recipes..."
-        data-testid="search"
-        className={css.search}
-        ingredient={ingredient}
-        setIngredient={setIngredient}
-      />
-      <div className={css.imgContainer}>
-        {recipes &&
-          recipes.slice(4, 10).map((item, index) => {
-            return (
-              <div key={item.id} className={css.recipeContainer}>
-                <figure className={css.recipeContainer2}>
-                  <Link to="/recipes" state={{ recipeId: item.id }}>
-                    <img src={item.image} alt={item.title}></img>
-                  </Link>
-                  <figcaption className={css.caption}>{item.title}</figcaption>
-                </figure>
-              </div>
-            );
-          })}
-      </div>
-    </Container>
+    <FadeIn>
+      <Container maxW="container.md" className={css.mainContainer}>
+        <SearchInput
+          placeholder="Search recipes..."
+          data-testid="search"
+          className={css.search}
+          ingredient={ingredient}
+          setIngredient={setIngredient}
+        />
+        <div className={css.imgContainer}>
+          {recipes &&
+            recipes.slice(4, 10).map((item, index) => {
+              return (
+                <div key={item.id} className={css.recipeContainer}>
+                  <figure className={css.recipeContainer2}>
+                    <Link to="/recipes" state={{ recipeId: item.id }}>
+                      <img src={item.image} alt={item.title}></img>
+                    </Link>
+                    <figcaption className={css.caption}>
+                      {item.title}
+                    </figcaption>
+                  </figure>
+                </div>
+              );
+            })}
+        </div>
+      </Container>
+    </FadeIn>
   );
 }
 

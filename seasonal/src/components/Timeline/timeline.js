@@ -18,9 +18,9 @@ function Timeline({ cssSeason }) {
           className={css[`seasonalCalendar${cssSeason}`]}
           style={{ fontSize: "1.5rem" }}
         >
-          Seasonal Calendar
+          - Seasonal Calendar -
         </h1>
-        <p> A handy guide to help you eat seasonally year-round.</p>
+        <h3> A handy guide to help you eat seasonally year-round.</h3>
       </div>
       <VerticalTimeline className={css.verticalTimeline}>
         <VerticalTimelineElement
@@ -29,8 +29,8 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- January -</h1>
-            <p>
-              Apple, Beetroot, Brussel Sprouts, Cauliflower, Celeriac, Celery,
+            <p className={css.produce}>
+              Apple, Beetroot, Brussels Sprouts, Cauliflower, Celeriac, Celery,
               Chicory, Horseradish, Jerusalem Artichoke, Kale, Kohlrabi, Leeks,
               Parsnips, Pear, Potatoes, Rhubarb, Salsify, Shallots, Swede,
               Turnips
@@ -42,7 +42,7 @@ function Timeline({ cssSeason }) {
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
         >
           <h1 style={{ fontSize: "1.5rem" }}>- February -</h1>
-          <p>
+          <p className={css.produce}>
             Brussel Sprouts, Cauliflower, Beetroot, Celeriac, Chicory, Jerusalem
             Artichoke, Kale, Kohlrabi, Leeks, Parsnips, Potatoes, Purple
             Sprouting Broccoli, Rhubarb, Salsify, Shallots, Swede, Turnips
@@ -53,7 +53,7 @@ function Timeline({ cssSeason }) {
           iconStyle={{ background: "#88E375", color: "#fff" }}
         >
           <h1 style={{ fontSize: "1.5rem" }}>- March -</h1>
-          <p>
+          <p className={css.produce}>
             Cauliflower, Kale, Leeks, Purple Sprouting Broccoli, Rhubarb,
             Salsify, Spinach, Spring onions, Swede, Wild Nettles, Wild Garlic
           </p>
@@ -64,7 +64,7 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- April -</h1>
-            <p>
+            <p className={css.produce}>
               Asparagus, Basil, Broccoli, Chives, Dill, Jersey Royal New
               Potatoes, Lettuce & Salad Leaves, New Potatoes, Purple Sprouting
               Broccoli, Radishes, Rhubarb, Rocket, Samphire, Sorrel, Spinach,
@@ -78,7 +78,7 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- May -</h1>
-            <p>
+            <p className={css.produce}>
               Asparagus, Basil, Broccoli, Carrots, Chervil, Chives, Coriander,
               Dill, Jersey Royal and New Potatoes, Lettuce and Salad Leaves,
               Mint, Nasturtium, New Potatoes, Parsley, Oregano, Peas, Radishes,
@@ -93,7 +93,7 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- June -</h1>
-            <p>
+            <p className={css.produce}>
               Artichoke, Asparagus, Aubergine, Basil, Beetroot, Bilberries,
               Blueberries, Broad Beans, Broccoli, Carrots, Chard, Cherries,
               Chervil, Chillies, Chives, Coriander, Courgettes, Dill,
@@ -113,7 +113,7 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- July -</h1>
-            <p>
+            <p className={css.produce}>
               Artichoke, Aubergine, Basil, Beetroot, Bilberries, Blackcurrants,
               Blueberries, Broad Beans, Broccoli, Carrots, Chard, Chervil,
               Chillies, Cherries, Chives, Coriander, Courgettes, Dill,
@@ -133,7 +133,7 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- August -</h1>
-            <p>
+            <p className={css.produce}>
               Artichoke, Aubergine, Basil, Beetroot, Bilberries, Blueberries,
               Broad Beans, Broccoli, Carrots, Chard, Cherries, Chillies, Chives,
               Coriander, Courgettes, Cucumber, Damsons, Fennel, Greengages,
@@ -152,7 +152,7 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- September -</h1>
-            <p>
+            <p className={css.produce}>
               Apples, Artichoke, Aubergine, Beetroot, Bilberries, Blackberries,
               Broccoli, Butternut Squash, Carrots, Celeriac, Celery, Chard,
               Chestnuts, Chillies, Chives, Cob Nuts, Coriander, Courgettes,
@@ -172,7 +172,7 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- October -</h1>
-            <p>
+            <p className={css.produce}>
               Apples, Artichoke, Beetroot, Bilberries, Blackberries, Broccoli,
               Butternut Squash, Celeriac, Celery, Chestnuts, Chicory, Chives,
               Chillies, Cob Nuts, Elderberries, Fennel, Garlic, Horseradish,
@@ -190,7 +190,7 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- November -</h1>
-            <p>
+            <p className={css.produce}>
               Apples, Artichoke, Beetroot, Butternut Squash, Cauliflower,
               Celeriac, Celery, Chestnuts, Chicory, Cob Nuts, Horseradish,
               Jerusalem Artichoke, Kale, Kohlrabi, Leeks, Parsnips, Pears,
@@ -205,7 +205,7 @@ function Timeline({ cssSeason }) {
         >
           <div style={{ width: "70vw" }}>
             <h1 style={{ fontSize: "1.5rem" }}>- December -</h1>
-            <p>
+            <p className={css.produce}>
               Apples, Beetroot, Brussels Sprouts, Cauliflower, Celeriac, Celery,
               Chestnuts, Chicory, Horseradish, Jerusalem Artichoke, Kale,
               kohlrabi, Leeks, Parsnips, Pears, Potatoes, Salsify, Shallots,
