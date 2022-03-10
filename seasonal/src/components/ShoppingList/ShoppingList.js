@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Input } from "@chakra-ui/react";
+import FadeIn from "react-fade-in";
 import css from "./ShoppingList.module.css";
-import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const api = process.env.REACT_APP_API_CALL;
 
 function ShoppingList({ user, cssSeason }) {
-  const {isAuthenticated } = useAuth0();
+  const { isAuthenticated } = useAuth0();
 
   const [input, setInput] = useState("");
   const [userList, setUserList] = useState(null);
@@ -70,36 +70,42 @@ function ShoppingList({ user, cssSeason }) {
     return (
       <>
         <div className={css.heading}>
-          <h2>Here's your shopping list...</h2>
+          <FadeIn>
+            <h2>Here's your shopping list...</h2>
+          </FadeIn>
         </div>
-        <form onSubmit={handleSubmit}>
-          <Input
-            className={css.input}
-            type="text"
-            value={input}
-            onChange={handleChange}
-          />
-          <button
-            aria-label="add-ingredient"
-            className={css[`addBtn${cssSeason}`]}
-            type="submit"
-          >
-            <i class="fa-solid fa-plus"></i>
-          </button>
-        </form>
+        <FadeIn>
+          <form onSubmit={handleSubmit}>
+            <Input
+              className={css.input}
+              type="text"
+              value={input}
+              onChange={handleChange}
+            />
+            <button
+              aria-label="add-ingredient"
+              className={css[`addBtn${cssSeason}`]}
+              type="submit"
+            >
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </form>
+        </FadeIn>
         <ul data-testid="shopping-list">
           {userList &&
             userList.map((ingredient, i) => {
               return (
-                <div key={i} className={css[`container${cssSeason}`]}>
-                  <li className={css.ingredient}>{ingredient}</li>
-                  <button
-                    className={css.deleteBtn}
-                    onClick={() => handleDelete(ingredient, i)}
-                  >
-                    <i class="fa-solid fa-xmark"></i>
-                  </button>
-                </div>
+                <FadeIn>
+                  <div key={i} className={css[`container${cssSeason}`]}>
+                    <li className={css.ingredient}>{ingredient}</li>
+                    <button
+                      className={css.deleteBtn}
+                      onClick={() => handleDelete(ingredient, i)}
+                    >
+                      <i class="fa-solid fa-xmark"></i>
+                    </button>
+                  </div>
+                </FadeIn>
               );
             })}
         </ul>
