@@ -43,6 +43,10 @@
   margin: 1rem;
 }
 
+.didYouKnow {
+font-weight: bold;
+}
+
 .imageContainer {
   display: flex;
   justify-content: center;

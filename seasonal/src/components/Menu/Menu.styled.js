@@ -7,7 +7,7 @@ export const StyledMenu = styled.nav`
   background: ${({ theme }) => theme.primaryLight};
   height: 100vh;
   text-align: left;
-  padding: 2rem;
+  padding: 1rem;
   z-index: 2;
   position: fixed;
   top: 0;
@@ -21,7 +21,7 @@ export const StyledMenu = styled.nav`
 
   a {
     font-size: 0.5rem;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     color: ${({ theme }) => theme.primaryDark};
     text-decoration: none;
     transition: color 0.3s linear;

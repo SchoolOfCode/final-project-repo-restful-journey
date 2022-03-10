@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import css from "./RecipePage.module.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const api = process.env.REACT_APP_API_CALL;
 const recipeApiKey = process.env.REACT_APP_SPONNACULAR_KEY;
 
 function RecipePage({ user, cssSeason }) {
+  const { isAuthenticated } = useAuth0();
   const location = useLocation();
   const [list, setList] = useState([]);
   const [ingredient, setIngredient] = useState(null);
@@ -43,7 +45,7 @@ function RecipePage({ user, cssSeason }) {
   }
 
   function handleRecipe(e, x) {
-    e.target.innerHTML = `${x.step} `;
+    e.target.innerHTML = `${x.step} 👍`;
   }
 
   function handleFavourites() {
@@ -135,12 +137,22 @@ function RecipePage({ user, cssSeason }) {
             </ul>
           </div>
         </div>
-        <div className={css[`shoppingListLink${cssSeason}`]}>
-          <Link to="/shoppinglist">
-            <p className={css.link}>Go to your Shopping list</p>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </Link>
-        </div>
+        {isAuthenticated ? (
+          <div className={css[`shoppingListLink${cssSeason}`]}>
+            <Link to="/shoppinglist">
+              <p className={css.link}>Go to your Shopping list</p>
+              <i class="fa-solid fa-cart-shopping"></i>
+            </Link>
+          </div>
+        ) : (
+          <div className={css[`shoppingListLink${cssSeason}`]}>
+            <Link to="/">
+              <p className={css.link}>Login to create your Shopping List</p>
+              <i class="fa-solid fa-cart-shopping"></i>
+            </Link>
+          </div>
+        )}
+
         <div>
           <p className={css.instructions}>Instructions</p>
           <ul>

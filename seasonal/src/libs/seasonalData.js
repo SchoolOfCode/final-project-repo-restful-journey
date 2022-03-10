@@ -13,23 +13,24 @@ export const seasonQuotes = {
 
   summer: [
     `Did you know that edible fruits belong to the Rosaceae group, 
-            or the rose family? A few of our favorite summer fruits, including 
-            apples, pears, cherries, plums, apricots, raspberries, strawberries, 
-            and peaches, are actually all members of the flowering plant group.`,
+    or the rose family? A few of our favorite summer fruits, including 
+    apples, pears, cherries, plums, apricots, raspberries, strawberries, 
+    and peaches, are actually all members of the flowering plant group.`,
     `Cucumbers are one of the most hydrating foods you can eat- they’re 
-            made out of a whopping 96% water. In addition to water, they also include 
-            electrolytes that help to restore your body from dehydration.`,
+    made out of a whopping 96% water. In addition to water, they also include 
+    electrolytes that help to restore your body from dehydration.`,
     `If you ever want your avocados to ripen quickly, put a banana or apple around it. 
-            These fruits give off ethylene gas which helps to speed up the ripening process.`,
-  ],
+    These fruits give off ethylene gas which helps to speed up the ripening process.`,
+    `The summer solstice marks the point when the Sun reaches its highest point in the sky. This is the longest day of the year and afthis point, the days slowly begin to get shorter until the winter solstice which occurs around 21 December. At the same time as Northern Hemisphere experiences the summer solstice, the Southern Hemisphere has a winter solstice marking the shortest day of the year.`,],
+
   autumn: [
     `On the motionless branches of some trees, autumn berries hung like clusters of coral 
         beads, as in those fabled orchards where the fruits were jewels`,
-    `Autumn is the time for pumpkins`,
+    `Those who live near the equator miss Autumn entirely, because their regions get a consistent amount of sun.`,
     `The heat of autumn is different from the heat of summer. One ripens apples, the other 
         turns them to cider.`,
-    `It's the first day of autumn! A time of hot chocolatey mornings, and toasty marshmallow 
-        evenings, and, best of all, leaping into leaves!`,
+    `The word "Autumn" is believed to come from the Etruscan word "autu", meaning change of season.`,
+    `In China, the Autumn equinox is a moon festival. Chinese families eat moon cakes and round foods like watermelons, oranges and green soybeans.`
   ],
 
   winter: [
@@ -40,6 +41,8 @@ export const seasonQuotes = {
     `Acorn, butternut, kabocha, and delicata squash are all at their prime during the fall
         and winter. Squash’s trendy golden flesh is teeming with nutrients, including carotenoids, 
         Vitamin A, and potassium.`,
+    `The snowiest city on Earth is Japan`,
+    `You might be surprised to know that in the northern hemisphere the Earth is closest to the Sun during winter.`,
   ],
 };
 

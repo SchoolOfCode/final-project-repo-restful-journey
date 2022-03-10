@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import { Input } from "@chakra-ui/react";
 import css from "./ShoppingList.module.css";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const api = process.env.REACT_APP_API_CALL;
 
-function ShoppingList({ user, cssSeason, isAuthenticated }) {
+function ShoppingList({ user, cssSeason }) {
+  const {isAuthenticated } = useAuth0();
+
   const [input, setInput] = useState("");
   const [userList, setUserList] = useState(null);
   let userId = "";
@@ -101,14 +104,6 @@ function ShoppingList({ user, cssSeason, isAuthenticated }) {
             })}
         </ul>
       </>
-    );
-  } else if (!isAuthenticated) {
-    return (
-      <Link to="/">
-        <h3 className={css[`noauth${cssSeason}`]}>
-          Log in to Nourish to create your own shopping list! 🛒
-        </h3>
-      </Link>
     );
   } else {
     return (

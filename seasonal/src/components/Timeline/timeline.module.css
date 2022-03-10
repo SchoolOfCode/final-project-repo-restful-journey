@@ -1,0 +1,56 @@
+.seasonalCalendarspring {
+  background-color: rgba(172, 243, 157, 0.502);
+  border-radius: 10px;
+  margin: 0 3.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.25rem;
+}
+
+.seasonalCalendarsummer {
+  background-color: rgba(247, 236, 161, 0.876);
+  border-radius: 10px;
+  margin: 0 3.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.25rem;
+}
+
+.seasonalCalendarautumn {
+  background-color: rgba(237, 205, 192, 0.808);
+  border-radius: 10px;
+  margin: 0 3.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.25rem;
+}
+
+.seasonalCalendarwinter {
+  background-color: rgba(210, 226, 238, 0.871);
+  border-radius: 10px;
+  margin: 0 3.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.25rem;
+}
+
+.container {
+  margin-top: 1.5rem;
+  margin: 0 1rem;
+}
+
+.timeline {
+  margin-top: 5rem;
+}
+
+.verticalTimeline::before {
+  z-index: -5;
+}
