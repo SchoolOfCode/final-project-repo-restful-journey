@@ -113,7 +113,7 @@ function ShoppingList({ user, cssSeason }) {
     );
   } else {
     return (
-      <div className={css.ldsEllipsis}>
+      <div className={css[`ldsEllipsis${cssSeason}`]}>
         <div></div>
         <div></div>
         <div></div>

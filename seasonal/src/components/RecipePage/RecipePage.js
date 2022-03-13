@@ -174,15 +174,26 @@ function RecipePage({ user, cssSeason }) {
     );
   } else {
     return (
-      <div>
-        <p className={css[`noRecipe${cssSeason}`]}>No recipe selected.</p>
-        <p className={css[`linkToHome${cssSeason}`]}>
-          Check the <Link to="/home"> &nbsp;home</Link> page for some
-          inspiration!
-        </p>
+      // Loading Spinner
+      <div className={css[`ldsEllipsis${cssSeason}`]}>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     );
   }
 }
 
 export default RecipePage;
+
+// removed for demo, placeholder elements
+{
+  /* <div>
+<p className={css[`noRecipe${cssSeason}`]}>No recipe selected.</p>
+<p className={css[`linkToHome${cssSeason}`]}>
+  Check the <Link to="/home"> &nbsp;home</Link> page for some
+  inspiration!
+</p>
+</div> */
+}
