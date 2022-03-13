@@ -85,6 +85,63 @@
   padding: 1.5rem;
 }
 
+.ldsEllipsisspring {
+  margin-top: 25rem;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.ldsEllipsisspring div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #acf39d;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ldsEllipsisspring div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.ldsEllipsisspring div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsisspring div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsisspring div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
 /* summer */
 
 .addBtnsummer {
@@ -126,6 +183,39 @@
   justify-content: center;
   background-color: #f7eca1;
   padding: 1.5rem;
+}
+
+.ldsEllipsissummer {
+  margin-top: 25rem;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.ldsEllipsissummer div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #f05e23;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ldsEllipsissummer div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.ldsEllipsissummer div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsissummer div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsissummer div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
 }
 
 /* autumn */
@@ -170,6 +260,39 @@
   padding: 1.5rem;
 }
 
+.ldsEllipsisautumn {
+  margin-top: 25rem;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.ldsEllipsisautumn div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #b7410e;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ldsEllipsisautumn div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.ldsEllipsisautumn div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsisautumn div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsisautumn div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
 /* winter */
 
 .addBtnwinter {
@@ -211,6 +334,39 @@
   justify-content: center;
   background-color: #d2e2ee;
   padding: 1.5rem;
+}
+
+.ldsEllipsiswinter {
+  margin-top: 25rem;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.ldsEllipsiswinter div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #3a5683;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ldsEllipsiswinter div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.ldsEllipsiswinter div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsiswinter div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.ldsEllipsiswinter div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
 }
 
 /* Favourites Heart button */

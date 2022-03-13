@@ -102,7 +102,7 @@ function Homepage({ user, cssSeason, handleSeason }) {
   } else if (!data) {
     return (
       // Loading Spinner
-      <div className={css.ldsEllipsis}>
+      <div className={css[`ldsEllipsis${cssSeason}`]}>
         <div></div>
         <div></div>
         <div></div>
