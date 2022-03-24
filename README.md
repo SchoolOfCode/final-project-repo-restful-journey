@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+<img src='header.png' alt="banner"></img>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Nourish. App
 
-## Available Scripts
+**Welcome to Nourish!** 
+Our Final group project as a team of five. 
+The School Of Code set us a task to create anything we can solve a problem to, 
+so we wanted to create something meaningful. It became apparent that something
+we all cared about was leading a more sustainable life, and with this eating more sustainably.
 
-In the project directory, you can run:
+Imports of food have a high carbon footprint so we decided to make an app that 
+helps to educate people about food that is in season right now, along with recipe
+inspiration for those particular ingredients. 
 
-### `npm start`
+## Research/Ideation Phase
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+During the early development process, we created multiple User Personas to represent the
+different types of people who might use our product and from there, we created 
+user stories.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### User Persona
+For example, meet **Jaya**; a young professional working in Notting Hill. She likes 
+to cook using fresh ingredients and has been feeling uninspired recently due to a 
+lack of options. Occasionally, she hosts dinner parties for friends and will make 
+an effort to pick ingredients that are fresher. She has recently become more 
+health-conscious and would like to eat more organic food if possible as she is 
+becoming increasingly aware of the harmful effects of the pesticides that are 
+used on out-of-season produce imported from countries with less-stringent regulations. She would now like to focus on making more dishes using seasonal produce but is having trouble finding these recipes at her fingertips.
 
-### `npm test`
+Based on this user persona, we refined our ideas by using the **Disney Ideation** model.
+We jotted down our ideas on our **Miro board** and decided on the core features we 
+would like to include in our MVP. Following this process, we sent out surveys 
+to the wider School of Code community to receive feedback on what features they
+would use in a seasonal food app. The results highlighted that the most popular 
+feature was the ability to save recipes to your favourites.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To quickly learn the scale of our product, we created **lo and hi-fidelity prototypes
+using Figma.**  
+We adopted an iterative approach - based on feedback as well as usability 
+issues we encountered, we came back to these designs to make appropriate 
+adjustments as the project developed.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Component Structure
+Once our low and high fidelity prototypes were completed, we went through the 
+design and organised the elements into a hierarchy of **components and 
+sub-components.** This allowed us to easily spot reusable components, along with 
+their variations (state, props, behaviour) and gave the team a good sense of the
+scope of work ahead. This aided our workflow as any team member could jump in, 
+pick an isolated component from the backlog and code it.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack
+We initially thought about exploring new technologies however we agreed on using
+the PERN stack so that we could consolidate our knowledge and add more value to the 
+app in a short amount of time.
 
-### `npm run eject`
+We used jest, super test, and cypress to test our app applying some tests primarily
+around the key components, and lastly end-to-end tests to consolidate the user journey.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Git, Heroku and Netlify had a crucial role in our CI and CD.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Team Management
+We began each day with a team standup in which we recap the previous day. We kept 
+feedback cycles short by meeting before breaks to update the whole team. We would 
+end the day with a retrospective in which we would reflect on the day.
+We used a series of sprints to achieve the MVP This was through the use of a 
+Trello board as it broke down tasks that needed to be done.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Future Vision
+- Filter by dietary requirements when searching for recipes eg, vegetarian, vegan, gluten free.
+- Ability to customise saved recipes - swap out ingredients they don’t like or altered ingredient amounts. 
+- User profile that includes a dashboard of their details, favourite recipe, saved dietary requirement, location and shopping list.
+- Map function so they can search for local market shops in the nearby area to but local produce.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
