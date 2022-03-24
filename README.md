@@ -1,4 +1,4 @@
-<img src='header.png' alt="banner"></img>
+<img src='https://github.com/SchoolOfCode/final-project-repo-restful-journey/blob/main/Untitled%20design.png' alt="banner"></img>
 
 # Nourish. App
 
