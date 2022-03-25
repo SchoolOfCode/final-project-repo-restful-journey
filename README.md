@@ -4,6 +4,8 @@
 [Link to Nourish App](https://seasonal-food.netlify.app/) (Note: The app is currently optimised for mobile, so if accessing through a desktop you'll want to swtich to mobile view in the developer tools 😊)
 
 **Welcome to Nourish!** 
+The Nourish App educates and provides recipes around in season produce, allowing a user to create an account and create shopping list and save favourite recipes as well. 
+
 Our Final group project as a team of five. 
 The School Of Code set us a task to create anything we can solve a problem to, 
 so we wanted to create something meaningful. It became apparent that something
