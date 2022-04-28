@@ -1,7 +1,7 @@
 <img src='https://github.com/SchoolOfCode/final-project-repo-restful-journey/blob/main/Untitled%20design.png' alt="banner"></img>
 
 # Nourish. App
-[Link to Nourish App](https://seasonal-food.netlify.app/) (Note: The app is currently optimised for mobile, so if accessing through a desktop you'll want to swtich to mobile view in the developer tools 😊)
+[Link to Nourish App](https://seasonal-food.netlify.app/) (Note: The app is currently optimised for mobile, so if accessing through a desktop you'll want to switch to mobile view in the developer tools 😊)
 
 **Welcome to Nourish!** 
 The Nourish App educates and provides recipes around in season produce, allowing a user to create an account and create shopping list and save favourite recipes as well. 
