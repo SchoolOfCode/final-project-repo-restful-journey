@@ -38,7 +38,7 @@ function App() {
     try {
       localStorage.setItem(test, test);
       localStorage.removeItem(test);
-      return false;
+      return true;
     } catch (e) {
       return false;
     }
@@ -48,11 +48,11 @@ function App() {
   const [cssSeason, setCssSeason] = useState(
     savedSeason ? savedSeason : season
   );
-  console.log('saved seasson',savedSeason);
+
   const { user, isAuthenticated, isLoading } = useAuth0();
   console.log(isLoading);
   let userId = "";
-  if (user) {
+  if (user && isLocalStorageAvailable()) {
     userId = user.sub.split("|")[1];
     localStorage.setItem("userId", userId);
   }
@@ -63,7 +63,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (cssSeason) {
+    if (cssSeason && isLocalStorageAvailable()) {
       localStorage.setItem("localSeason", cssSeason);
     }
   }, [cssSeason]);
