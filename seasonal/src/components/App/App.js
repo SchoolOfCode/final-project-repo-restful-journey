@@ -33,11 +33,22 @@ async function postNewUser(newUser) {
 }
 
 function App() {
+  function isLocalStorageAvailable() {
+    var test = 'test';
+    try {
+      localStorage.setItem(test, test);
+      localStorage.removeItem(test);
+      return false;
+    } catch (e) {
+      return false;
+    }
+  }
   // const [id, setid] = useState(null);
-  const savedSeason = localStorage.getItem("localSeason");
+  const savedSeason = isLocalStorageAvailable() ? localStorage.getItem("localSeason") : season;
   const [cssSeason, setCssSeason] = useState(
     savedSeason ? savedSeason : season
   );
+  console.log('saved seasson',savedSeason);
   const { user, isAuthenticated, isLoading } = useAuth0();
   console.log(isLoading);
   let userId = "";
