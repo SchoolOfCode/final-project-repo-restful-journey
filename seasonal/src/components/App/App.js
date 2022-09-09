@@ -91,6 +91,7 @@ function App() {
       overflow="hidden"
       className={css.App}
       data-testid="mainbox"
+      minH='100vh'
     >
       <NavMenu cssSeason={cssSeason} />
       <Routes>

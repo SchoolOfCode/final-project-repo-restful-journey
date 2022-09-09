@@ -71,7 +71,7 @@ const Slider = ({
 export default Slider;
 
 const StyledSlider = styled.div`
-  width: 115vw;
+  padding-left: 2rem;
   div {
     width: 400px;
   }
