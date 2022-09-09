@@ -7,7 +7,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Menu = ({ open }) => {
   const {isAuthenticated, logout } = useAuth0();
 
-  return (
+  return ( 
     <StyledMenu open={open}>
     {!isAuthenticated && <Link to={'/'}>Login</Link>}
     <Link to={'/home'}>Home</Link>
