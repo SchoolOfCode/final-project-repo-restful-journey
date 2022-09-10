@@ -34,8 +34,8 @@ function Homepage({ user, cssSeason, handleSeason }) {
   );
 
   const [data] = useFetch(`${api}/ingredients/season/${cssSeason}`);
-  console.log(data);
-  console.log(`Season determined from actual date ${getSeason()}`);
+  // console.log(data);
+  // console.log(`Season determined from actual date ${getSeason()}`);
 
   function handleClick(e) {
     setIngredient(e.target.alt);
