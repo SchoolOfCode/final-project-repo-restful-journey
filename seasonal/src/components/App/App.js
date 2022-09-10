@@ -1,31 +1,30 @@
-import css from "./App.module.css";
-import { Routes, Route } from "react-router-dom";
-import Homepage from "../Homepage/Homepage.js";
-import IngredientPage from "../IngredientPage/IngredientPage.js";
-import RecipePage from "../RecipePage/RecipePage.js";
-import SearchPage from "../SearchPage/SearchPage.js";
-import ShoppingList from "../ShoppingList/ShoppingList.js";
-import NavMenu from "../NavMenu/navmenu";
-import LoginButton from "../LoginButton/Login";
-import Favourites from "../Favourites/favourites";
-import Timeline from "../Timeline/timeline";
-import { About } from "../About/about.js";
-import { Box } from "@chakra-ui/react";
-import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect, useState } from "react";
-import { getSeason } from "../../libs/seasonalData";
-
+import css from './App.module.css';
+import { Routes, Route } from 'react-router-dom';
+import Homepage from '../Homepage/Homepage.js';
+import IngredientPage from '../IngredientPage/IngredientPage.js';
+import RecipePage from '../RecipePage/RecipePage.js';
+import SearchPage from '../SearchPage/SearchPage.js';
+import ShoppingList from '../ShoppingList/ShoppingList.js';
+import NavMenu from '../NavMenu/navmenu';
+import LoginButton from '../LoginButton/Login';
+import Favourites from '../Favourites/favourites';
+import Timeline from '../Timeline/timeline';
+import { About } from '../About/about.js';
+import { Box } from '@chakra-ui/react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { useEffect, useState } from 'react';
+import { getSeason } from '../../libs/seasonalData';
 
 const season = getSeason();
 
 async function postNewUser(newUser) {
   const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(newUser),
   };
   const response = await fetch(
-    "https://nourish-seasonal.herokuapp.com/users",
+    'https://nourish-seasonal.herokuapp.com/users',
     requestOptions
   );
   const data = await response.json();
@@ -44,17 +43,19 @@ function App() {
     }
   }
   // const [id, setid] = useState(null);
-  const savedSeason = isLocalStorageAvailable() ? localStorage.getItem("localSeason") : season;
+  const savedSeason = isLocalStorageAvailable()
+    ? localStorage.getItem('localSeason')
+    : season;
   const [cssSeason, setCssSeason] = useState(
     savedSeason ? savedSeason : season
   );
 
   const { user, isAuthenticated, isLoading } = useAuth0();
   console.log(isLoading);
-  let userId = "";
+  let userId = '';
   if (user && isLocalStorageAvailable()) {
-    userId = user.sub.split("|")[1];
-    localStorage.setItem("userId", userId);
+    userId = user.sub.split('|')[1];
+    localStorage.setItem('userId', userId);
   }
 
   function handleSeason(e) {
@@ -64,7 +65,7 @@ function App() {
 
   useEffect(() => {
     if (cssSeason && isLocalStorageAvailable()) {
-      localStorage.setItem("localSeason", cssSeason);
+      localStorage.setItem('localSeason', cssSeason);
     }
   }, [cssSeason]);
 
@@ -80,7 +81,7 @@ function App() {
     }
   }, [isAuthenticated]);
 
-  console.log("user  object app", user);
+  console.log('user  object app', user);
   console.log(`"app", ${userId}, ${typeof userId}`);
 
   return (
@@ -91,7 +92,7 @@ function App() {
       overflow="hidden"
       className={css.App}
       data-testid="mainbox"
-      minH='100vh'
+      minH="100vh"
     >
       <NavMenu cssSeason={cssSeason} />
       <Routes>
