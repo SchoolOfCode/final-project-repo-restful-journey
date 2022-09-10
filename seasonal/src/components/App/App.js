@@ -34,11 +34,13 @@ async function postNewUser(newUser) {
 function App() {
 
   function isLocalStorageAvailable() {
-    var test = 'test';
+    let storage;
     try {
-      localStorage.setItem(test, test);
-      localStorage.removeItem(test);
-      return true;
+        storage =  window['localStorage'];
+        const x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
     } catch (e) {
       return false;
     }
@@ -52,7 +54,7 @@ function App() {
   }
 
   const savedSeason = localSavedSeason()
-  
+
   const [cssSeason, setCssSeason] = useState(
     savedSeason ? savedSeason : season
   );
