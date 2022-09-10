@@ -32,6 +32,7 @@ async function postNewUser(newUser) {
 }
 
 function App() {
+
   function isLocalStorageAvailable() {
     var test = 'test';
     try {
@@ -42,16 +43,22 @@ function App() {
       return false;
     }
   }
-  // const [id, setid] = useState(null);
-  const savedSeason = isLocalStorageAvailable()
-    ? localStorage.getItem('localSeason')
-    : season;
+  function localSavedSeason(){
+    if (isLocalStorageAvailable()){
+      return localStorage.getItem('localSeason')
+    } else{
+      return season
+    }
+  }
+
+  const savedSeason = localSavedSeason()
+  
   const [cssSeason, setCssSeason] = useState(
     savedSeason ? savedSeason : season
   );
 
   const { user, isAuthenticated, isLoading } = useAuth0();
-  console.log(isLoading);
+  // console.log(isLoading);
   let userId = '';
   if (user && isLocalStorageAvailable()) {
     userId = user.sub.split('|')[1];
@@ -60,7 +67,7 @@ function App() {
 
   function handleSeason(e) {
     setCssSeason(e);
-    console.log(cssSeason);
+    // console.log(cssSeason);
   }
 
   useEffect(() => {
@@ -81,8 +88,8 @@ function App() {
     }
   }, [isAuthenticated]);
 
-  console.log('user  object app', user);
-  console.log(`"app", ${userId}, ${typeof userId}`);
+  // console.log('user  object app', user);
+  // console.log(`"app", ${userId}, ${typeof userId}`);
 
   return (
     <Box
