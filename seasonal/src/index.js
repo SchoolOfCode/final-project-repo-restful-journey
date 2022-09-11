@@ -11,12 +11,33 @@ import { ChakraProvider } from "@chakra-ui/react";
 const domain = process.env.REACT_APP_DOMAIN;
 const clientId = process.env.REACT_APP_CLIENT_ID;
 
+
+function isLocalStorageAvailable() {
+  let storage;
+  try {
+      storage =  window['localStorage'];
+      const x = '__storage_test__';
+      storage.setItem(x, x);
+      storage.removeItem(x);
+      return true;
+  } catch (e) {
+    return false;
+  }
+}
+let redirect = ''
+if (isLocalStorageAvailable()){
+  redirect = `${window.location.origin}/home`
+}else{
+  redirect = 'https://seasonal-food-development.netlify.app/home'
+}
+
 ReactDOM.render(
   <BrowserRouter>
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirectUri={`${window.location.origin}/home`}
+      // redirectUri={`${window.location.origin}/home`}
+      redirectUri={redirect}
     >
       <ChakraProvider>
         <App />
