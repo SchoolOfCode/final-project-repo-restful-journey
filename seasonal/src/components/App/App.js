@@ -24,7 +24,7 @@ async function postNewUser(newUser) {
     body: JSON.stringify(newUser),
   };
   const response = await fetch(
-    'https://nourish-seasonal.herokuapp.com/users',
+    'https://api-restfull-nourish.cyclic.app/users',
     requestOptions
   );
   const data = await response.json();
